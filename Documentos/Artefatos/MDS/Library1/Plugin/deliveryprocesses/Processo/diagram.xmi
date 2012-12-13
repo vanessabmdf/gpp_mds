@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Activity xmi:id="_JZWIoEOzEeK8XbF4pQTUvg" name="Processo"/>
+  <notation:Diagram xmi:id="_JZVhkEOzEeK8XbF4pQTUvg" type="AD" element="_JZWIoEOzEeK8XbF4pQTUvg" name="Processo" measurementUnit="Pixel"/>
+  <uml:Activity xmi:id="_JZWvsEOzEeK8XbF4pQTUvg" name="Processo">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JZWvsUOzEeK8XbF4pQTUvg" source="uma_element">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JZWvskOzEeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_FX9H4UOUEeK8XbF4pQTUvg"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JZWvs0OzEeK8XbF4pQTUvg" key="type" value="Activity"/>
+    </eAnnotations>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_-fHS4EO2EeK8XbF4pQTUvg" name="Iniciação">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-fHS4UO2EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS4kO2EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_HIxIwUOVEeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS40O2EeK8XbF4pQTUvg" key="type" value="Phase"/>
+      </eAnnotations>
+    </node>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_-fHS5EO2EeK8XbF4pQTUvg" name="Definir Grupo">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-fHS5UO2EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS5kO2EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_MagIIUOVEeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS50O2EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_-fHS6EO2EeK8XbF4pQTUvg" name="Definir Tema">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-fHS6UO2EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS6kO2EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_Wecx8UOYEeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS60O2EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_-fHS7EO2EeK8XbF4pQTUvg" name="Escopo preliminar">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-fHS7UO2EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS7kO2EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_OY3MEUOyEeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS70O2EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_-fHS8EO2EeK8XbF4pQTUvg" name="Processo de desenvolvimento">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-fHS8UO2EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS8kO2EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_z-B98UOvEeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS80O2EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_-fHS9EO2EeK8XbF4pQTUvg" name="Plano de projeto">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-fHS9UO2EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS9kO2EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_cykKoEO0EeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-fHS90O2EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+  </uml:Activity>
+  <notation:Diagram xmi:id="_JZWvtEOzEeK8XbF4pQTUvg" type="AD" element="_JZWvsEOzEeK8XbF4pQTUvg" name="Processo" measurementUnit="Pixel">
+    <styles xmi:type="notation:PageStyle" xmi:id="_JZWvtUOzEeK8XbF4pQTUvg"/>
+    <styles xmi:type="notation:GuideStyle" xmi:id="_JZWvtkOzEeK8XbF4pQTUvg"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_JZWvt0OzEeK8XbF4pQTUvg"/>
+  </notation:Diagram>
+  <uml:Activity xmi:id="_J-QPsEO3EeK8XbF4pQTUvg" name="Escopo preliminar">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J-QPsUO3EeK8XbF4pQTUvg" source="uma_element">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPskO3EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_J9-i4UO3EeK8XbF4pQTUvg"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPs0O3EeK8XbF4pQTUvg" key="type" value="Activity"/>
+    </eAnnotations>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_J-QPtEO3EeK8XbF4pQTUvg" name="Identificar interessados">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J-QPtUO3EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPtkO3EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_DugQQUO0EeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPt0O3EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_J-QPuEO3EeK8XbF4pQTUvg" name="customizar processo">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J-QPuUO3EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPukO3EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_TF14kEOyEeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPu0O3EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+    <node xmi:type="uml:StructuredActivityNode" xmi:id="_J-QPvEO3EeK8XbF4pQTUvg" name="elaborar project charter">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J-QPvUO3EeK8XbF4pQTUvg" source="uma_element">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPvkO3EeK8XbF4pQTUvg" key="uri" value="uma://_FX9H4EOUEeK8XbF4pQTUvg#_UMA2cUOyEeK8XbF4pQTUvg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_J-QPv0O3EeK8XbF4pQTUvg" key="type" value="Activity"/>
+      </eAnnotations>
+    </node>
+  </uml:Activity>
+  <notation:Diagram xmi:id="_J-Q2wEO3EeK8XbF4pQTUvg" type="AD" element="_J-QPsEO3EeK8XbF4pQTUvg" name="Escopo preliminar" measurementUnit="Pixel">
+    <styles xmi:type="notation:PageStyle" xmi:id="_J-Q2wUO3EeK8XbF4pQTUvg"/>
+    <styles xmi:type="notation:GuideStyle" xmi:id="_J-Q2wkO3EeK8XbF4pQTUvg"/>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_J-Q2w0O3EeK8XbF4pQTUvg"/>
+  </notation:Diagram>
+</xmi:XMI>

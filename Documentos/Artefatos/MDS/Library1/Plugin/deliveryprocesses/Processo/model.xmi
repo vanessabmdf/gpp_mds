@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.epf.uma="http://www.eclipse.org/epf/uma/1.0.6/uma.ecore" xmlns:org.eclipse.epf.uma.resourcemanager="http:///org/eclipse/epf/uma/resourcemanager.ecore" xmlns:epf="http://www.eclipse.org/epf" epf:version="1.5.1">
+  <org.eclipse.epf.uma.resourcemanager:ResourceManager xmi:id="_FZWPAEOUEeK8XbF4pQTUvg" guid="_FZWPAEOUEeK8XbF4pQTUvg">
+    <resourceDescriptors xmi:id="_FZWPAUOUEeK8XbF4pQTUvg" id="-yyUG52DuskeUiZIv27RyCw" uri="content.xmi"/>
+  </org.eclipse.epf.uma.resourcemanager:ResourceManager>
+  <org.eclipse.epf.uma:ProcessComponent xmi:id="_FX9H4EOUEeK8XbF4pQTUvg" name="Processo" guid="_FX9H4EOUEeK8XbF4pQTUvg">
+    <methodElementProperty xmi:id="_iEXqMEOuEeK8XbF4pQTUvg" name="me_edited" value="true"/>
+    <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_HIxIwEOVEeK8XbF4pQTUvg" name="Iniciação" guid="_HIxIwEOVEeK8XbF4pQTUvg">
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9970EO3EeK8XbF4pQTUvg" name="calma" guid="_J9970EO3EeK8XbF4pQTUvg">
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9970UO3EeK8XbF4pQTUvg" name="calma" guid="_J9970UO3EeK8XbF4pQTUvg" presentationName="Definir Grupo" superActivities="_HIxIwUOVEeK8XbF4pQTUvg"/>
+      </childPackages>
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9970kO3EeK8XbF4pQTUvg" name="Definir Tema" guid="_J9970kO3EeK8XbF4pQTUvg">
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J99700O3EeK8XbF4pQTUvg" name="Definir Tema" guid="_J99700O3EeK8XbF4pQTUvg" presentationName="Definir Tema" superActivities="_HIxIwUOVEeK8XbF4pQTUvg"/>
+      </childPackages>
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9971EO3EeK8XbF4pQTUvg" name="Escopo preliminar" guid="_J9971EO3EeK8XbF4pQTUvg">
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9971UO3EeK8XbF4pQTUvg" name="Levantar requisitos" guid="_J9971UO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9-i4EO3EeK8XbF4pQTUvg" name="Levantar requisitos" guid="_J9-i4EO3EeK8XbF4pQTUvg" presentationName="customizar processo" superActivities="_J9-i4UO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9_xAkO3EeK8XbF4pQTUvg" name="Elaborar documento de visão" guid="_J9_xAkO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9_xA0O3EeK8XbF4pQTUvg" name="Elaborar documento de visão" guid="_J9_xA0O3EeK8XbF4pQTUvg" presentationName="elaborar project charter" superActivities="_J9-i4UO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9_xAEO3EeK8XbF4pQTUvg" name="Identificar interessados" guid="_J9_xAEO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9_xAUO3EeK8XbF4pQTUvg" name="Identificar interessados" guid="_J9_xAUO3EeK8XbF4pQTUvg" presentationName="Identificar interessados" superActivities="_J9-i4UO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9-i4UO3EeK8XbF4pQTUvg" name="Escopo preliminar" guid="_J9-i4UO3EeK8XbF4pQTUvg" presentationName="Escopo preliminar" superActivities="_HIxIwUOVEeK8XbF4pQTUvg" breakdownElements="_J9_xAUO3EeK8XbF4pQTUvg _J9-i4EO3EeK8XbF4pQTUvg _J9_xA0O3EeK8XbF4pQTUvg"/>
+      </childPackages>
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9_xBEO3EeK8XbF4pQTUvg" name="Identificar interessados" guid="_J9_xBEO3EeK8XbF4pQTUvg">
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-BmMEO3EeK8XbF4pQTUvg" name="Levantar requisitos" guid="_J-BmMEO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-CNQEO3EeK8XbF4pQTUvg" name="Levantar requisitos" guid="_J-CNQEO3EeK8XbF4pQTUvg" presentationName="customizar processo" superActivities="_J9_xCUO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9_xCkO3EeK8XbF4pQTUvg" name="Elaborar documento de visão" guid="_J9_xCkO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-A_IEO3EeK8XbF4pQTUvg" name="Elaborar documento de visão" guid="_J-A_IEO3EeK8XbF4pQTUvg" presentationName="elaborar project charter" superActivities="_J9_xCUO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9_xB0O3EeK8XbF4pQTUvg" name="desenvolver wiki" guid="_J9_xB0O3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9_xCEO3EeK8XbF4pQTUvg" name="desenvolver wiki" guid="_J9_xCEO3EeK8XbF4pQTUvg" presentationName="desenvolver wiki" superActivities="_J9_xCUO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J9_xBUO3EeK8XbF4pQTUvg" name="configurar repositório" guid="_J9_xBUO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9_xBkO3EeK8XbF4pQTUvg" name="configurar repositório" guid="_J9_xBkO3EeK8XbF4pQTUvg" presentationName="configurar repositório" superActivities="_J9_xCUO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J9_xCUO3EeK8XbF4pQTUvg" name="Identificar interessados" guid="_J9_xCUO3EeK8XbF4pQTUvg" presentationName="Processo de desenvolvimento" superActivities="_HIxIwUOVEeK8XbF4pQTUvg" breakdownElements="_J-CNQEO3EeK8XbF4pQTUvg _J-A_IEO3EeK8XbF4pQTUvg _J9_xCEO3EeK8XbF4pQTUvg _J9_xBkO3EeK8XbF4pQTUvg"/>
+      </childPackages>
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-CNQUO3EeK8XbF4pQTUvg" name="Plano de projeto" guid="_J-CNQUO3EeK8XbF4pQTUvg">
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-C0V0O3EeK8XbF4pQTUvg" name="plano de risco" guid="_J-C0V0O3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-C0WEO3EeK8XbF4pQTUvg" name="plano de risco" guid="_J-C0WEO3EeK8XbF4pQTUvg" presentationName="plano de risco" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-DbY0O3EeK8XbF4pQTUvg" name="plano de custo" guid="_J-DbY0O3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-DbZEO3EeK8XbF4pQTUvg" name="plano de custo" guid="_J-DbZEO3EeK8XbF4pQTUvg" presentationName="plano de custo" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-C0WUO3EeK8XbF4pQTUvg" name="plano de tempo" guid="_J-C0WUO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-DbYEO3EeK8XbF4pQTUvg" name="plano de tempo" guid="_J-DbYEO3EeK8XbF4pQTUvg" presentationName="plano de tempo" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-C0U0O3EeK8XbF4pQTUvg" name="tempo de qualidade" guid="_J-C0U0O3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-C0VEO3EeK8XbF4pQTUvg" name="tempo de qualidade" guid="_J-C0VEO3EeK8XbF4pQTUvg" presentationName="plano de qualidade" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-DbYUO3EeK8XbF4pQTUvg" name="plano de comunicação" guid="_J-DbYUO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-DbYkO3EeK8XbF4pQTUvg" name="plano de comunicação" guid="_J-DbYkO3EeK8XbF4pQTUvg" presentationName="plano de comunicação" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-DbZUO3EeK8XbF4pQTUvg" name="plano de escopo" guid="_J-DbZUO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-DbZkO3EeK8XbF4pQTUvg" name="plano de escopo" guid="_J-DbZkO3EeK8XbF4pQTUvg" presentationName="plano de escopo" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-C0UUO3EeK8XbF4pQTUvg" name="plano de integração" guid="_J-C0UUO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-C0UkO3EeK8XbF4pQTUvg" name="plano de integração" guid="_J-C0UkO3EeK8XbF4pQTUvg" presentationName="plano de integração" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_J-C0VUO3EeK8XbF4pQTUvg" name="plano de RH" guid="_J-C0VUO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-C0VkO3EeK8XbF4pQTUvg" name="plano de RH" guid="_J-C0VkO3EeK8XbF4pQTUvg" presentationName="plano de RH" superActivities="_J-C0UEO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_J-C0UEO3EeK8XbF4pQTUvg" name="Plano de projeto" guid="_J-C0UEO3EeK8XbF4pQTUvg" presentationName="Plano de projeto" superActivities="_HIxIwUOVEeK8XbF4pQTUvg" breakdownElements="_J-C0WEO3EeK8XbF4pQTUvg _J-DbZEO3EeK8XbF4pQTUvg _J-DbYEO3EeK8XbF4pQTUvg _J-C0VEO3EeK8XbF4pQTUvg _J-DbYkO3EeK8XbF4pQTUvg _J-DbZkO3EeK8XbF4pQTUvg _J-C0UkO3EeK8XbF4pQTUvg _J-C0VkO3EeK8XbF4pQTUvg"/>
+      </childPackages>
+      <processElements xsi:type="org.eclipse.epf.uma:Phase" xmi:id="_HIxIwUOVEeK8XbF4pQTUvg" name="Iniciação" guid="_HIxIwUOVEeK8XbF4pQTUvg" presentationName="Iniciação" superActivities="_FX9H4UOUEeK8XbF4pQTUvg" breakdownElements="_J9970UO3EeK8XbF4pQTUvg _J99700O3EeK8XbF4pQTUvg _J9-i4UO3EeK8XbF4pQTUvg _J9_xCUO3EeK8XbF4pQTUvg _J-C0UEO3EeK8XbF4pQTUvg"/>
+    </childPackages>
+    <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_GnFfkEO3EeK8XbF4pQTUvg" name="Elaboração" guid="_GnFfkEO3EeK8XbF4pQTUvg">
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_PkKIQEO3EeK8XbF4pQTUvg" name="Refinar Requisitos" guid="_PkKIQEO3EeK8XbF4pQTUvg">
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_PkKIQUO3EeK8XbF4pQTUvg" name="Refinar Requisitos" guid="_PkKIQUO3EeK8XbF4pQTUvg" presentationName="Refinar Requisitos" superActivities="_GnFfkUO3EeK8XbF4pQTUvg"/>
+      </childPackages>
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_S2Ek8EO3EeK8XbF4pQTUvg" name="Documento de Arquitetura" guid="_S2Ek8EO3EeK8XbF4pQTUvg">
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_V3KXYEO3EeK8XbF4pQTUvg" name="Gerar modelo estático" guid="_V3KXYEO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_V3KXYUO3EeK8XbF4pQTUvg" name="Gerar modelo estático" guid="_V3KXYUO3EeK8XbF4pQTUvg" presentationName="Gerar modelo estático" superActivities="_S2Ek8UO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_X6xN4EO3EeK8XbF4pQTUvg" name="gerar modelo lógico" guid="_X6xN4EO3EeK8XbF4pQTUvg">
+          <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_X6xN4UO3EeK8XbF4pQTUvg" name="gerar modelo lógico" guid="_X6xN4UO3EeK8XbF4pQTUvg" presentationName="gerar modelo lógico" superActivities="_S2Ek8UO3EeK8XbF4pQTUvg"/>
+        </childPackages>
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_S2Ek8UO3EeK8XbF4pQTUvg" name="Documento de Arquitetura" guid="_S2Ek8UO3EeK8XbF4pQTUvg" presentationName="Documento de Arquitetura" superActivities="_GnFfkUO3EeK8XbF4pQTUvg" breakdownElements="_V3KXYUO3EeK8XbF4pQTUvg _X6xN4UO3EeK8XbF4pQTUvg"/>
+      </childPackages>
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_a3PmEEO3EeK8XbF4pQTUvg" name="C" guid="_a3PmEEO3EeK8XbF4pQTUvg">
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_a3QNIEO3EeK8XbF4pQTUvg" name="C" guid="_a3QNIEO3EeK8XbF4pQTUvg" presentationName="Configurar ambiente" superActivities="_GnFfkUO3EeK8XbF4pQTUvg"/>
+      </childPackages>
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_gF9tsEO3EeK8XbF4pQTUvg" name="Elaborar EPF" guid="_gF9tsEO3EeK8XbF4pQTUvg">
+        <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_gF9tsUO3EeK8XbF4pQTUvg" name="Elaborar EPF" guid="_gF9tsUO3EeK8XbF4pQTUvg" presentationName="Elaborar EPF" superActivities="_GnFfkUO3EeK8XbF4pQTUvg"/>
+      </childPackages>
+      <processElements xsi:type="org.eclipse.epf.uma:Phase" xmi:id="_GnFfkUO3EeK8XbF4pQTUvg" name="Elaboração" guid="_GnFfkUO3EeK8XbF4pQTUvg" presentationName="Elaboração" superActivities="_FX9H4UOUEeK8XbF4pQTUvg" breakdownElements="_PkKIQUO3EeK8XbF4pQTUvg _S2Ek8UO3EeK8XbF4pQTUvg _a3QNIEO3EeK8XbF4pQTUvg _gF9tsUO3EeK8XbF4pQTUvg"/>
+    </childPackages>
+    <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_iMofQEO3EeK8XbF4pQTUvg" name="Const" guid="_iMofQEO3EeK8XbF4pQTUvg">
+      <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_lE7iEEO3EeK8XbF4pQTUvg" name="Release1" guid="_lE7iEEO3EeK8XbF4pQTUvg">
+        <processElements xsi:type="org.eclipse.epf.uma:Iteration" xmi:id="_lE7iEUO3EeK8XbF4pQTUvg" name="Release1" guid="_lE7iEUO3EeK8XbF4pQTUvg" presentationName="Release1" superActivities="_iMofQUO3EeK8XbF4pQTUvg" isRepeatable="true"/>
+      </childPackages>
+      <processElements xsi:type="org.eclipse.epf.uma:Phase" xmi:id="_iMofQUO3EeK8XbF4pQTUvg" name="Const" guid="_iMofQUO3EeK8XbF4pQTUvg" presentationName="Construção" superActivities="_FX9H4UOUEeK8XbF4pQTUvg" breakdownElements="_lE7iEUO3EeK8XbF4pQTUvg"/>
+    </childPackages>
+    <process xsi:type="org.eclipse.epf.uma:DeliveryProcess" xmi:id="_FX9H4UOUEeK8XbF4pQTUvg" name="Processo" guid="_FX9H4UOUEeK8XbF4pQTUvg" presentationName="Processo" breakdownElements="_HIxIwUOVEeK8XbF4pQTUvg _GnFfkUO3EeK8XbF4pQTUvg _iMofQUO3EeK8XbF4pQTUvg">
+      <presentation xmi:id="-yyUG52DuskeUiZIv27RyCw" href="uma://-yyUG52DuskeUiZIv27RyCw#-yyUG52DuskeUiZIv27RyCw"/>
+    </process>
+  </org.eclipse.epf.uma:ProcessComponent>
+</xmi:XMI>
