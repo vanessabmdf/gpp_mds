@@ -1,0 +1,13 @@
+Emitir Alerta: Caso de uso responsável por emitir um email para o usuário caso a
+chamada tenha sido concluída.
+
+Encaminhar Chamado: Consiste na delegação do chamado a alguem do cpd, ou seja, o
+haverá um responsável pela a execução do chamado.
+
+Manter Solução: Consiste no cadastro, atualização, exclusão e consulta das soluções
+eficientes de chamados anteriores.
+
+Obs: Retirei alguns casos de uso inconsistentes, caso vocês achem necessário,
+desconsiderem minhas mudanças.
+
+André Cruz
