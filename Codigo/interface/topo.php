@@ -8,10 +8,10 @@
 
 <div class="menu">
 <ul id="menu">
-   <li><a href="index.php?p=home">Home</a></li>
-   <li><a href="index.php?p=chamado">Chamado</a></li>
-   <li><a href=index.php?p=usuario>Usuário</a></li>
-   <li><a href=index.php?p=solucao>Solução</a></li>
-   <li><a href="index.php?p=contato">Contato</a></li>
+   <li><a href="home.php">Home</a></li>
+   <li><a href="chamado.php">Chamado</a></li>
+   <li><a href=usuario.php>Usuário</a></li>
+   <li><a href=solucao.php>Solução</a></li>
+   <li><a href="contato.php">Contato</a></li>
 </ul>
 </div><!-- fim class menu -->

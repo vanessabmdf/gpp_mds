@@ -1,3 +1,8 @@
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="css/menu.css" type="text/css" />
+<?php
+    include "topo.php"
+?>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </html>
@@ -23,3 +28,6 @@ Coordenaçãoo Geral: (61) 3107-8904<br><br><br><br><br><br><br><br>
 </div><!-- fim div cont -->
 
 </div> <!-- fim div conteudo -->
+<?php
+    include "rodape.php"
+?>

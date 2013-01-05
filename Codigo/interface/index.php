@@ -10,10 +10,7 @@
 <body>
 
 <?php
-	include "topo.php";
-	include "../funcoes/conexao.php";
-	include "paginas.php";
-	include "rodape.php";
+	include "home.php";
 ?>
 
 </body>

@@ -1,17 +1,23 @@
-<div id="conteudo">
-
-<div id="cont">
-
-
-<h2>Página inicial</h2>
-
-<hr>
 <?php
 	session_start();
 	if(isset($_SESSION['login']) and isset($_SESSION['senha'])){
             header("Location: logout.php");
 	}
 ?>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="css/menu.css" type="text/css" />
+<?php
+    include "topo.php"
+?>
+
+<div id="conteudo">
+
+<div id="cont">
+
+    <h2>Página inicial</h2>
+
+<hr>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -29,7 +35,7 @@
     </tr>
    <tr>
         <td align="right">&nbsp;</td>
-        <td> <input type="submit" value="Logar" /></td>
+        <td align="center"> <input type="submit" value="Logar" /></td>
         </tr>
 
 </table>
@@ -42,3 +48,6 @@
 </div><!-- fim div cont -->
 
 </div> <!-- fim div conteudo -->
+<?php
+    include "rodape.php"
+?>

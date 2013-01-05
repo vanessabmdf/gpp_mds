@@ -1,3 +1,9 @@
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="css/menu.css" type="text/css" />
+<?php
+    include "topo.php"
+?>
+
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </html>
@@ -5,7 +11,7 @@
 
 <div id="cont">
 
-<h2>Página de soluçaoo</h2>
+<h2>Página de soluçãoo</h2>
 <?php
 	session_start();
 	if(!isset($_SESSION['login']) and !isset($_SESSION['senha'])){
@@ -18,5 +24,7 @@
 ?>
 
 </div><!-- fim div cont -->
-
 </div>
+<?php
+    include "rodape.php"
+?>
