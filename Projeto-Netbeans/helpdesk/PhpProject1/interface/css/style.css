@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; padding:0; background:#FFFFFF;}
+#topo{ margin:0 auto; height:130px; width:700px; border:1px #ccc solid;}
+#logo{ margin:15px;}
+#rodape{margin:0 auto; height:20px; width:702px; border:1px #ccc solid; background:#fff; border-top:5px #037c25 solid; font-family:Arial, Helvetica, sans-serif; font-size:12px; text-align:center; padding-top:05px;}
+#conteudo{ width:702px; height:auto; border:1px #ccc solid; margin:0 auto; background:#FFF; clear:both;}
+#cont{ margin:10px; font-family:Arial, Helvetica, sans-serif; font-size:12px;}
