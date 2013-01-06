@@ -7,6 +7,19 @@ if($_POST['senha']!=$_POST['confirmasenha']){
     header("Location: ../interface/novocadastro.php");
 }else{
         
+    //Validar matricula.
+    $sql = mysql_query("SELECT matricula FROM solicitante");
+    
+    if(mysql_num_rows($sql)){
+	while($ln = mysql_fetch_array($sql)){
+            if( $_POST['matricula'] == $ln['matricula'])
+                {
+                    echo "Erro! Matricula ja cadastrada no sistema.";
+                    exit(0);
+                }
+        
+        }
+    }
    
     $solicitante= new Solicitante($_POST['nome'],$_POST['email'],$_POST['matricula'],$_POST['data_nascimento']);
     $user = new Usuario($_POST['login'], $_POST['senha'], NULL );
