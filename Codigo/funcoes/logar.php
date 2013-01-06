@@ -10,8 +10,9 @@ $sql = mysql_query("SELECT 'login','senha' FROM usuario WHERE login = '$user->no
 if(mysql_num_rows($sql)==true){
 	while($ln = mysql_fetch_array($sql)){
 	
-	$_SESSION['login'] = $ln['login'];
+	$_SESSION['login'] = $user->nome_usuario;
 	$_SESSION['senha'] = $ln['senha'];
+       
         }
 	echo "<script type=\"text/javascript\">
 	alert(\"Login efetuado\");
