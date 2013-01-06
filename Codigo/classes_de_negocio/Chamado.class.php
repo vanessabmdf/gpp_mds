@@ -8,11 +8,10 @@ class Chamado {
     public  $data_final;
     public  $cod_tecnico;
     public  $cod_solicitante;
-    public  $codigo;
 
     public function __construct ($cod_status,  $cod_servico,  $descricao,
                      $data_inicial,  $data_final,  $cod_tecnico,
-                     $cod_solicitante,  $codigo) {
+                     $cod_solicitante) {
             $this->setcod_status($cod_status);
             $this->setcod_servico($cod_servico);
             $this->setdescricao($descricao);
@@ -20,7 +19,6 @@ class Chamado {
             $this->setdata_final($data_final);
             $this->setcod_tecnico($cod_tecnico);
             $this->setcod_solicitante($cod_solicitante);
-            $this->setcodigo($codigo);
     }
 
     public function  getcod_status() {
@@ -64,12 +62,6 @@ class Chamado {
     }
     public function  setcod_solicitante( $cod_solicitante) {
             $this->cod_solicitante = $cod_solicitante;
-    }
-    public function  getcodigo() {
-            return $this->codigo;
-    }
-    public function  setcodigo( $codigo) {
-            $this->codigo = $codigo;
     }	
 }
 ?>
