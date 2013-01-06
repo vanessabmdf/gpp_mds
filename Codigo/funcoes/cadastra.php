@@ -6,6 +6,20 @@ include '../classes_de_negocio/Solicitante.class.php';
 if($_POST['senha']!=$_POST['confirmasenha']){
     header("Location: ../interface/novocadastro.php");
 }else{
+    
+    //Validar login.
+    $sql = mysql_query("SELECT login FROM usuario");
+    
+    if(mysql_num_rows($sql)){
+	while($ln = mysql_fetch_array($sql)){
+            if( $_POST['login'] == $ln['login'])
+                {
+                    echo "Erro! Login ja cadastrado no sistema.";
+                    exit(0);
+                }
+        
+        }
+    }
         
     //Validar matricula.
     $sql = mysql_query("SELECT matricula FROM solicitante");
