@@ -10,8 +10,9 @@ include '../classes_de_negocio/Chamado.class.php';
     
     $chamado = new Chamado(NULL, NULL, $_POST['descricao'], NULL, NULL, NULL, $cod_solicitante);
     $bd = mysql_query("INSERT INTO `helpdesk`.`chamado` (`codigo`, `descricao`, `data_inicial`, `data_final`, `codigo_status`, `codigo_servico`, `codigo_tecnico`, `codigo_solicitante`) VALUES ('', '$chamado->descricao', '', '', '', '', '', '$chamado->cod_solicitante')");
-    echo "<script type=\"text/javascript\">
-            alert(\"Chamado cadastrado\");
-            </script>";
+    echo "<meta http-equiv='refresh' content='0; URL=../interface/chamado.php'>
+		<script type=\"text/javascript\">
+		alert(\"Chamado cadastrado\");
+		</script>";
     
 ?>

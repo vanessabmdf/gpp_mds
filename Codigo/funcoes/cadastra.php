@@ -49,9 +49,9 @@ if($_POST['senha']!=$_POST['confirmasenha']){
         $sql2 = mysql_query("INSERT INTO `helpdesk`.`usuario` (`login`, `senha`, `codigo_perfil`, `codigo_solicitante`, `codigo`) VALUES ('$user->nome_usuario', '$user->senha', '', $cod, '')");
         }
     }
-    echo "<script type=\"text/javascript\">
-            alert(\"Cadastro efetuado\");
-            </script>";
-    header("Location: ../interface/home.php");
+    echo "<meta http-equiv='refresh' content='0; URL=../interface/chamado.php'>
+		<script type=\"text/javascript\">
+		alert(\"Usuário cadastrado\");
+		</script>";
 }
 ?>
