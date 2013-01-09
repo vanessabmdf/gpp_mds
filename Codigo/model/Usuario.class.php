@@ -1,14 +1,16 @@
 <?php
 
 class Usuario{
+    
     private $nome_usuario = null;
     private $senha = null;
     private $codigo_perfil = null;
+    private $codigo_solicitante = null;
     
     public function Usuario() {
     }
 
-        public function setNome($nome_usuario){
+    public function setNome($nome_usuario){
         $this->nome_usuario=$nome_usuario;
     }
     public function  getNome(){
@@ -27,6 +29,13 @@ class Usuario{
     }
     public function getCod(){
         return $this->codigo_perfil;
+    }
+    
+    public function setCodigo_solicitante($codigo_solicitante){
+        $this->codigo_solicitante=$codigo_solicitante;
+    }
+    public function getCodigo_solicitante(){
+        return $this->codigo_solicitante;
     }
 }
 ?>
