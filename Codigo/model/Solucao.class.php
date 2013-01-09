@@ -1,13 +1,11 @@
 <?php
 class Solucao {
 
-    public  $codigo;
-    public  $descricao;
-    public  $data;
-    public function __contructor( $codigo,  $descricao,  $data) {
-            $this->setcodigo($codigo);
-            $this->setdescricao($descricao);
-            $this->setdata($data);
+    private $codigo = null;
+    private $descricao = null;
+    private $data = null;
+    
+    public function Solucao(){
     }
     public function  getcodigo() {
             return $this->codigo;
