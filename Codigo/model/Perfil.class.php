@@ -2,12 +2,10 @@
 
 class Perfil {
 
-    public  $codigo;
-    public  $tipo;
+    private $codigo = NULL;
+    private $tipo = NULL;
 
-    public function __construct( $codigo,  $tipo) {
-            $this->setcodigo($codigo);
-            $this->settipo($tipo);
+    public function perfil() {
     }
     public function  getcodigo() {
             return $this->codigo;
