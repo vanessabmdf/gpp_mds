@@ -1,14 +1,11 @@
 <?php
 
 class Usuario{
-    public $nome_usuario;
-    public $senha;
-    public $codigo_perfil;
+    private $nome_usuario = null;
+    private $senha = null;
+    private $codigo_perfil = null;
     
-    public function __construct($nome_usuario, $senha, $codigo_perfil) {
-        $this->setNome($nome_usuario);
-        $this->setSenha($senha);
-        $this->setCod($codigo_perfil);
+    public function Usuario() {
     }
 
         public function setNome($nome_usuario){
