@@ -1,13 +1,12 @@
 <?php
 class Tipo_Servico {
 
-    public  $codigo ;
-    public  $descricao;
+    private $codigo = null;
+    private $descricao = null;
 
-    public function __construct( $codigo,  $descricao) {
-            $this->setcodigo($codigo);
-            $this->setdescricao($descricao);
+    public function Tipo_Servico(){
     }
+    
     public function  getcodigo() {
             return $this->codigo;
     }
