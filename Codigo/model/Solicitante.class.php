@@ -29,8 +29,7 @@ class Solicitante{
     }
     public function  getMatricula(){
         return $this->matricula;
-    }
-    
+    }    
     public function setData($data_nascimento){
         $this->data_nascimento=$data_nascimento;
     }

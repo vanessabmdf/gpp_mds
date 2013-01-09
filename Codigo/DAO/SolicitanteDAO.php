@@ -7,22 +7,27 @@ class SolicitanteDAO {
 
     private $con; 
     public function SolicitanteDAO(){
-        $this->con = new Conexao();
+        $this->con = new Conection();
         //Função para aparecer os erros
-        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function insereSolicitante(Solicitante $solicitante, Usuario $usuario) {
         try{
-            $stm = $con->prepare("INSERT INTO solicitante (nome, email, matricula, codigo, data_nascimento) 
-                                  VALUES (:nome, :email, :matricula, :codigo, :data_nascimento)");
+            /*Sem passagem por referência
+            $nome = $solicitante->getNome();
+            $email = $solicitante->getEmail();
+            $matricula = $solicitante->getMatricula();
+            $data = $solicitante->getData();
+            */
+            $stm = $this->con->prepare("INSERT INTO solicitante (nome, email, matricula, data_nascimento) 
+                                  VALUES (:nome, :email, :matricula, :data_nascimento)");
             $stm->bindParam(":nome",$solicitante->getNome());
-            $stm->bindParam(":nome",$solicitante->getEmail());
-            $stm->bindParam(":nome",$solicitante->getMatricula());
-            $stm->bindParam(":nome",$solicitante->getCodigo());
-            $stm->bindParam(":nome",$solicitante->getData_Nascimento());
+            $stm->bindParam(":email",$solicitante->getEmail());
+            $stm->bindParam(":matricula",$solicitante->getMatricula());
+            $stm->bindParam(":data_nascimento",$solicitante->getData());
             $exec = $stm->execute();
-            $con->null;
+            $this->con->null;
         }catch (Exception $erro){
             echo "Ocorreu um erro na operação, informe o erro a seguir ao CPD: ". $erro->getMessage();           
         }        

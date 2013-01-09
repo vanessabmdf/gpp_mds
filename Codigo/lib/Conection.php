@@ -4,7 +4,7 @@
 // Caso seja necessário, pode-se trocar o SGBD com poucas linhas
 class Conection extends PDO {
     
-    private $hostname = "mysql:host=127.0.0.1;dbname=helpdeskfga";
+    private $hostname = "mysql:host=127.0.0.1;dbname=helpdesk";
     private $user = "root";
     private $pass = "";
     public $hdl = null;
