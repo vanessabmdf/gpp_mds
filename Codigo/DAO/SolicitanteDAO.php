@@ -67,6 +67,15 @@ class SolicitanteDAO {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
+    
+    public function deleteSolicitante($codigo) {
+        try {
+            $stm = $this->con->query("DELETE FROM solicitante WHERE codigo = ".$codigo."");
+            return $stm;
+        } catch (PDOException $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
     //Função de fechar a conexão aberta no DAO
     public function fechaConexão() {
         try {
