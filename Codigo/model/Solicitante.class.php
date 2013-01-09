@@ -1,16 +1,13 @@
 <?php
 
 class Solicitante{
-    public $nome;
-    public $email;
-    public $matricula;
-    public $data_nascimento;
     
-    public function __construct( $nome, $email, $matricula, $data_nascimento ) {
-        $this->setNome($nome);
-        $this->setEmail($email);
-        $this->setMatricula($matricula);
-        $this->setData($data_nascimento);
+    private $nome = NULL;
+    private $email = NULL;
+    private $matricula = NULL;
+    private $data_nascimento = NULL;
+    
+    public function solicitante() {
     }
     
     public function setNome($nome) {
