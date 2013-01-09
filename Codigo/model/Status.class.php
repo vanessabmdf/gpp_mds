@@ -2,12 +2,10 @@
 
 class Status {
 
-    public  $codigo;
-    public  $descricao;
+    private $codigo = null;
+    private $descricao = null;
 
-    public function __construct( $codigo,  $descricao) {
-            $this->setcodigo($codigo);
-            $this->setdescricao($descricao);
+    public function Status(){
     }
     public function  getcodigo() {
             return $this->codigo;
