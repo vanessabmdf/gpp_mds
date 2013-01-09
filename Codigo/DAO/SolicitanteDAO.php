@@ -29,7 +29,7 @@ class SolicitanteDAO {
             $exec = $stm->execute();
             $this->con->null;
         }catch (Exception $erro){
-            echo "Ocorreu um erro na operação, informe o erro a seguir ao CPD: ". $erro->getMessage();           
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: ". $erro->getMessage();           
         }        
     }
 
