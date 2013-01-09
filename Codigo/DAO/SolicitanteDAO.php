@@ -5,11 +5,11 @@ require_once "../model/Solicitante.class.php";
 
 class SolicitanteDAO {
 
-    public $con;
+    private $con;
 
     public function SolicitanteDAO() {
         $this->con = new Conection();
-        //Função para aparecer os erros
+        //Função para aparecer os erros e warnings
         $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
