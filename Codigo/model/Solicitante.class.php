@@ -7,7 +7,7 @@ class Solicitante{
     private $matricula = NULL;
     private $data_nascimento = NULL;
     
-    public function solicitante() {
+    public function Solicitante() {
     }
     
     public function setNome($nome) {

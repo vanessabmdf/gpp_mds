@@ -5,7 +5,7 @@ class Perfil {
     private $codigo = NULL;
     private $tipo = NULL;
 
-    public function perfil() {
+    public function Perfil() {
     }
     public function  getcodigo() {
             return $this->codigo;
