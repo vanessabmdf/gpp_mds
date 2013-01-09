@@ -4,8 +4,8 @@ class Usuario{
     
     private $nome_usuario = null;
     private $senha = null;
-    private $codigo_perfil = null;
-    private $codigo_solicitante = null;
+    private $perfil = null;
+    private $solicitante = null;
     
     public function Usuario() {
     }
@@ -24,18 +24,18 @@ class Usuario{
         return $this->senha;
     }
     
-    public function setCod($codigo){
-        $this->codigo_perfil=$codigo;
+    public function setPerfil($perfil){
+        $this->perfil=$perfil;
     }
-    public function getCod(){
-        return $this->codigo_perfil;
+    public function getPerfil(){
+        return $this->perfil;
     }
     
-    public function setCodigo_solicitante($codigo_solicitante){
-        $this->codigo_solicitante=$codigo_solicitante;
+    public function setSolicitante($solicitante){
+        $this->solicitante=$solicitante;
     }
-    public function getCodigo_solicitante(){
-        return $this->codigo_solicitante;
+    public function getSolicitante(){
+        return $this->solicitante;
     }
 }
 ?>
