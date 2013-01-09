@@ -1,14 +1,11 @@
 <?php
 class Comentario {
 
-    public  $codigo;
-    public  $descriçao;
-    public  $cod_comentario;
+    private $codigo = null;
+    private  $descriçao = null;
+    private  $cod_comentario = null;
     
-    public function __constructor( $codigo,  $descriçao,  $cod_comentario) {
-            $this->setcodigo($codigo);
-            $this->setdescriçao($descriçao);
-            $this->setcod_comentario($cod_comentario);
+    public function Comentario(){
     }
     public function  getcodigo() {
             return $this->codigo;
