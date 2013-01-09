@@ -1,12 +1,10 @@
 <?php
 class Transicao_Status {
 
-    public  $cod_status_origem;
-    public  $cod_status_destino;
+    private  $cod_status_origem = null;
+    private  $cod_status_destino = null;
 
-    public function __constructor( $cod_status_origem,  $cod_status_destino) {
-            $this->setcod_status_origem($cod_status_origem);
-            $this->setcod_status_destino($cod_status_destino);
+    public function Transicao_Status() {
     }
     public function  getcod_status_origem() {
             return $this->cod_status_origem;
