@@ -1,24 +1,15 @@
 <?php
 class Chamado {
 
-    public  $cod_status;
-    public  $cod_servico;
-    public  $descricao;
-    public  $data_inicial;
-    public  $data_final;
-    public  $cod_tecnico;
-    public  $cod_solicitante;
+    private  $cod_status = null;
+    private  $cod_servico = null;
+    private  $descricao = null;
+    private  $data_inicial = null;
+    private  $data_final = null;
+    private  $cod_tecnico = null;
+    private  $cod_solicitante = null;
 
-    public function __construct ($cod_status,  $cod_servico,  $descricao,
-                     $data_inicial,  $data_final,  $cod_tecnico,
-                     $cod_solicitante) {
-            $this->setcod_status($cod_status);
-            $this->setcod_servico($cod_servico);
-            $this->setdescricao($descricao);
-            $this->setdata_inicial($data_inicial);
-            $this->setdata_final($data_final);
-            $this->setcod_tecnico($cod_tecnico);
-            $this->setcod_solicitante($cod_solicitante);
+    public function Chamado () {
     }
 
     public function  getcod_status() {
