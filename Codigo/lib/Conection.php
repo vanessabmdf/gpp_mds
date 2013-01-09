@@ -26,7 +26,9 @@ class Conection extends PDO {
 
     //Destrutor da conexão
     function __destruct() {
-        $this->hdl = NULL;
+        if (!($this->hdl == null)) {
+            $this->hdl = NULL;
+        }
     }
 
 }
