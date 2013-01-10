@@ -6,17 +6,14 @@
                                 <li>
                                     <a href="../FormSolicitante/index.php">Solicitante</a>
                                 </li>
-                                <li class="current">
-                                    <a href="../FormUsuario/index.php">Usuario</a>
-                                </li>
                             </ul>
                         </li>
                         <li>
                             <a href="#">Visualizar</a>
 				    <ul>
-                                        <li><a href="#">short</a></li>
-                                        <li><a href="#">short</a></li>
-                                        <li><a href="#">short</a></li>
+                                        <li><a href="#">Chamados</a></li>
+                                        <li><a href="#">SoluÃ§Ãµes</a></li>
+                                        <li><a href="#">UsuÃ¡rios</a></li>
                                         <li><a href="#">short</a></li>
                                         <li><a href="#">short</a></li>
                                     </ul>
@@ -35,7 +32,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Histórico</a>
+                                    <a href="#">Histï¿½rico</a>
                                     <ul>
                                         <li><a href="#">menu item</a></li>
                                         <li><a href="#">menu item</a></li>
@@ -137,7 +134,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Relatórios</a>
+                            <a href="#">Relatï¿½rios</a>
                             <ul>
 
                                 <li>

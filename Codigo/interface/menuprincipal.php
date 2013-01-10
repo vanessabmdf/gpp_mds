@@ -6,9 +6,6 @@
                                 <li>
                                     <a href="FormSolicitante/index.php">Solicitante</a>
                                 </li>
-                                <li class="current">
-                                    <a href="FormUsuario/index.php">Usuario</a>
-                                </li>
                             </ul>
                         </li>
                         <li>
