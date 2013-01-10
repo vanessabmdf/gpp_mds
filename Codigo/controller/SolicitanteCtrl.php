@@ -11,25 +11,41 @@ require_once "../model/Usuario.class.php";
  */
 class SolicitanteCtrl {
 
-    //put your function
-    public function instSolicitante($nomeSolicitante, $email, $matricula, $dataNascimento, $nomeUsuario, $senhaUsuario) {
+    private $DAO;
 
-        $solicitante = new Solicitante();
-        $usuario = new Usuario();
-        
-        $solicitante->setNome($nomeSolicitante);
-        $solicitante->setEmail($email);
-        $solicitante->setMatricula($matricula);
-        $solicitante->setData($dataNascimento);
-        $usuario->setNome($nomeUsuario);
-        $usuario->setSenha($senhaUsuario);
-        
-        $DAO = new SolicitanteDAO();
-        $DAO->insereSolicitante($solicitante, $usuario);
-        $DAO->fechaConexão();
+    public function SolicitanteDAO() {
+        $this->DAO = new SolicitanteDAO();
     }
 
+    //put your function
+    public function instSolicitante($nomeSolicitante, $email, $matricula, $dataNascimento, $nomeUsuario, $senhaUsuario) {
+        try {
+            $solicitante = new Solicitante();
+            $usuario = new Usuario();
 
+            $solicitante->setNome($nomeSolicitante);
+            $solicitante->setEmail($email);
+            $solicitante->setMatricula($matricula);
+            $solicitante->setData($dataNascimento);
+            $usuario->setNome($nomeUsuario);
+            $usuario->setSenha($senhaUsuario);
+
+            $this->DAO->insereSolicitante($solicitante, $usuario);
+            $this->DAO->fechaConexão();
+        } catch (Exception $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
+
+    public function delSolicitante($codigoSolicitante) {
+        try {
+            
+            $this->DAO->deleteSolicitante($codigoSolicitante);
+            $this->DAO->fechaConexão();
+        } catch (Exception $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
 
 }
 
