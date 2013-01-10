@@ -1,17 +1,19 @@
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</html>
-<div id="topo">
-<div id="logo" style="float:left;"><a href="index.php" title="Voltar para a página incial"><img src="images/logo.png" border="0"></a></div>
-
-</div>
-
-<div class="menu">
-<ul id="menu">
-   <li><a href="home.php">Home</a></li>
-   <li><a href="chamado.php">Chamado</a></li>
-   <li><a href=usuario.php>Usuário</a></li>
-   <li><a href=solucao.php>Solução</a></li>
-   <li><a href="contato.php">Contato</a></li>
-</ul>
-</div><!-- fim class menu -->
+    <div id="topo">	<!-- Inicio div topo-->
+        <div id="banner"> <!-- Inicio div banner-->
+        </div> <!-- fim div banner-->
+        <div id="controles"> <!-- inicio div controles -->
+            <div id="datahora"> <!--Inicio div datahora-->
+                <form action=""  name="form_relogio" >
+                    <input type="text"  size="48" name="relogio" ReadOnly/>
+                </form>
+            </div> <!-- fim div datahora-->
+            <div id="controllogin"> <!--Inicio div controllogin-->
+                <div class="controlusuario">
+                    <b>Usu�rio: Luiz Fernando de Freitas Matos</b>
+                </div>
+                <div class="controlperfil">
+                    <b>Perfil: Administrador</b>
+                </div>
+            </div> <!-- fim div contrologin-->
+        </div>	<!-- fim div controles-->
+    </div> <!-- fim div topo-->  

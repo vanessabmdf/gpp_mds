@@ -1,0 +1,81 @@
+#boxcadastro{
+    height: 250px;
+}
+#boxcadastro label.nomeSolicitante{
+    width: 99%;
+}
+#boxcadastro label.emailSolicitante{
+    width: 32%;
+}
+#boxcadastro label.dtNascSolicitante{
+    width: 32%;
+}
+#boxcadastro label.matriculaSolicitante{
+    width: 32%;
+}
+#boxcadastro label.nomeUsuario{
+    width: 49%;
+}
+#boxcadastro label.senhaUsuario{
+    width: 48%;
+}
+#boxcadastro input.nomeSolicitante{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.emailSolicitante{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.dtNascSolicitante{ 
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.matriculaSolicitante{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.nomeUsuario{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.senhaUsuario{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+   
+/*
+--------------------------------------------------
+                CSS da Tabela
+--------------------------------------------------
+*/
+table.tablesorter thead tr th.campogrande {
+	background-color: #e6EEEE;	
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px; 
+        width:50%;
+        overflow: hidden;
+}
+table.tablesorter thead tr th.campopequeno {
+	background-color: #e6EEEE;	
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+        width: 30%;
+}
+table.tablesorter thead tr th.campopequenofone {
+	background-color: #e6EEEE;	
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+        width: 20%;
+}
+
+
