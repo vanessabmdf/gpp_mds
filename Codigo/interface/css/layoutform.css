@@ -1,0 +1,104 @@
+body{
+    font-family: Verdana; 
+    font-size: 12px;
+}
+#boxcadastro{
+    font-family: Verdana,Arial,Helvetica,sans-serif;; 
+    font-size: 12px;
+        
+    overflow: hidden;
+    background-color: #F2F2F2;  
+    border: 1px solid #D0D0D0;
+    padding: 20px 0 10px 10px;
+    margin-bottom: 50px;
+}
+#boxconteudo h1{
+    font-size:large;
+    color: #1353B5;
+    border-bottom: 2px solid #6CB3F5;
+    display:block;
+    margin:10px 0 30px 0px;
+}
+#boxcadastro input{   
+    display: block;
+}
+#boxcadastro label{
+    display:block;
+    float:left;  
+    margin: 0 1% -5px 0;
+}
+#boxcadastro input.botoesInput {
+    border: none;
+    background: #f2f2f2;
+    width: 100px;
+    font-family: verdana;
+    font-size: 12px;
+    color: #ffffff; 
+    background: url('../imagens/up.gif') no-repeat top left;
+    padding: 2px 8px;
+    height: 22px;
+    display: block;
+    position: relative;
+    left: 35%;
+    float:left;
+    font-weight: bold;
+    padding: 0px 0px 0px 0px;
+    margin: 25px 13px 6px 4px;
+    text-align: center;
+    cursor: pointer;
+}
+#boxcadastro fieldset {
+    position: relative;
+    border: 0px;
+    font-size: 10px;
+    display: block;
+    margin: 0 0 20px -12px;
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+}
+#boxcadastro label.error{ 
+    color:#FF0000; 
+    font-size: 9px;
+    margin-top: -1px;
+}
+.cursor{
+    background: #F2F2F2
+}
+.bordaErro{
+    background: #f8dbdb; 
+    border: 1px solid #e77776 
+}
+.bt{ 
+    width:auto!important; 
+}
+.borda{
+    font-family:arial;
+    background-color: #e6EEEE;
+    border: 1px solid #FFF;
+    font-size: 8pt;
+    padding: 4px;
+}
+td{
+    font-family: Verdana; 
+    font-size: 12px;
+}
+#boxcadastro textarea{
+    font-family: Verdana; 
+    font-size: 12px; 
+    display:block; 
+    margin-bottom: 10px;
+}
+input.marcado, textarea.marcado {
+    border: 1px solid #000000;
+    background: #F2F2F2;
+    
+} 
+.boxes{
+    width: 1em;
+}
+br{
+    clear: left;
+}
+.clear{
+    clear:both; 
+}

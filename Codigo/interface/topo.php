@@ -12,7 +12,7 @@
                     <b>Usuário: Luiz Fernando de Freitas Matos</b>
                 </div>
                 <div class="controlperfil">
-                    <b>Perfil: Administrador</b>
+                    <b>Perfil: Gerente</b>
                 </div>
             </div> <!-- fim div contrologin-->
         </div>	<!-- fim div controles-->

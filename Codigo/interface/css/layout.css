@@ -1,0 +1,171 @@
+body{
+	background:#FFFFFF;	
+	text-align: center;
+	margin: 1px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+}
+#box{
+	height:100%;
+	width:82%;        
+	min-width:982px;
+	text-align:left;
+	background:#F2F2F2;
+        overflow: auto;
+	margin: 0 auto;  
+        margin-bottom: 7px;
+}
+#topo{
+	height:100px;
+	background:#FFFFFF;
+	border-bottom:#0099FF solid 3px;
+}
+#banner{
+	width:510px;
+	height:100px;
+	background:#FFFFFF url(../imagens/LogoGTI_menor.jpg) no-repeat;
+	float:left;
+}
+#controles{	
+	width: 48%;
+	height:60px;	
+	float:right;
+}
+#datahora{
+	height: 50px;
+	text-align: right;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+#datahora input{
+        width: 230px;
+        font-size: 10px;
+        border: 0 none White;
+        text-align: center;
+}
+#controllogin{
+	height: 20px;	
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	margin: 25px 0 0 0;
+}
+ #controllogin .controlusuario{
+        text-align: right;
+        width: 55%;
+        float: left;
+        padding: 2px 0 0 0;
+ }
+ #controllogin .controlperfil{
+        text-align: right;
+        width: 45%;
+        float: right;
+        padding: 2px 0 0 0;
+}
+#boxcaixabaixo{
+        border: 1px solid #D0D0D0;
+        
+}
+#menu{
+	height: 30px;
+	text-align:left;
+}
+#ondeestou{
+	height:40px;
+	margin:0 auto;
+}
+#ondeestou p{
+   	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #909090;
+	text-align: left;
+	padding:10px 0 0 18px;
+	font-size: 10px;
+}
+#ondeestou b{
+	font-family: Verdana, Helvetica, sans-serif;
+	color: #909090;
+	text-align: left;
+	font-size: 11px;
+}
+#boxbaixo{
+	overflow: hidden;        
+	height: 100%;     
+        padding-bottom: 30px;
+}
+#menuesquerda{
+        height: 100%;
+        width: 19.5%;
+        float: left;       
+        overflow: hidden;
+        padding: 10px 10px 5px 10px;
+}
+#caixacontrole1{
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        height: 100%; 
+        background: #FFF;
+        border: 1px solid #D0D0D0;
+        display: block;
+        padding-bottom: 10px;
+}
+#caixacontrole1 ul{
+        list-style-image: url("../imagens/seta.gif");    
+}
+#caixacontrole1 li{  
+        color: #1353B5;
+        padding-right: 5px;
+        padding-bottom: 15px;
+        text-align: left;
+        font-size: 12px;
+}
+#caixacontrole1 h3{
+        padding: 10px 0 5px 0;
+        text-align: center;
+        font-size: 12px;
+        color: #1353B5;
+        padding: 3%;
+        background: #F2F2F2;
+        border: 1px solid #D0D0D0; 
+        margin: 5px 5px 15px 5px;        
+        
+}
+#caixacontrole2{
+        width: 90%;        
+        margin: 0 auto;
+        margin-top: 30px;
+        text-align: center;
+        background: #FFF;
+        border: 1px solid #D0D0D0;
+}
+#caixacontrole2 h3{
+        padding: 10px 0 5px 0;
+        text-align: center;
+        font-size: 12px;
+        color: #1353B5;
+        padding: 3%;
+        background: #F2F2F2;
+        border: 1px solid #D0D0D0; 
+        margin: 5px 5px 15px 5px;
+}
+#caixacontrole2 ul{
+        list-style-image: url("../imagens/seta.gif");    
+}
+#caixacontrole2 li{  
+        color: #909090;
+        padding-bottom: 30px;
+        padding-right: 5px;
+        text-align: left;
+        font-size: 10px;
+}
+#boxconteudo{
+        width: 75%;
+        height: 100%;
+        min-height: 900px;
+        float: right;
+        background: #FFF;
+        margin: 10px 10px 0 0;
+	border: 1px solid #D0D0D0;
+        padding: 0px 1% 1% 1%;
+}
+#clear{
+	clear: both;
+}
