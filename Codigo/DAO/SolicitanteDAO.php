@@ -43,7 +43,7 @@ class SolicitanteDAO {
               $matricula = $solicitante->getMatricula();
               $data = $solicitante->getData();
              */
-            $query = "UPDATE SET nome=:nome, email=:email, matricula:matricula, data_nascimento:data_nascimento
+            $query = "UPDATE SET nome=:nome, email=:email, matricula=:matricula, data_nascimento=:data_nascimento
                       WHERE codigo = ".$codigo.""; 
                       
             $stm = $this->con->prepare($query);
@@ -72,6 +72,16 @@ class SolicitanteDAO {
         try {
             $stm = $this->con->query("DELETE FROM solicitante WHERE codigo = ".$codigo."");
             return $stm;
+        } catch (PDOException $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
+    public function numColSolicitante() {
+        try {
+            $stm = $this->con->query("DESCRIBE solicitante");
+            $colcount = $stm->fetchAll( PDO::FETCH_ASSOC );
+            echo sizeof($colcount);
+            return $colcount;
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }

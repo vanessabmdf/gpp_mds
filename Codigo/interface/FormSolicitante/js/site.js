@@ -20,7 +20,7 @@ function limpa_form(){
 		var cancelar = 
 		{
 			cancelaralteracao: {
-				html:'Deseja cancelar a alteração?',
+				html:'Deseja cancelar a alteraï¿½ï¿½o?',
 				buttons: {Nao: false, Sim: true},
 				focus: 1,
 				submit:function(v,m,f){
@@ -37,7 +37,7 @@ function limpa_form(){
 				}
 			},
 			cancelado: {
-				html:'Alteração cancelada!',
+				html:'Alteraï¿½ï¿½o cancelada!',
 				buttons: {Sair: false},
 				focus: 1,
 				submit:function(v,m,f){
@@ -187,7 +187,7 @@ function apagar(id){
 			}
 		},
 		apagado: {
-			html:'Registro excluído com sucesso!',
+			html:'Registro excluï¿½do com sucesso!',
 			buttons: {Sair: 0},
 			focus: 1,
 			submit:function(v,m,f){
@@ -201,7 +201,7 @@ function apagar(id){
                 $.prompt(apagar);
         }
         else
-            $.prompt("Conclua ou cancele a alteração pendente!");
+            $.prompt("Conclua ou cancele a alteraÃ§Ã£o pendente!");
 }
 
 function editar(texto){
@@ -249,10 +249,10 @@ function editar(texto){
 	}
     if(retorno == 0){
 
-		$("#nomeSolicitante").val(array[1]);
-		$("#emailSolicitante").val(array[2]);
-		$("#dtNascSolicitante").val(array[3]);
-		$("#matriculaSolicitante").val(array[4]);
+		$("#nomeSolicitante").val(array[0]);
+		$("#emailSolicitante").val(array[1]);
+		$("#dtNascSolicitante").val(array[4]);
+		$("#matriculaSolicitante").val(array[2]);
 		$("#nomeUsuario").val(array[5]);
 		$("#senhaUsuario").val(array[6]);
 
@@ -273,7 +273,7 @@ function editar(texto){
 		$("#nomeSolicitante").focus();
         
 		}else{
-            $.prompt("Conclua ou cancele alteração pendente!");
+            $.prompt("Conclua ou cancele alteraÃ§Ã£o pendente!");
         }
 }
 
@@ -328,10 +328,10 @@ function detalhes(texto){
                     array=texto.split('</td>');
             }
 
-            $("#nomeSolicitante").val(array[1]);
-            $("#emailSolicitante").val(array[2]);
-            $("#dtNascSolicitante").val(array[3]);
-            $("#matriculaSolicitante").val(array[4]);
+            $("#nomeSolicitante").val(array[0]);
+            $("#emailSolicitante").val(array[1]);
+            $("#dtNascSolicitante").val(array[4]);
+            $("#matriculaSolicitante").val(array[2]);
             $("#nomeUsuario").val(array[5]);
             $("#senhaUsuario").val(array[6]);
 
@@ -347,7 +347,7 @@ function detalhes(texto){
             $("#limpar").val("Sair");
         }
         else
-            $.prompt("Conclua ou cancele a alteração pendente!");
+            $.prompt("Conclua ou cancele a alteraÃ§Ã£o pendente!");
 }
 
 function valida_form(){   
@@ -377,7 +377,7 @@ function valida_form(){
             if(er.test($("#emailSolicitante").val()) == false){
                     var emailInvalido = {
                     erroEmailInvalido: {
-                            html:'Email inválido! Preencha um Email correto!',
+                            html:'Email invÃ¡lido! Preencha um Email correto!',
                             buttons: {Ok: 0},
                             focus: 1,
                             submit:function(v,m,f){
@@ -396,7 +396,7 @@ function valida_form(){
     if($("#nomeUsuario").val().length<6){
         var UsuarioMenor = {
         erroUsuarioMenor: {
-                    html:'Preencha o campo nome de usuário corretamente!',
+                    html:'Preencha o campo nome de usuÃ¡rio corretamente!',
                     buttons: {Ok: 0},
                     focus: 1,
                     submit:function(v,m,f){
@@ -434,7 +434,7 @@ function valida_form(){
     if($("#dtNascSolicitante").val().length!=0 && $("#dtNascSolicitante").val().length<10){
         var dtNascInvalido = {
                     errodtNascInvalido: {
-                            html:'Data de nascimento inválida! Preencha um data correta!',
+                            html:'Data de nascimento invÃ¡lida! Preencha um data correta!',
                             buttons: {Ok: 0},
                             focus: 1,
                             submit:function(v,m,f){
@@ -475,7 +475,7 @@ function imprime(xmldoc){
 		var tabela="<table border='0' class='tablesorter' cellspacing='1'><thead><tr>";
                 
                 
-                tabela+="<td class='borda' colspan='6'>";
+                tabela+="<td class='borda' colspan='8'>";
                 tabela+="<label for='pesquisa'><b>Pesquisar:</b></label>";
                 tabela+="<input id='pesquisar' type='text' name='pesquisar' maxlength='30' size='30'/>";
                 tabela+="</td>";
@@ -485,27 +485,27 @@ function imprime(xmldoc){
                 
 		//cabecalho da tabela
 		for(i=0;i<campo.length;i++){
-                    if(i==0 || i==4 || i==5 || i==6){
+                    if(i==3){
                         tabela+= "<th style='display: none'>"+campo[i].firstChild.data+"</th>";
                     }else if(i==1)
 			tabela+="<th class='campogrande'>"+campo[i].firstChild.data+"</th>";
                     else if(i==2)
                         tabela+="<th class='campopequeno'>"+campo[i].firstChild.data+"</th>";
-                    else if(i==3)
+                    else
                         tabela+="<th class='campopequenofone'>"+campo[i].firstChild.data+"</th>";
 		}
                 
-		tabela+="<td colspan='3' class='borda'><b>Controles</b></td>";
+		tabela+="<td colspan='5' class='borda'><b>Controles</b></td>";
                 tabela+="</tr></thead>";
 		//rodape
 		tabela+="<tfoot id='pager'>";
 		tabela+="<tr class='pager' align='center'>";
-		tabela+="<th class='pager1' colspan='6'>";
-			tabela+="<img src='../imagens/first.png' alt='Primeira página' class='first'/>";
-			tabela+="<img src='../imagens/prev.png' alt='Página anterior' class='prev'/>";
+		tabela+="<th class='pager1' colspan='8'>";
+			tabela+="<img src='../imagens/first.png' alt='Primeira pï¿½gina' class='first'/>";
+			tabela+="<img src='../imagens/prev.png' alt='Pï¿½gina anterior' class='prev'/>";
 			tabela+="<input type='text' class='pagedisplay' Readonly/>";
-			tabela+="<img src='../imagens/next.png' alt='Próxima página' class='next'/>";
-			tabela+="<img src='../imagens/last.png' alt='Última página' class='last'/>";
+			tabela+="<img src='../imagens/next.png' alt='Prï¿½xima pï¿½gina' class='next'/>";
+			tabela+="<img src='../imagens/last.png' alt='ï¿½ltima pï¿½gina' class='last'/>";
 			tabela+="<select class='pagesize'>";
 				tabela+="<option selected='selected'  value='10'>10</option>";
 				tabela+="<option value='20'>20</option>";
@@ -522,13 +522,11 @@ function imprime(xmldoc){
 			var itens = registros[i].getElementsByTagName('item');                        
 			tabela+="<tr bgcolor='#F2F2F2' id=linha"+i+" style=\"cursor:default\" onMouseOver=\"javascript:this.style.backgroundColor='#1353B5'\" onMouseOut=\"javascript:this.style.backgroundColor='#F2F2F2'\">"
           		for(j=0;j<itens.length;j++){
-				if(itens[j].firstChild==null){
-					if(j==0 || j==4 || j==5 || j==6)
-                                        tabela+="<td style= 'display: none'></td>";
-                                        else
+				if(itens[j].firstChild==null){					
                                         tabela+="<td></td>";
+                                        
                                 }else{
-                                    if(j==0 || j==4 || j==5 || j==6){
+                                    if(j==3){
                                         tabela+= "<td style='display: none'>"+itens[j].firstChild.data+"</td>";
                                     }
                                     else
@@ -538,7 +536,7 @@ function imprime(xmldoc){
                       
 			tabela+="<td style='cursor: pointer' class='botoes'><img src='../imagens/detalhes.gif' alt='detalhes' onClick=\"detalhes($('#linha"+i+"').html());\")></td>";
 			tabela+="<td style='cursor: pointer' class='botoes'><img src='../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linha"+i+"').html());limparValidacao();\"></td>";
-			tabela+="<td style='cursor: pointer' class='botoes'><img src='../imagens/delete.gif' alt='excluir' onClick=apagar(" + itens[0].firstChild.data + ")></td>";
+			tabela+="<td style='cursor: pointer' class='botoes'><img src='../imagens/delete.gif' alt='excluir' onClick=apagar(" + itens[3].firstChild.data + ")></td>";
 			tabela+="</tr>";
 		}
 		tabela+="</tbody>";	

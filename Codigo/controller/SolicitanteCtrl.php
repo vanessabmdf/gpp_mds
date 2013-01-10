@@ -1,8 +1,7 @@
 <?php
-
-require_once "../lib/Conection.php";
-require_once "../model/Solicitante.class.php";
-require_once "../model/Usuario.class.php";
+require_once "/../DAO/SolicitanteDAO.php";
+require_once "/../model/Solicitante.class.php";
+require_once "/../model/Usuario.class.php";
 
 /**
  * Description of SolicitanteCtrl
@@ -12,12 +11,12 @@ require_once "../model/Usuario.class.php";
 class SolicitanteCtrl {
 
     private $DAO;
-
+    /*
     public function SolicitanteDAO() {
         $this->DAO = new SolicitanteDAO();
     }
-
-    //put your function
+    */
+   
     public function instSolicitante($nomeSolicitante, $email, $matricula, $dataNascimento, $nomeUsuario, $senhaUsuario) {
         try {
             $solicitante = new Solicitante();
@@ -29,9 +28,9 @@ class SolicitanteCtrl {
             $solicitante->setData($dataNascimento);
             $usuario->setNome($nomeUsuario);
             $usuario->setSenha($senhaUsuario);
-
-            $this->DAO->insereSolicitante($solicitante, $usuario);
-            $this->DAO->fechaConexão();
+            $DAO = new SolicitanteDAO();
+            $DAO->insereSolicitante($solicitante, $usuario);
+            $DAO->fechaConexão();
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
@@ -39,14 +38,53 @@ class SolicitanteCtrl {
 
     public function delSolicitante($codigoSolicitante) {
         try {
-            
-            $this->DAO->deleteSolicitante($codigoSolicitante);
-            $this->DAO->fechaConexão();
+            $DAO = new SolicitanteDAO();
+            $DAO->deleteSolicitante($codigoSolicitante);
+            $DAO->fechaConexão();
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
-
+    
+        public function listaSolicitante() {
+        try {
+            $DAO = new SolicitanteDAO();
+            $lista = $DAO->obterSolicitante();
+            $DAO->fechaConexão();
+            return $lista;
+        } catch (Exception $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
+        public function alteraSolicitante($nomeSolicitante, $email, $matricula, $dataNascimento, $nomeUsuario, $senhaUsuario, $codigo) {
+        try {     
+            $solicitante = new Solicitante();
+            $usuario = new Usuario();
+            
+            $solicitante->setNome($nomeSolicitante);
+            $solicitante->setEmail($email);
+            $solicitante->setMatricula($matricula);
+            $solicitante->setData($dataNascimento);
+            $usuario->setNome($nomeUsuario);
+            $usuario->setSenha($senhaUsuario);
+            
+            $DAO = new SolicitanteDAO();
+            $DAO->alteraSolicitante($solicitante, $usuario, $codigo);
+            $DAO->fechaConexão();
+        } catch (Exception $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
+     public function getNumCols() {
+        try {
+            $DAO = new SolicitanteDAO();
+            $col = $DAO->numColSolicitante();
+            $DAO->fechaConexão();
+            return $col;
+        } catch (Exception $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
 }
 
 ?>
