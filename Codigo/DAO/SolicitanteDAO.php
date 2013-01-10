@@ -29,7 +29,7 @@ class SolicitanteDAO {
             $stm->bindParam(":matricula", $solicitante->getMatricula());
             $stm->bindParam(":data_nascimento", $solicitante->getData());
             $exec = $stm->execute();
-            
+             
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
