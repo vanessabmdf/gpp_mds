@@ -26,8 +26,8 @@ class UsuarioAcoes
             $usuario = new Usuario($codigo,"Tecnico", $senha, $nome, $email, $matricula, $data_nascimento);
         
         //Insere o usuario no banco de dados.
-        $usuarioDAO->conectarUsuario();
         $usuarioDAO->inserirUsuario($usuario);
+        $usuarioDAO->fechaConexão();
     }
     
     

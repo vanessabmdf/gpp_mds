@@ -9,7 +9,7 @@ class ControladoraUsuario
     //Cria o objeto da classe UsuarioAcoes, que vai realizar os metodos necessarios.
     function __construct() 
     {
-        $this->$usuarioAcoes = new UsuarioAcoes();
+        $this->usuarioAcoes = new UsuarioAcoes();
     }
     
     
