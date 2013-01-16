@@ -14,7 +14,9 @@ class UsuarioAcoes
     {   
         //Cria o objeto da classe UsuarioDao para inserir no banco de dados.
         $usuarioDAO = new UsuarioDAO();
-        //Falta inserir um metodo pra buscar o ultimo codigo de usuario no banco de dados.
+        /*Falta inserir um metodo pra buscar o ultimo codigo de usuario no banco de dados,
+         * para então colocar o codigo do novo usuario como sendo o proximo numero.
+         */
         
         
         //Solicitante é usuario tipo 1.

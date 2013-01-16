@@ -47,7 +47,7 @@ class ChamadoDAO
         }
     }
     
-    public function alterarChamado(Chamado $chamado)
+    public function alterarChamado(Chamado $chamado, $codigo_chamado)
     {
         try {
             
@@ -62,7 +62,7 @@ class ChamadoDAO
             
                 $query = "UPDATE chamado SET codigo=:codigo, data_inicial=:data_inicial, data_final=:data_final, descricao=:descricao, comentarioChamado=:comentarioChamado, 
                           solicitante=:solicitante, tecnico=:tecnico, status=:status, solucao=:solucao, tipoChamado=:tipo_chamado
-                          WHERE codigo = ".$chamado->getCodigo().""; 
+                          WHERE codigo = ".$codigo_chamado; 
                       
                 $stm = $this->con->prepare($query);
                 
@@ -84,10 +84,10 @@ class ChamadoDAO
             }
     }
     
-    public function obterChamado($codigo) {
+    public function obterChamado($codigo_chamado) {
         try {
             
-                $stm = $this->con->query("SELECT * FROM chamado WHERE codigo = ".$codigo."");
+                $stm = $this->con->query("SELECT * FROM chamado WHERE codigo = ".$codigo_chamado."");
                 //Criando um objeto chamado e armazenando as informações nele.
                 $chamado = new Chamado();
                 
@@ -117,10 +117,11 @@ class ChamadoDAO
             }
     }
     
-     public function deletarChamado($codigo) {
+     public function deletarChamado($codigo_chamado) {
         try {
-                $stm = $this->con->query("DELETE FROM chamado WHERE codigo = ".$codigo."");
-                return $stm;
+                //Deleta um registro. Retorna um booleano que ainda não é usado.
+                $this->con->query("DELETE FROM chamado WHERE codigo = ".$codigo_chamado."");
+                 
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }

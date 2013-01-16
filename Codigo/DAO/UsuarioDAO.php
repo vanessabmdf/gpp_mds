@@ -16,34 +16,30 @@ class UsuarioDAO {
 
     public function inserirUsuario(Usuario $usuario) {
         try {
-            /* Sem passagem por referência
-              $nome = $solicitante->getNome();
-              $email = $solicitante->getEmail();
-              $matricula = $solicitante->getMatricula();
-              $data = $solicitante->getData();
-             */
-            $query = "INSERT INTO usuario (codigo, tipo, login, senha, nome, email, matricula, data_nascimento) 
-                      VALUES (:codigo, :tipo, :login, :senha, :nome, :email, :matricula, :data_nascimento)";
-            $stm = $this->con->prepare($query);
-            $stm->bindParam(":codigo", $usuario->getCodigo());
-            $stm->bindParam(":tipo", $usuario->getTipo());
-            $stm->bindParam(":login", $usuario->getLogin());
-            $stm->bindParam(":senha", $usuario->getSenha());
-            $stm->bindParam(":nome", $usuario->getNome());
-            $stm->bindParam(":email", $usuario->getEmail());
-            $stm->bindParam(":matricula", $usuario->getMatricula());
-            $stm->bindParam(":data_nascimento", $usuario->getData_nascimento());
-            $stm->execute();
+ 
+                $query = "INSERT INTO usuario (codigo, tipo, login, senha, nome, email, matricula, data_nascimento) 
+                          VALUES (:codigo, :tipo, :login, :senha, :nome, :email, :matricula, :data_nascimento)";
+            
+                $stm = $this->con->prepare($query);
+                $stm->bindParam(":codigo", $usuario->getCodigo());
+                $stm->bindParam(":tipo", $usuario->getTipo());
+                $stm->bindParam(":login", $usuario->getLogin());
+                $stm->bindParam(":senha", $usuario->getSenha());
+                $stm->bindParam(":nome", $usuario->getNome());
+                $stm->bindParam(":email", $usuario->getEmail());
+                $stm->bindParam(":matricula", $usuario->getMatricula());
+                $stm->bindParam(":data_nascimento", $usuario->getData_nascimento());
+                $stm->execute();
              
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
     
-        public function alteraUsuario(Usuario $usuario) {
+        public function alterarUsuario(Usuario $usuario, $codigo_usuario) {
         try {
                 $query = "UPDATE usuario SET codigo=:codigo, tipo=:tipo, login=:login, senha=:senha, nome=:nome, email=:email, matricula=:matricula, data_nascimento=:data_nascimento
-                          WHERE codigo = ".$usuario->getCodigo().""; 
+                          WHERE codigo = ".$codigo_usuario; 
                       
                 $stm = $this->con->prepare($query);
                 
@@ -57,15 +53,16 @@ class UsuarioDAO {
                 $stm->bindParam(":data_nascimento", $usuario->getData_nascimento());    
                 $stm->execute();
                 $this->con->commit();
+                
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
         }
 
 
-    public function obterUsuario($codigo) {
+    public function obterUsuario($codigo_usuario) {
         try {
-            $stm = $this->con->query("SELECT * FROM usuario WHERE codigo = ".$codigo."");
+            $stm = $this->con->query("SELECT * FROM usuario WHERE codigo = ".$codigo_usuario);
             
             $usuario = new Usuario();
             
@@ -85,15 +82,15 @@ class UsuarioDAO {
         }
     }
     
-    public function deletarUsuario($codigo) {
+    public function deletarUsuario($codigo_usuario) {
         try {
-            $stm = $this->con->query("DELETE FROM usuario WHERE codigo = ".$codigo."");
-            return $stm;
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+                $this->con->query("DELETE FROM usuario WHERE codigo = ".$codigo_usuario);
+            
+            }catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
-    public function numColSolicitante() {
+    /*public function numColSolicitante() {
         try {
             $stm = $this->con->query("DESCRIBE solicitante");
             $colcount = $stm->fetchAll( PDO::FETCH_ASSOC );
@@ -102,12 +99,14 @@ class UsuarioDAO {
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
-    }
+    }*/
+    
     //Função de fechar a conexão aberta no DAO
     public function fechaConexão() {
         try {
-            $this->con = null;
-        } catch (PDOException $erro) {
+                $this->con = null;
+                
+            } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }

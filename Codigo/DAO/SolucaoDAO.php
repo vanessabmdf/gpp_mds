@@ -31,12 +31,12 @@ class SolucaoDAO
         }   
     }
     
-    public function alterarSolucao(Solucao $solucao)
+    public function alterarSolucao(Solucao $solucao, $codigo_solucao)
     {
         
         try {
                 $query = "UPDATE solucao SET codigo=:codigo, descricao=:descricao, data=:data
-                          WHERE codigo = ".$solucao->getCodigo().""; 
+                          WHERE codigo = ".$codigo_solucao; 
                       
                 $stm = $this->con->prepare($query);            
                 $stm->bindParam(":codigo", $solucao->getCodigo());
@@ -51,9 +51,9 @@ class SolucaoDAO
     }
     
     
-    public function obterSolucao($codigo) {
+    public function obterSolucao($codigo_solucao) {
         try {
-                $stm = $this->con->query("SELECT * FROM solucao WHERE codigo = ".$codigo."");
+                $stm = $this->con->query("SELECT * FROM solucao WHERE codigo = ".$codigo_solucao);
                 
                 $solucao = new Solucao();
                 
@@ -68,10 +68,10 @@ class SolucaoDAO
         }
     }
     
-    public function deletarSolucao($codigo) {
+    public function deletarSolucao($codigo_solucao) {
         try {
-            $stm = $this->con->query("DELETE FROM solucao WHERE codigo = ".$codigo."");
-            return $stm;
+                $this->con->query("DELETE FROM solucao WHERE codigo = ".$codigo_solucao);
+                
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }

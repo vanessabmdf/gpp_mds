@@ -30,12 +30,12 @@ class Tipo_ChamadoDAO
         }   
     }
     
-    public function alterarTipo_Chamado(Tipo_Chamado $tipo_chamado)
+    public function alterarTipo_Chamado(Tipo_Chamado $tipo_chamado, $codigoTipo_Chamado)
     {
         
         try {
                 $query = "UPDATE tipo_chamado SET codigo=:codigo, descricao=:descricao
-                          WHERE codigo = ".$tipo_chamado->getCodigo().""; 
+                          WHERE codigo = ".$codigoTipo_Chamado; 
                       
                 $stm = $this->con->prepare($query);            
                 $stm->bindParam(":codigo", $tipo_chamado->getCodigo());
@@ -48,9 +48,9 @@ class Tipo_ChamadoDAO
             }
     }
     
-    public function obterTipo_Chamado($codigo) {
+    public function obterTipo_Chamado($codigoTipo_Chamado) {
         try {
-                $stm = $this->con->query("SELECT * FROM tipo_chamado WHERE codigo = ".$codigo."");
+                $stm = $this->con->query("SELECT * FROM tipo_chamado WHERE codigo = ".$codigoTipo_Chamado);
                 
                 $tipo_chamado = new Tipo_Chamado();
                 
@@ -64,22 +64,22 @@ class Tipo_ChamadoDAO
         }
     }
     
-    public function deletarSolucao($codigo) {
+    public function deletarTipo_Chamado($codigoTipo_Chamado) {
         try {
-            $stm = $this->con->query("DELETE FROM tipo_chamado WHERE codigo = ".$codigo."");
-            return $stm;
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+                $this->con->query("DELETE FROM tipo_chamado WHERE codigo = ".$codigoTipo_Chamado);
+            
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
     
-    //Função de fechar a conexão aberta no DAO
+    //Função de fechar a conexão aberta no Banco de Dados.
     public function fechaConexão() {
         try {
-            $this->con = null;
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+                $this->con = null;
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
     
 }
