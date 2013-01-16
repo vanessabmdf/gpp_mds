@@ -15,7 +15,8 @@ class Usuario
     /*Agente pode fazer um cod. sequencial de acordo com os usuarios que forem sendo cadastrados
      * por exemplo: 01, 02, 03, 04, 05, ...
      */
-    function __construct($tipo, $login, $senha, $nome, $email, $matricula, $data_nascimento) {
+    function __construct($codigo, $tipo, $login, $senha, $nome, $email, $matricula, $data_nascimento) {
+        $this->codigo = $codigo;
         $this->tipo = $tipo;
         $this->login = $login;
         $this->senha = $senha;
