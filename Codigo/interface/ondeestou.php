@@ -1,3 +1,3 @@
  <div id="ondeestou"> <!--Inicio div ondeestou-->
-                    <p>Onde estou: <b> Gerência de Equipamentos > Cadastro de Equipamento</b></p>
+                    <p>Onde estou: <b> GerÃªncia de Cadastros > Cadastro de Solicitantes</b></p>
  </div> <!--fim div ondestou -->

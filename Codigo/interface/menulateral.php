@@ -1,18 +1,10 @@
 <div id="menuesquerda">
     <div id="caixacontrole1">    
-        <h3>Gerenciamento de Solicitações</h3>
+        <h3>Gerenciamento de Solicitaï¿½ï¿½es</h3>
         <ul>                         
-            <li> Cad. de Solicitantes </li>
-            <li> Mov. de Equipamentos </li>
-            <li> Rel. de Equipamentos </li>
-            <li> Cad. de Usuários </li>                                
-        </ul>
-        <h3>Gerência de Demandas</h3>
-        <ul>
-            <li> Ger. de Atendimentos </li>
-            <li> Enc. de Demanda </li>
-            <li> Baixa de Demanda </li>
-            <li> Rel. de Demanda </li>
+            <li> <a href="FormSolicitante/index.php">Cad. de Solicitantes</a> </li>
+            <li> Cad. de Chamados </li>
+            <li> Cad. de SoluÃ§Ãµes </li>                                
         </ul>
     </div>
     <div id="caixacontrole2">     
@@ -20,8 +12,8 @@
         <marquee direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
             <ul>
                 <li> Verificar andamento da OS 210.04.2011 </li>
-                <li> Providenciar distribuições dos equipamentos novos</li>
-                <li> Reunião técnica às 16h </li>
+                <li> Providenciar distribuiï¿½ï¿½es dos equipamentos novos</li>
+                <li> Reuniï¿½o tï¿½cnica ï¿½s 16h </li>
             </ul>
         </marquee>
     </div>
