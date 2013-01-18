@@ -1,7 +1,5 @@
 <?php
 
-include '../NewModel/Usuario.php';
-
 class Chamado
 {
     private $codigo;
