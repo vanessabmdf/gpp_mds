@@ -85,38 +85,15 @@ class ChamadoDAO
                 //Falta criar o objeto do comentario do chamado.
                 
                 //Buscando solicitante, para criar o objeto e atribuir a variavel $chamado.
-                $dadosSolicitante = $this->con->query("SELECT * FROM usuario WHERE codigo = ".$stm['solicitante']);
-                
-                $solicitante = new Usuario();
-                
-                $solicitante->setCodigo($dadosSolicitante['codigo']);
-                $solicitante->setTipo($dadosSolicitante['tipo']);
-                $solicitante->setLogin($dadosSolicitante['login']);
-                $solicitante->setSenha($dadosSolicitante['senha']);
-                $solicitante->setNome($dadosSolicitante['nome']);
-                $solicitante->setEmail($dadosSolicitante['email']);
-                $solicitante->setMatricula($dadosSolicitante['matricula']);
-                $solicitante->setData_nascimento($dadosSolicitante['data_nascimento']);
+                $buscarUsuario = new UsuarioDAO();
+                $solicitante = $buscarUsuario->obterUsuario($stm['solicitante']);
                 $chamado->setSolicitante($solicitante);
-                
-                
+             
                 //Buscando tecnico, para criar o objeto e atribuir a variavel $chamado.
-                $dadosTecnico = $this->con->query("SELECT * FROM usuario WHERE codigo = ".$stm['tecnico']);
-                
-                $tecnico = new Usuario();
-              
-                $tecnico->setCodigo($dadosTecnico['codigo']);
-                $tecnico->setTipo($dadosTecnico['tipo']);
-                $tecnico->setLogin($dadosTecnico['login']);
-                $tecnico->setSenha($dadosTecnico['senha']);
-                $tecnico->setNome($dadosTecnico['nome']);
-                $tecnico->setEmail($dadosTecnico['email']);
-                $tecnico->setMatricula($dadosTecnico['matricula']);
-                $tecnico->setData_nascimento($dadosTecnico['data_nascimento']);
+                $tecnico = $buscarUsuario->obterUsuario($stm['tecnico']);
                 $chamado->setTecnico($tecnico);
                 
-                
-                //Bucando status, para criar o objeto e atribuir a variaval $chamado.
+                /*Bucando status, para criar o objeto e atribuir a variaval $chamado.
                 $dadosStatus = $this->con->query("SELECT * FROM status WHERE codigo = ".$stm['status']);
                 
                 $status = new Status();
@@ -133,15 +110,11 @@ class ChamadoDAO
                 $solucao->setCodigo($dadosSolucao['codigo']);
                 $solucao->setDescricao($dadosSolucao['descricao']);
                 $solucao->setData($dadosSolucao['data']);
-                $chamado->setSolucao($solucao);
+                $chamado->setSolucao($solucao);*/
                 
                 //Buscando tipo_chamado, para criar o objeto e atribuir a variavel $chamado.
-                $dadosTipo_Chamado = $this->con->query("SELECT * FROM tipo_chamado WHERE codigo = ".$stm['tipoChamado']);
-                
-                $tipoChamado = new Tipo_Chamado();
-                
-                $tipoChamado->setCodigo($dadosTipo_Chamado['codigo']);
-                $tipoChamado->setDescricao($dadosTipo_Chamado['descricao']);
+                $buscarTipo_Chamado = new Tipo_ChamadoDAO();
+                $tipoChamado = $buscarTipo_Chamado->obterTipo_Chamado($stm['tipoChamado']);
                 $chamado->setTipoChamado($tipoChamado);
                 
                 return $chamado;
