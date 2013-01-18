@@ -28,12 +28,12 @@ class ChamadoDAO
                 $stm->bindParam(":data_inicial", $chamado->getData_inicial());
                 $stm->bindParam(":data_final", $chamado->getData_final());
                 $stm->bindParam(":descricao", $chamado->getDescricao());
-                $stm->bindParam(":comentarioChamado", $chamado->getComentarioChamado());
-                $stm->bindParam(":solicitante", $solicitante);
-                $stm->bindParam(":tecnico", $tecnico);
-                $stm->bindParam(":status", $status);
-                $stm->bindParam(":solucao", $solucao);
-                $stm->bindParam(":tipo_chamado", $tipo_chamado);
+                $stm->bindParam(":comentarioChamado", $chamado->getComentarioChamado()->getCodigo());
+                $stm->bindParam(":solicitante",$chamado->getSolicitante()->getCodigo());
+                $stm->bindParam(":tecnico", $chamado->getTecnico()->getCodigo());
+                $stm->bindParam(":status", $chamado->getStatus()->getCodigo());
+                $stm->bindParam(":solucao", $chamado->getSolucao()->getCodigo());
+                $stm->bindParam(":tipo_chamado", $chamado->getTipoChamado()->getCodigo());
             
                 $stm->execute();
              
@@ -56,12 +56,13 @@ class ChamadoDAO
                 $stm->bindParam(":data_inicial", $chamado->getData_inicial());
                 $stm->bindParam(":data_final", $chamado->getData_final());
                 $stm->bindParam(":descricao", $chamado->getDescricao());
-                $stm->bindParam(":comentarioChamado", $chamado->getComentarioChamado());
-                $stm->bindParam(":solicitante", $solicitante);
-                $stm->bindParam(":tecnico", $tecnico);
-                $stm->bindParam(":status", $status);
-                $stm->bindParam(":solucao", $solucao);
-                $stm->bindParam(":tipo_chamado", $tipo_chamado);
+                $stm->bindParam(":comentarioChamado", $chamado->getComentarioChamado()->getCodigo());
+                $stm->bindParam(":solicitante",$chamado->getSolicitante()->getCodigo());
+                $stm->bindParam(":tecnico", $chamado->getTecnico()->getCodigo());
+                $stm->bindParam(":status", $chamado->getStatus()->getCodigo());
+                $stm->bindParam(":solucao", $chamado->getSolucao()->getCodigo());
+                $stm->bindParam(":tipo_chamado", $chamado->getTipoChamado()->getCodigo());
+
                 $stm->execute();
                 $this->con->commit();
                 
@@ -73,7 +74,7 @@ class ChamadoDAO
     public function obterChamado($codigo_chamado) {
         try {
             
-                $stm = $this->con->query("SELECT * FROM chamado WHERE codigo = ".$codigo_chamado."");
+                $stm = $this->con->query("SELECT * FROM chamado WHERE codigo = ".$codigo_chamado);
                 //Criando um objeto chamado e armazenando as informações nele.
                 $chamado = new Chamado();
                 
@@ -93,27 +94,21 @@ class ChamadoDAO
                 $tecnico = $buscarUsuario->obterUsuario($stm['tecnico']);
                 $chamado->setTecnico($tecnico);
                 
-                /*Bucando status, para criar o objeto e atribuir a variaval $chamado.
-                $dadosStatus = $this->con->query("SELECT * FROM status WHERE codigo = ".$stm['status']);
+                //Bucando status, para criar o objeto e atribuir a variaval $chamado.
+                $buscarStatus = new StatusDAO();
                 
-                $status = new Status();
-                
-                $status->setCodigo($dadosStatus['codigo']);
-                $status->setNome($dadosStatus['nome']);
+                $status = $buscarStatus->obterStatus($stm['status']);
                 $chamado->setStatus($status);
                 
                 //Bucando solucao, para criar o objeto e atribuir a variavel $chamado.
-                $dadosSolucao = $this->con->query("SELECT * FROM solucao WHERE codigo = ".$stm['solucao']);
+                $buscarSolucao = new SolucaoDAO();
                 
-                $solucao = new Solucao();
-                
-                $solucao->setCodigo($dadosSolucao['codigo']);
-                $solucao->setDescricao($dadosSolucao['descricao']);
-                $solucao->setData($dadosSolucao['data']);
-                $chamado->setSolucao($solucao);*/
+                $solucao = $buscarSolucao->obterSolucao($stm['solucao']);
+                $chamado->setSolucao($solucao);
                 
                 //Buscando tipo_chamado, para criar o objeto e atribuir a variavel $chamado.
                 $buscarTipo_Chamado = new Tipo_ChamadoDAO();
+                
                 $tipoChamado = $buscarTipo_Chamado->obterTipo_Chamado($stm['tipoChamado']);
                 $chamado->setTipoChamado($tipoChamado);
                 
