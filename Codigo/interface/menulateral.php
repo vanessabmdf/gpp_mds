@@ -3,8 +3,8 @@
         <h3>Gerenciamento de Solicita��es</h3>
         <ul>                         
             <li> <a href="FormSolicitante/index.php">Cad. de Solicitantes</a> </li>
-            <li> Cad. de Chamados </li>
-            <li> Cad. de Soluções </li>                                
+            <li> <a href="FormChamado/index.php">Cad. de Chamados</a> </li>
+            <li> <a href="FormSolucoes/index.php">Cad. de Soluções</a> </li>                                
         </ul>
     </div>
     <div id="caixacontrole2">     
