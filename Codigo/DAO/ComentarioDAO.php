@@ -62,24 +62,21 @@ class ComentarioDAO
                 $stm = $this->con->query("SELECT * FROM comentario WHERE codigo = ".$codigo_comentario);
                 
                 $comentario = new Comentario();
-                //Como so 1 registro é retornado, executa o foreach 1 vez somente.
-                foreach($stm as $row)
-                {
-                    $comentario->setCodigo($row['codigo']);
-                    $comentario->setDescricao($row['descricao']);
                 
-                    //Buscando chamado, para criar o objeto e atribuir a variavel $comentario.
-                    $buscarChamado = new ChamadoDAO();
+                $comentario->setCodigo($stm['codigo']);
+                $comentario->setDescricao($stm['descricao']);
                 
-                    $chamado = $buscarChamado->obterChamado($row['chamado']);
-                    $comentario->setChamado($chamado);
+                //Buscando chamado, para criar o objeto e atribuir a variavel $comentario.
+                $buscarChamado = new ChamadoDAO();
                 
-                    //Buscando usuario, para criar o objeto e atribuir a variavel $comentario.
-                    $buscarUsuario = new UsuarioDAO();
+                $chamado = $buscarChamado->obterChamado($stm['chamado']);
+                $comentario->setChamado($chamado);
                 
-                    $usuario = $buscarUsuario->obterUsuario($row['usuario']);
-                    $comentario->setUsuario($usuario);
-                }
+                //Buscando usuario, para criar o objeto e atribuir a variavel $comentario.
+                $buscarUsuario = new UsuarioDAO();
+                
+                $usuario = $buscarUsuario->obterUsuario($stm['usuario']);
+                $comentario->setUsuario($usuario);
                 
                 return $comentario;
                 

@@ -56,13 +56,10 @@ class SolucaoDAO
                 $stm = $this->con->query("SELECT * FROM solucao WHERE codigo = ".$codigo_solucao);
                 
                 $solucao = new Solucao();
-                //Como so 1 registro é retornado, executa o foreach 1 vez somente.
-                foreach($stm as $row)
-                {
-                    $solucao->setCodigo($row['codigo']);
-                    $solucao->setDescricao($row['descricao']);
-                    $solucao->setData($row['data']);
-                }
+                
+                $solucao->setCodigo($stm['codigo']);
+                $solucao->setDescricao($stm['descricao']);
+                $solucao->setData($stm['data']);
                 
                 return $solucao;
                 

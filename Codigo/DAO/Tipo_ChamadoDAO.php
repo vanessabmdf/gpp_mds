@@ -53,12 +53,9 @@ class Tipo_ChamadoDAO
                 $stm = $this->con->query("SELECT * FROM tipo_chamado WHERE codigo = ".$codigoTipo_Chamado);
                 
                 $tipo_chamado = new Tipo_Chamado();
-                //Como so 1 registro é retornado, executa o foreach 1 vez somente.
-                foreach($stm as $row)
-                {
-                    $tipo_chamado->setCodigo($row['codigo']);
-                    $tipo_chamado->setDescricao($row['descricao']);
-                }
+                
+                $tipo_chamado->setCodigo($stm['codigo']);
+                $tipo_chamado->setDescricao($stm['descricao']);
                 
                 return $tipo_chamado;
                 

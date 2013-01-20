@@ -53,12 +53,9 @@ class StatusDAO
                 $stm = $this->con->query("SELECT * FROM status WHERE codigo = ".$codigo_status);
                 
                 $status = new Status();
-                //Como so 1 registro é retornado, executa o foreach 1 vez somente.
-                foreach($stm as $row)
-                {
-                    $status->setCodigo($row['codigo']);
-                    $status->setNome($row['nome']);
-                }
+                
+                $status->setCodigo($stm['codigo']);
+                $status->setNome($stm['nome']);
                 
                 return $status;
                 
