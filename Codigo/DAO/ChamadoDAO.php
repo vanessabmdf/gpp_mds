@@ -88,16 +88,12 @@ class ChamadoDAO
                 //Criando um objeto chamado, para receber as informações buscadas no banco de dados.
                 $chamado = new Chamado();
                 
-                //Busca os valores(codigo, data_inicial, data_final, descricao) no banco, e atribui ao objeto $chamado.
+                //Busca os valores(codigo, data_inicial, data_final, descricao, comentarioChamado) no banco, e atribui ao objeto $chamado.
                 $chamado->setCodigo($stm['codigo']);
                 $chamado->setData_inicial($stm['data_inicial']);
                 $chamado->setData_final($stm['data_final']);
                 $chamado->setDescricao($stm['descricao']);
-                
-                //Buscando comentario, para criar o objeto e atribuir a variavel $chamado.
-                $buscarComentario = new ComentarioDAO();
-                $comentario = $buscarComentario->obterComentario($stm['comentarioChamado']);
-                $chamado->setComentarioChamado($comentario);
+                $chamado->setComentarioChamado($stm['comentarioChamado']);
                 
                 //Buscando solicitante, para criar o objeto e atribuir a variavel $chamado.
                 $buscarUsuario = new UsuarioDAO();
