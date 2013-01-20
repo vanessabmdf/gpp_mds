@@ -175,7 +175,7 @@ $endereco = $_SERVER ['REQUEST_URI'];
                     require_once ("../menulateral.php");
                     ?>
                     <div id="boxconteudo">
-                        <h1>Cadastro de Solicitantes</h1>
+                        <h1>Cadastro de Usuario</h1>
                         <div id="boxcadastro">                            	
                             <form id="formSolicitante" action="#" method="POST" class="form">
                                 <fieldset>
@@ -202,7 +202,7 @@ $endereco = $_SERVER ['REQUEST_URI'];
                                 </fieldset>
                                 <fieldset>
                                     <label class="nomeUsuario" for="nomeUsuario">
-                                        Nome de Usu�rio:
+                                        Nome de Usuário:
                                         <input class="nomeUsuario" id="nomeUsuario" type="text" name="foneFornecedor" size="25" />  
                                     </label>  
                                     <label class="senhaUsuario" for="senhaUsuario">
