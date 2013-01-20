@@ -26,10 +26,10 @@ class SolicitanteCtrl {
             $solicitante->setEmail($email);
             $solicitante->setMatricula($matricula);
             $solicitante->setData($dataNascimento);
-            $usuario->setNome($nomeUsuario);
-            $usuario->setSenha($senhaUsuario);
+            $solicitante->setNomeUsuario($nomeUsuario);
+            $solicitante->setSenhaUsuario($senhaUsuario);
             $DAO = new SolicitanteDAO();
-            $DAO->insereSolicitante($solicitante, $usuario);
+            $DAO->insereSolicitante($solicitante);
             $DAO->fechaConexão();
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -59,17 +59,16 @@ class SolicitanteCtrl {
         public function alteraSolicitante($nomeSolicitante, $email, $matricula, $dataNascimento, $nomeUsuario, $senhaUsuario, $codigo) {
         try {     
             $solicitante = new Solicitante();
-            $usuario = new Usuario();
             
             $solicitante->setNome($nomeSolicitante);
             $solicitante->setEmail($email);
             $solicitante->setMatricula($matricula);
             $solicitante->setData($dataNascimento);
-            $usuario->setNome($nomeUsuario);
-            $usuario->setSenha($senhaUsuario);
+            $solicitante->setNomeUsuario($nomeUsuario);
+            $solicitante->setSenhaUsuario($senhaUsuario);
             
             $DAO = new SolicitanteDAO();
-            $DAO->alteraSolicitante($solicitante, $usuario, $codigo);
+            $DAO->alteraSolicitante($solicitante, $codigo);
             $DAO->fechaConexão();
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();

@@ -6,6 +6,8 @@ class Solicitante{
     private $email = NULL;
     private $matricula = NULL;
     private $data_nascimento = NULL;
+    private $nome_usuario = NULL;
+    private $senha_usuario = NULL;
     
     public function Solicitante() {
     }
@@ -34,6 +36,18 @@ class Solicitante{
         $this->data_nascimento=$data_nascimento;
     }
     public function getData(){
+        return $this->data_nascimento;
+    }
+    public function setNomeUsuario($data_nascimento){
+        $this->data_nascimento=$data_nascimento;
+    }
+    public function getNomeUsuario(){
+        return $this->data_nascimento;
+    }
+    public function setSenhaUsuario($data_nascimento){
+        $this->data_nascimento=$data_nascimento;
+    }
+    public function getSenhaUsuario(){
         return $this->data_nascimento;
     }
 }
