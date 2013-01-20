@@ -1,9 +1,17 @@
 <?php
 
+//Inclusao de classes necessarias.
 require_once "/../lib/Conection.php";
 require_once "/../NewModel/Chamado.php";
+require_once "/../NewModel/Comentario.php";
+require_once "/../NewModel/Solucao.php";
+require_once "/../NewModel/Status.php";
+require_once "/../NewModel/Tipo_Chamado.php";
+require_once "/../NewModel/Usuario.php";
 require_once "/../DAO/UsuarioDAO.php";
 require_once "/../DAO/SolucaoDAO.php";
+require_once "/../DAO/StatusDAO.php";
+require_once "/../DAO/ComentarioDAO.php";
 require_once "/../DAO/Tipo_ChamadoDAO.php";
 
 class ChamadoDAO
@@ -23,6 +31,7 @@ class ChamadoDAO
                 $query = "INSERT INTO chamado (codigo, data_inicial, data_final, descricao, comentarioChamado, solicitante, tecnico, status, solucao, tipoChamado) 
                           VALUES (:codigo, :data_inicial, :data_final, :descricao, :comentarioChamado, :solicitante, :tecnico, :status, :solucao, :tipoChamado)";
             
+                //Insere no banco de dados, os dados do objeto $chamado(parametro da função).
                 $stm = $this->con->prepare($query);
                 $stm->bindParam(":codigo", $chamado->getCodigo());
                 $stm->bindParam(":data_inicial", $chamado->getData_inicial());
@@ -51,7 +60,7 @@ class ChamadoDAO
                           WHERE codigo = ".$codigo_chamado; 
                       
                 $stm = $this->con->prepare($query);
-                
+                //Os dados contidos no objeto $chamado(parametro da função), sao passados ao banco de dados, alterando os dados do chamado.
                 $stm->bindParam(":codigo", $chamado->getCodigo());
                 $stm->bindParam(":data_inicial", $chamado->getData_inicial());
                 $stm->bindParam(":data_final", $chamado->getData_final());
@@ -74,16 +83,21 @@ class ChamadoDAO
     public function obterChamado($codigo_chamado) {
         try {
             
+                //Busca os dados do chamado com o codigo_chamado informado.
                 $stm = $this->con->query("SELECT * FROM chamado WHERE codigo = ".$codigo_chamado);
-                //Criando um objeto chamado e armazenando as informações nele.
+                //Criando um objeto chamado, para receber as informações buscadas no banco de dados.
                 $chamado = new Chamado();
                 
+                //Busca os valores(codigo, data_inicial, data_final, descricao) no banco, e atribui ao objeto $chamado.
                 $chamado->setCodigo($stm['codigo']);
                 $chamado->setData_inicial($stm['data_inicial']);
                 $chamado->setData_final($stm['data_final']);
                 $chamado->setDescricao($stm['descricao']);
                 
-                //Falta criar o objeto do comentario do chamado.
+                //Buscando comentario, para criar o objeto e atribuir a variavel $chamado.
+                $buscarComentario = new ComentarioDAO();
+                $comentario = $buscarComentario->obterComentario($stm['comentarioChamado']);
+                $chamado->setComentarioChamado($comentario);
                 
                 //Buscando solicitante, para criar o objeto e atribuir a variavel $chamado.
                 $buscarUsuario = new UsuarioDAO();
@@ -112,6 +126,7 @@ class ChamadoDAO
                 $tipoChamado = $buscarTipo_Chamado->obterTipo_Chamado($stm['tipoChamado']);
                 $chamado->setTipoChamado($tipoChamado);
                 
+                //Retorna um objeto chamado.
                 return $chamado;
                 
             } catch (PDOException $erro) {
@@ -121,7 +136,7 @@ class ChamadoDAO
     
      public function deletarChamado($codigo_chamado) {
         try {
-                //Deleta um registro. Retorna um booleano que ainda não é usado.
+                //Deleta um chamado atraves do codigo informado.
                 $this->con->query("DELETE FROM chamado WHERE codigo = ".$codigo_chamado."");
                  
             }catch (PDOException $erro) {
