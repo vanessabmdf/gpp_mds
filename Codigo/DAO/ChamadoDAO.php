@@ -87,41 +87,44 @@ class ChamadoDAO
                 $stm = $this->con->query("SELECT * FROM chamado WHERE codigo = ".$codigo_chamado);
                 //Criando um objeto chamado, para receber as informações buscadas no banco de dados.
                 $chamado = new Chamado();
+                //Como so 1 registro é retornado, executa o foreach 1 vez somente.
+                foreach($stm as $row)
+                {
                 
-                //Busca os valores(codigo, data_inicial, data_final, descricao, comentarioChamado) no banco, e atribui ao objeto $chamado.
-                $chamado->setCodigo($stm['codigo']);
-                $chamado->setData_inicial($stm['data_inicial']);
-                $chamado->setData_final($stm['data_final']);
-                $chamado->setDescricao($stm['descricao']);
-                $chamado->setComentarioChamado($stm['comentarioChamado']);
+                    //Busca os valores(codigo, data_inicial, data_final, descricao, comentarioChamado) no banco, e atribui ao objeto $chamado.
+                    $chamado->setCodigo($row['codigo']);
+                    $chamado->setData_inicial($row['data_inicial']);
+                    $chamado->setData_final($row['data_final']);
+                    $chamado->setDescricao($row['descricao']);
+                    $chamado->setComentarioChamado($row['comentarioChamado']);
                 
-                //Buscando solicitante, para criar o objeto e atribuir a variavel $chamado.
-                $buscarUsuario = new UsuarioDAO();
-                $solicitante = $buscarUsuario->obterUsuario($stm['solicitante']);
-                $chamado->setSolicitante($solicitante);
+                    //Buscando solicitante, para criar o objeto e atribuir a variavel $chamado.
+                    $buscarUsuario = new UsuarioDAO();
+                    $solicitante = $buscarUsuario->obterUsuario($row['solicitante']);
+                    $chamado->setSolicitante($solicitante);
              
-                //Buscando tecnico, para criar o objeto e atribuir a variavel $chamado.
-                $tecnico = $buscarUsuario->obterUsuario($stm['tecnico']);
-                $chamado->setTecnico($tecnico);
+                    //Buscando tecnico, para criar o objeto e atribuir a variavel $chamado.
+                    $tecnico = $buscarUsuario->obterUsuario($row['tecnico']);
+                    $chamado->setTecnico($tecnico);
                 
-                //Bucando status, para criar o objeto e atribuir a variaval $chamado.
-                $buscarStatus = new StatusDAO();
+                    //Bucando status, para criar o objeto e atribuir a variaval $chamado.
+                    $buscarStatus = new StatusDAO();
                 
-                $status = $buscarStatus->obterStatus($stm['status']);
-                $chamado->setStatus($status);
+                    $status = $buscarStatus->obterStatus($row['status']);
+                    $chamado->setStatus($status);
                 
-                //Bucando solucao, para criar o objeto e atribuir a variavel $chamado.
-                $buscarSolucao = new SolucaoDAO();
+                    //Bucando solucao, para criar o objeto e atribuir a variavel $chamado.
+                    $buscarSolucao = new SolucaoDAO();
                 
-                $solucao = $buscarSolucao->obterSolucao($stm['solucao']);
-                $chamado->setSolucao($solucao);
+                    $solucao = $buscarSolucao->obterSolucao($row['solucao']);
+                    $chamado->setSolucao($solucao);
                 
-                //Buscando tipo_chamado, para criar o objeto e atribuir a variavel $chamado.
-                $buscarTipo_Chamado = new Tipo_ChamadoDAO();
+                    //Buscando tipo_chamado, para criar o objeto e atribuir a variavel $chamado.
+                    $buscarTipo_Chamado = new Tipo_ChamadoDAO();
                 
-                $tipoChamado = $buscarTipo_Chamado->obterTipo_Chamado($stm['tipoChamado']);
-                $chamado->setTipoChamado($tipoChamado);
-                
+                    $tipoChamado = $buscarTipo_Chamado->obterTipo_Chamado($row['tipoChamado']);
+                    $chamado->setTipoChamado($tipoChamado);
+                }
                 //Retorna um objeto chamado.
                 return $chamado;
                 

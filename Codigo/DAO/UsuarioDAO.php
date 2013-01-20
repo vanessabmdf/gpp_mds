@@ -65,15 +65,18 @@ class UsuarioDAO {
             $stm = $this->con->query("SELECT * FROM usuario WHERE codigo = ".$codigo_usuario);
             
             $usuario = new Usuario();
-            
-            $usuario->setCodigo($stm['codigo']);
-            $usuario->setTipo($stm['tipo']);
-            $usuario->setLogin($stm['login']);
-            $usuario->setSenha($stm['senha']);
-            $usuario->setNome($stm['nome']);
-            $usuario->setEmail($stm['email']);
-            $usuario->setMatricula($stm['matricula']);
-            $usuario->setData_nascimento($stm['data_nascimento']);
+            //Como so 1 registro é retornado, executa o foreach 1 vez somente.
+            foreach($stm as $row)
+            { 
+                $usuario->setCodigo($row['codigo']);
+                $usuario->setTipo($row['tipo']);
+                $usuario->setLogin($row['login']);
+                $usuario->setSenha($row['senha']);
+                $usuario->setNome($row['nome']);
+                $usuario->setEmail($row['email']);
+                $usuario->setMatricula($row['matricula']);
+                $usuario->setData_nascimento($row['data_nascimento']);
+            }
             
             return $usuario;
             
