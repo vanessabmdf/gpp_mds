@@ -47,8 +47,8 @@ class Tipo_ChamadoDAO
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
     }
-    
-    public function obterTipo_Chamado($codigoTipo_Chamado) {
+    //Obtém um Tipo_Chamado especifico, de acordo com o codigo passado como parametro.
+    public function obterTipo_Chamado_Especifico($codigoTipo_Chamado) {
         try {
                 $stm = $this->con->query("SELECT * FROM tipo_chamado WHERE codigo = ".$codigoTipo_Chamado);
                 
@@ -63,6 +63,18 @@ class Tipo_ChamadoDAO
                 return $tipo_chamado;
                 
         } catch (PDOException $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
+    //Obtém todos os Tipo_Chamado salvos no banco de dados.
+    //O objeto retornado, precisa passar pela função foreach(), para obter cada registro.
+    public function obterTipo_Chamado_Geral()
+    {
+        try
+        {
+            $stm = $this->con->query("SELECT * FROM tipo_chamado");
+            return $stm;
+        }catch(PDOException $erro){
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }

@@ -51,7 +51,7 @@ class SolucaoDAO
     }
     
     
-    public function obterSolucao($codigo_solucao) {
+    public function obterSolucao_Especifico($codigo_solucao) {
         try {
                 $stm = $this->con->query("SELECT * FROM solucao WHERE codigo = ".$codigo_solucao);
                 
@@ -67,6 +67,19 @@ class SolucaoDAO
                 return $solucao;
                 
         } catch (PDOException $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
+    
+    //Obtém todos as Solucoes salvas no banco de dados.
+    //O objeto retornado, precisa passar pela função foreach(), para obter cada registro.
+    public function obterSolucao_Geral()
+    {
+        try
+        {
+            $stm = $this->con->query("SELECT * FROM solucao");
+            return $stm;
+        }catch(PDOException $erro){
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }

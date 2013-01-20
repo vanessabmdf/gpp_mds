@@ -57,7 +57,7 @@ class ComentarioDAO
     }
     
     
-    public function obterComentario($codigo_comentario) {
+    public function obterComentario_Especifico($codigo_comentario) {
         try {
                 $stm = $this->con->query("SELECT * FROM comentario WHERE codigo = ".$codigo_comentario);
                 
@@ -86,6 +86,19 @@ class ComentarioDAO
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
+    }
+    
+    //Obtém todos os Comentarios salvos no banco de dados.
+    //O objeto retornado, precisa passar pela função foreach(), para obter cada registro.
+    public function obterComentario_Geral()
+    {
+        try
+        {
+            $stm = $this->con->query("SELECT * FROM comentario");
+            return $stm;
+        }catch(PDOException $erro){
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
     }
     
     public function deletarComentario($codigo_comentario) {

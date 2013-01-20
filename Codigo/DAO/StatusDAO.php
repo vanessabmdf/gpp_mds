@@ -48,7 +48,7 @@ class StatusDAO
     }
     
     
-    public function obterStatus($codigo_status) {
+    public function obterStatus_Especifico($codigo_status) {
         try {
                 $stm = $this->con->query("SELECT * FROM status WHERE codigo = ".$codigo_status);
                 
@@ -65,6 +65,19 @@ class StatusDAO
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
+    }
+    
+    //Obtém todos os Status salvos no banco de dados.
+    //O objeto retornado, precisa passar pela função foreach(), para obter cada registro.
+    public function obterStatus_Geral()
+    {
+        try
+        {
+            $stm = $this->con->query("SELECT * FROM status");
+            return $stm;
+        }catch(PDOException $erro){
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
     }
     
     public function deletarStatus($codigo_status) {

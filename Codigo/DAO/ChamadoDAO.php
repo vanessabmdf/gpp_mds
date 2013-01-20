@@ -80,7 +80,7 @@ class ChamadoDAO
             }
     }
     
-    public function obterChamado($codigo_chamado) {
+    public function obterChamado_Especifico($codigo_chamado) {
         try {
             
                 //Busca os dados do chamado com o codigo_chamado informado.
@@ -131,6 +131,19 @@ class ChamadoDAO
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
+    }
+    
+    //Obtém todos os Chamados salvos no banco de dados.
+    //O objeto retornado, precisa passar pela função foreach(), para obter cada registro.
+    public function obterChamado_Geral()
+    {
+        try
+        {
+            $stm = $this->con->query("SELECT * FROM chamado");
+            return $stm;
+        }catch(PDOException $erro){
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
     }
     
      public function deletarChamado($codigo_chamado) {
