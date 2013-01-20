@@ -84,12 +84,12 @@ $endereco = $_SERVER ['REQUEST_URI'];
                 
                     },
                     messages: {
-                        nomeSolicitante: { nome: "&nbsp;Mínimo de 5 caracteres!"},
-                        emailSolicitante: { email: '&nbsp;Email inválido!'},
-                        dtNascSolicitante: { dtnasc: '&nbsp;Data de Nascimento inválida!'},
-                        matriculaSolicitante: { matricula: '&nbsp;Matricula inválida!'},
-                        nomeUsuario: { usuario: "&nbsp;Mínimo de 4 caracteres!"},
-                        senhaUsuario: { senha: "&nbsp;Mínimo de 5 caracteres!"}
+                        nomeSolicitante: { nome: "&nbsp;Mï¿½nimo de 5 caracteres!"},
+                        emailSolicitante: { email: '&nbsp;Email invï¿½lido!'},
+                        dtNascSolicitante: { dtnasc: '&nbsp;Data de Nascimento invï¿½lida!'},
+                        matriculaSolicitante: { matricula: '&nbsp;Matricula invï¿½lida!'},
+                        nomeUsuario: { usuario: "&nbsp;Mï¿½nimo de 4 caracteres!"},
+                        senhaUsuario: { senha: "&nbsp;Mï¿½nimo de 5 caracteres!"}
                     },
                     submitHandler:function(form) {
                         alert('ok');
@@ -146,8 +146,8 @@ $endereco = $_SERVER ['REQUEST_URI'];
                 if (diadomes<10)
                     diadomes="0"+diadomes
 
-                var arrayDiadaSemana = new Array("Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado")
-                var arrayMes = new Array(" de Janeiro de "," de Fevereiro de "," de Março de ","de Abril de ","de Maio de ","de Junho de","de Julho de ","de Agosto de ","de Setembro de "," de Outubro de "," de Novembro de "," de Dezembro de ")
+                var arrayDiadaSemana = new Array("Domingo","Segunda-feira","Terï¿½a-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sï¿½bado")
+                var arrayMes = new Array(" de Janeiro de "," de Fevereiro de "," de Marï¿½o de ","de Abril de ","de Maio de ","de Junho de","de Julho de ","de Agosto de ","de Setembro de "," de Outubro de "," de Novembro de "," de Dezembro de ")
 
                 //Imprimindo a hora
                 Imprimir = arrayDiadaSemana[diasemana]+ ", "+ diadomes +" "+arrayMes[mes]+ano + " - " +hora + ":" + minuto + ":" +segundo;
@@ -156,7 +156,7 @@ $endereco = $_SERVER ['REQUEST_URI'];
                 setTimeout("dataHora()",1000)
             }
         </script>
-        <noscript>Habilite o Javascript para visualizar esta página corretamente...</noscript>
+        <noscript>Habilite o Javascript para visualizar esta pï¿½gina corretamente...</noscript>
     </head>
     <body onload="dataHora();carregando()">
         <!--div's do cabecalho-->
@@ -202,11 +202,11 @@ $endereco = $_SERVER ['REQUEST_URI'];
                                 </fieldset>
                                 <fieldset>
                                     <label class="nomeUsuario" for="nomeUsuario">
-                                        Nome de Usuário:
+                                        Nome de Usuï¿½rio:
                                         <input class="nomeUsuario" id="nomeUsuario" type="text" name="foneFornecedor" size="25" />  
                                     </label>  
                                     <label class="senhaUsuario" for="senhaUsuario">
-                                        Senha:
+                                        Senha(MÃ­nimo 6 caracteres):
                                         <input class="senhaUsuario" id="senhaUsuario" type="password" name="foneFornecedor" size="25" />  
                                     </label>  
                                 </fieldset>
