@@ -72,16 +72,17 @@
                         nomeSolicitante: {nome: 5},
                         emailSolicitante: {email: true},
                         dtNascSolicitante: {required: true, date: true},
-                        matriculaSolicitante: {matricula: 5},
-                        nomeUsuario: {nome: 4},
+                        matriculaSolicitante: {nome: 4},
+                        nomeUsuario: {nome: 6},
                         senhaUsuario: {nome: 6}
                 
                     },
                     messages: {
                         nomeSolicitante: { nome: "&nbsp;Mínimo de 5 caracteres!"}, 
                         emailSolicitante: { email: '&nbsp;E-mail inválido!'},
-                        matriculaSolicitante: { matricula: '&nbsp;Matricula inválida!'},
-                        nomeUsuario: { nome: "&nbsp;Mínimo de 4 caracteres!"},
+                        dtNascSolicitante: { required: '&nbsp;Preencha uma data válida!', date: '&nbsp;Preencha uma data válida!'},
+                        matriculaSolicitante: { nome: '&nbsp;Mínimo de 4 caracteres!'},
+                        nomeUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"},
                         senhaUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"}
                     },
                     submitHandler:function(form) {
@@ -138,25 +139,25 @@
                                 <fieldset>
                                     <label class="emailSolicitante" for="emailSolicitante">
                                         Email:
-                                        <input class="emailSolicitante" id="emailSolicitante" type="text" name="cnpjFornecedor" size="25">   
+                                        <input class="emailSolicitante" id="emailSolicitante" type="text" name="emailSolicitante" size="25">   
                                     </label> 
                                     <label class="matriculaSolicitante" for="matriculaSolicitante">
                                         Matricula:
-                                        <input class="matriculaSolicitante" id="matriculaSolicitante" type="text" name="foneFornecedor" size="25" />  
+                                        <input class="matriculaSolicitante" id="matriculaSolicitante" type="text" name="matriculaSolicitante" size="25" />  
                                     </label> 
                                     <label class="dtNascSolicitante" for="dtNascSolicitante">
                                         Data de Nascimento:
-                                        <input class="dtNascSolicitante" id="dtNascSolicitante" type="text" name="contato" size="25" /> 
+                                        <input class="dtNascSolicitante" id="dtNascSolicitante" type="text" name="dtNascSolicitante" size="25" /> 
                                     </label>  
                                 </fieldset>
                                 <fieldset>
                                     <label class="nomeUsuario" for="nomeUsuario">
                                         Nome de Usuário:
-                                        <input class="nomeUsuario" id="nomeUsuario" type="text" name="foneFornecedor" size="25" />  
+                                        <input class="nomeUsuario" id="nomeUsuario" type="text" name="nomeUsuario" size="25" />  
                                     </label>  
                                     <label class="senhaUsuario" for="senhaUsuario">
                                         Senha(Mínimo 6 caracteres):
-                                        <input class="senhaUsuario" id="senhaUsuario" type="password" name="foneFornecedor" size="25" />  
+                                        <input class="senhaUsuario" id="senhaUsuario" type="password" name="senhaUsuario" size="25" />  
                                     </label>  
                                 </fieldset>
                                 <input type="button" id="botao" value="Salvar" onClick=valida_form() class="botoesInput" />
