@@ -8,6 +8,7 @@ $endereco = $_SERVER ['REQUEST_URI'];
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>HelpDesk - Faculdade UnB Gama</title>
