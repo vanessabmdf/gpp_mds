@@ -194,11 +194,6 @@ $endereco = $_SERVER ['REQUEST_URI'];
                                     <label class="emailSolicitante" for="emailSolicitante">
                                         Descrição:
                                         <textarea name="descricao" rows="12" cols="70"></textarea>
-                                    </label>
-                                    <label class="matriculaSolicitante" for="matriculaSolicitante">
-                                       Comentário:
-                                       	<textarea name="descricao" rows="12" cols="70"></textarea>
-                                    </label> 
                                 </fieldset>
                                 <input type="button" id="botao" value="Salvar" onClick=valida_form() class="botoesInput" />
                                 <input type="button" id="limpar" value="Limpar" onClick="limpa_form();limparValidacao();" class="botoesInput" />
