@@ -9,7 +9,7 @@ $matriculaSolicitante=utf8_decode($_POST["matriculaSolicitante"]);
 $dataNascimento=utf8_decode($_POST["dtNascSolicitante"]);
 $datanova = explode("/", $dataNascimento);
 $datanova = $datanova[2] . "-" . $datanova[1] . "-" . $datanova[0];
-echo $datanova;
+
 $nomeUsuario=utf8_decode($_POST["nomeUsuario"]);
 $senhaUsuario=utf8_decode($_POST["senhaUsuario"]);
 
