@@ -1,15 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<?
-//pegar a url atual com variaveis de ambiente
-$server = $_SERVER['SERVER_NAME'];
-$endereco = $_SERVER ['REQUEST_URI'];
-//echo "http://" . $server . $endereco;
-?>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>HelpDesk - Faculdade UnB Gama</title>
         <link href="../css/layout.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../css/superfish.css" media="screen" />
@@ -27,12 +20,12 @@ $endereco = $_SERVER ['REQUEST_URI'];
         <script src="../js/jquery/jquery.blockUI.js"></script>
         <script src="../js/hoverIntent.js"></script>
         <script src="../js/superfish.js"></script>
-
+        
+        <script src="../js/dataHora.js"></script>
         <script src="js/site.js"></script>
 
         <script type="text/javascript">
-            var validacao;
-    
+            var validacao;    
             document.onkeydown = function(e){
                 var keychar;
         
@@ -56,7 +49,8 @@ $endereco = $_SERVER ['REQUEST_URI'];
                     $("#emailSolicitante").removeClass('marcado');
                     $("#dtNascSolicitante").removeClass('marcado');
                     $("#matriculaSolicitante").removeClass('marcado');
-                    $("#nomeUsuario").removeClass('marcado');                    
+                    $("#nomeUsuario").removeClass('marcado'); 
+                    $("#senhaUsuario").removeClass('marcado');
                     limpa_form();
                     return false;
                 }
@@ -64,10 +58,10 @@ $endereco = $_SERVER ['REQUEST_URI'];
             }
     
             $(document).ready(function() {
-                $('input[type=text], textarea').focus(function() {
+                $('input[type=text], textarea, input[type=password]').focus(function() {
                     $(this).addClass('marcado');
                 });
-                $('input[type=text], textarea').blur(function() {
+                $('input[type=text], textarea, input[type=password]').blur(function() {
                     $(this).removeClass('marcado');
                 });
             }); 
@@ -77,19 +71,18 @@ $endereco = $_SERVER ['REQUEST_URI'];
                     rules: {
                         nomeSolicitante: {nome: 5},
                         emailSolicitante: {email: true},
-                        dtNascSolicitante: {dtnasc: true},
+                        dtNascSolicitante: {required: true, date: true},
                         matriculaSolicitante: {matricula: 5},
-                        nomeUsuario: {usuario: 4},
-                        senhaUsuario: {senha: 6}
+                        nomeUsuario: {nome: 4},
+                        senhaUsuario: {nome: 6}
                 
                     },
                     messages: {
-                        nomeSolicitante: { nome: "&nbsp;M�nimo de 5 caracteres!"},
-                        emailSolicitante: { email: '&nbsp;Email inv�lido!'},
-                        dtNascSolicitante: { dtnasc: '&nbsp;Data de Nascimento inv�lida!'},
-                        matriculaSolicitante: { matricula: '&nbsp;Matricula inv�lida!'},
-                        nomeUsuario: { usuario: "&nbsp;M�nimo de 4 caracteres!"},
-                        senhaUsuario: { senha: "&nbsp;M�nimo de 5 caracteres!"}
+                        nomeSolicitante: { nome: "&nbsp;Mínimo de 5 caracteres!"}, 
+                        emailSolicitante: { email: '&nbsp;E-mail inválido!'},
+                        matriculaSolicitante: { matricula: '&nbsp;Matricula inválida!'},
+                        nomeUsuario: { nome: "&nbsp;Mínimo de 4 caracteres!"},
+                        senhaUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"}
                     },
                     submitHandler:function(form) {
                         alert('ok');
@@ -105,57 +98,15 @@ $endereco = $_SERVER ['REQUEST_URI'];
             }  
     
     
-        </script>
+        </script>        
+        
+        
         <script>
-            // initialise plugins
             jQuery(function(){
                 jQuery('ul.sf-menu').superfish();
             });
 
-        </script>
-        <script type="text/javascript" language="JavaScript">
-            function dataHora(){
-                momento = new Date()
-                var ano = momento.getYear()
-                var diasemana = momento.getDay()
-                var mes = momento.getMonth()
-                var diadomes = momento.getDate()
-                                
-                               
-                hora = momento.getHours()
-                minuto = momento.getMinutes()
-                segundo = momento.getSeconds()
-
-                //Formatando a hora, transforma os min/segs/hora em string, se for menor igual a 1 ele acrescenta um 0
-                string_segundo = new String (segundo)
-                if (string_segundo.length == 1)
-                    segundo = "0" + segundo
-
-                string_minuto = new String (minuto)
-                if (string_minuto.length == 1)
-                    minuto = "0" + minuto
-
-                string_hora = new String (hora)
-                if (string_hora.length == 1)
-                    hora = "0" + hora
-
-                //Formatando Data
-                if (ano<2000)
-                    ano += (ano < 1900) ? 1900 : 0
-
-                if (diadomes<10)
-                    diadomes="0"+diadomes
-
-                var arrayDiadaSemana = new Array("Domingo","Segunda-feira","Ter�a-feira","Quarta-feira","Quinta-feira","Sexta-feira","S�bado")
-                var arrayMes = new Array(" de Janeiro de "," de Fevereiro de "," de Mar�o de ","de Abril de ","de Maio de ","de Junho de","de Julho de ","de Agosto de ","de Setembro de "," de Outubro de "," de Novembro de "," de Dezembro de ")
-
-                //Imprimindo a hora
-                Imprimir = arrayDiadaSemana[diasemana]+ ", "+ diadomes +" "+arrayMes[mes]+ano + " - " +hora + ":" + minuto + ":" +segundo;
-                document.form_relogio.relogio.value = Imprimir
-
-                setTimeout("dataHora()",1000)
-            }
-        </script>
+         </script>
         <noscript>Habilite o Javascript para visualizar esta p�gina corretamente...</noscript>
     </head>
     <body onload="dataHora();carregando()">
@@ -175,17 +126,15 @@ $endereco = $_SERVER ['REQUEST_URI'];
                     require_once ("../menulateral.php");
                     ?>
                     <div id="boxconteudo">
-                        <h1>Cadastro de Usuario</h1>
+                        <h1>Cadastro de Usuário</h1>
                         <div id="boxcadastro">                            	
                             <form id="formSolicitante" action="#" method="POST" class="form">
                                 <fieldset>
                                     <label class="nomeSolicitante" for="nomeSolicitante">
-                                        Solicitante:
+                                        Nome Completo:
                                         <input class="nomeSolicitante" id="nomeSolicitante" type="text" name="nomeSolicitante" size="25" />              
-                                    </label>   
-                                                                     
+                                    </label>                                                                      
                                 </fieldset>
-
                                 <fieldset>
                                     <label class="emailSolicitante" for="emailSolicitante">
                                         Email:

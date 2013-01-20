@@ -38,17 +38,17 @@ class Solicitante{
     public function getData(){
         return $this->data_nascimento;
     }
-    public function setNomeUsuario($data_nascimento){
-        $this->data_nascimento=$data_nascimento;
+    public function setNomeUsuario($nome_usuario){
+        $this->nome_usuario=$nome_usuario;
     }
     public function getNomeUsuario(){
-        return $this->data_nascimento;
+        return $this->nome_usuario;
     }
-    public function setSenhaUsuario($data_nascimento){
-        $this->data_nascimento=$data_nascimento;
+    public function setSenhaUsuario($senha_usuario){
+        $this->senha_usuario=$senha_usuario;
     }
     public function getSenhaUsuario(){
-        return $this->data_nascimento;
+        return $this->senha_usuario;
     }
 }
 ?>
