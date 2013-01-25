@@ -18,7 +18,7 @@ class SolucaoDAO
     {
         try {
             
-                $query = "INSERT INTO solucao (codigo, descricao, data) 
+                $query = "INSERT INTO solucao (cod, descricao, dt_solucao) 
                           VALUES (:codigo, :descricao, :data)";
                 $stm = $this->con->prepare($query);
                 $stm->bindParam(":codigo", $solucao->getCodigo());
@@ -35,8 +35,8 @@ class SolucaoDAO
     {
         
         try {
-                $query = "UPDATE solucao SET codigo=:codigo, descricao=:descricao, data=:data
-                          WHERE codigo = ".$codigo_solucao; 
+                $query = "UPDATE solucao SET cod=:codigo, descricao=:descricao, dt_solucao=:data
+                          WHERE cod = ".$codigo_solucao; 
                       
                 $stm = $this->con->prepare($query);            
                 $stm->bindParam(":codigo", $solucao->getCodigo());
@@ -53,15 +53,15 @@ class SolucaoDAO
     
     public function obterSolucao_Especifico($codigo_solucao) {
         try {
-                $stm = $this->con->query("SELECT * FROM solucao WHERE codigo = ".$codigo_solucao);
+                $stm = $this->con->query("SELECT * FROM solucao WHERE cod = ".$codigo_solucao);
                 
                 $solucao = new Solucao();
                 //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                 foreach($stm as $row)
                 {
-                    $solucao->setCodigo($row['codigo']);
+                    $solucao->setCodigo($row['cod']);
                     $solucao->setDescricao($row['descricao']);
-                    $solucao->setData($row['data']);
+                    $solucao->setData($row['dt_solucao']);
                 }
                 
                 return $solucao;
@@ -86,7 +86,7 @@ class SolucaoDAO
     
     public function deletarSolucao($codigo_solucao) {
         try {
-                $this->con->query("DELETE FROM solucao WHERE codigo = ".$codigo_solucao);
+                $this->con->query("DELETE FROM solucao WHERE cod = ".$codigo_solucao);
                 
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();

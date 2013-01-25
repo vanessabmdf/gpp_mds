@@ -1,6 +1,6 @@
 CREATE TABLE chamado (
   cod INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  tipo_serviço_cod INTEGER UNSIGNED NOT NULL,
+  tipo_servico_cod INTEGER UNSIGNED NOT NULL,
   usuario_login VARCHAR NOT NULL,
   nome_chamado VARCHAR(30) NULL,
   descricao VARCHAR(300) NULL,
@@ -11,7 +11,7 @@ CREATE TABLE chamado (
   cod_tecnico INTEGER UNSIGNED NULL,
   PRIMARY KEY(cod),
   INDEX chamado_FKI_usuario(usuario_login),
-  INDEX chamado_FK_tipo_servico(tipo_serviço_cod)
+  INDEX chamado_FK_tipo_servico(tipo_servico_cod)
 );
 
 CREATE TABLE hitorico_chamado (

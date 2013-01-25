@@ -18,7 +18,7 @@ class Tipo_ChamadoDAO
     {
         try {
             
-                $query = "INSERT INTO tipo_chamado (codigo, descricao) 
+                $query = "INSERT INTO tipo_servico (cod, descricao) 
                           VALUES (:codigo, :descricao)";
                 $stm = $this->con->prepare($query);
                 $stm->bindParam(":codigo", $tipo_chamado->getCodigo());
@@ -34,8 +34,8 @@ class Tipo_ChamadoDAO
     {
         
         try {
-                $query = "UPDATE tipo_chamado SET codigo=:codigo, descricao=:descricao
-                          WHERE codigo = ".$codigoTipo_Chamado; 
+                $query = "UPDATE tipo_servico SET cod=:codigo, descricao=:descricao
+                          WHERE cod = ".$codigoTipo_Chamado; 
                       
                 $stm = $this->con->prepare($query);            
                 $stm->bindParam(":codigo", $tipo_chamado->getCodigo());
@@ -50,13 +50,13 @@ class Tipo_ChamadoDAO
     //Obtém um Tipo_Chamado especifico, de acordo com o codigo passado como parametro.
     public function obterTipo_Chamado_Especifico($codigoTipo_Chamado) {
         try {
-                $stm = $this->con->query("SELECT * FROM tipo_chamado WHERE codigo = ".$codigoTipo_Chamado);
+                $stm = $this->con->query("SELECT * FROM tipo_servico WHERE cod = ".$codigoTipo_Chamado);
                 
                 $tipo_chamado = new Tipo_Chamado();
                 //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                 foreach($stm as $row)
                 {
-                    $tipo_chamado->setCodigo($row['codigo']);
+                    $tipo_chamado->setCodigo($row['cod']);
                     $tipo_chamado->setDescricao($row['descricao']);
                 }
                 
@@ -72,7 +72,7 @@ class Tipo_ChamadoDAO
     {
         try
         {
-            $stm = $this->con->query("SELECT * FROM tipo_chamado");
+            $stm = $this->con->query("SELECT * FROM tipo_servico");
             return $stm;
         }catch(PDOException $erro){
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -81,7 +81,7 @@ class Tipo_ChamadoDAO
     
     public function deletarTipo_Chamado($codigoTipo_Chamado) {
         try {
-                $this->con->query("DELETE FROM tipo_chamado WHERE codigo = ".$codigoTipo_Chamado);
+                $this->con->query("DELETE FROM tipo_servico WHERE cod = ".$codigoTipo_Chamado);
             
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();

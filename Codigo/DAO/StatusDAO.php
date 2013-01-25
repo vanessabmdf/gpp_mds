@@ -18,7 +18,7 @@ class StatusDAO
     {
         try {
             
-                $query = "INSERT INTO status (codigo, nome) 
+                $query = "INSERT INTO status (cod, descricao) 
                           VALUES (:codigo, :nome)";
                 $stm = $this->con->prepare($query);
                 $stm->bindParam(":codigo", $status->getCodigo());;
@@ -34,7 +34,7 @@ class StatusDAO
     {
         
         try {
-                $query = "UPDATE status SET codigo=:codigo, nome=:nome WHERE codigo = ".$codigo_status; 
+                $query = "UPDATE status SET cod=:codigo, descricao=:nome WHERE cod = ".$codigo_status; 
                       
                 $stm = $this->con->prepare($query);            
                 $stm->bindParam(":codigo", $status->getCodigo());
@@ -50,14 +50,14 @@ class StatusDAO
     
     public function obterStatus_Especifico($codigo_status) {
         try {
-                $stm = $this->con->query("SELECT * FROM status WHERE codigo = ".$codigo_status);
+                $stm = $this->con->query("SELECT * FROM status WHERE cod = ".$codigo_status);
                 
                 $status = new Status();
                 //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                 foreach($stm as $row)
                 {
-                    $status->setCodigo($row['codigo']);
-                    $status->setNome($row['nome']);
+                    $status->setCodigo($row['cod']);
+                    $status->setNome($row['descricao']);
                 }
                 
                 return $status;
@@ -82,7 +82,7 @@ class StatusDAO
     
     public function deletarStatus($codigo_status) {
         try {
-                $this->con->query("DELETE FROM status WHERE codigo = ".$codigo_status);
+                $this->con->query("DELETE FROM status WHERE cod = ".$codigo_status);
                 
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
