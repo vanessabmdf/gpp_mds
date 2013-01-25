@@ -6,6 +6,7 @@ class Chamado
     private $data_inicial;
     private $data_final;
     private $descricao;
+    private $comentarioChamado;
     private $solicitante;
     private $tecnico;
     private $status;
@@ -53,6 +54,14 @@ class Chamado
 
     public function setDescricao($descricao) {
         $this->descricao = $descricao;
+    }
+
+    public function getComentarioChamado() {
+        return $this->comentarioChamado;
+    }
+
+    public function setComentarioChamado($comentarioChamado) {
+        $this->comentarioChamado = $comentarioChamado;
     }
 
     public function getSolicitante() {
