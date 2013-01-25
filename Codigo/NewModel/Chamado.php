@@ -6,14 +6,15 @@ class Chamado
     private $data_inicial;
     private $data_final;
     private $descricao;
-    private $comentarioChamado;
     private $solicitante;
     private $tecnico;
     private $status;
     private $solucao;
     private $tipoChamado;
+    private $local_equipamento;
+    private $equip_patrimonio;
     
-    function __construct($codigo, $data_inicial, $data_final, $descricao, $solicitante, $tecnico, $status, $tipoChamado) {
+    function __construct($codigo, $data_inicial, $data_final, $descricao, $solicitante, $tecnico, $status, $solucao, $tipoChamado, $local_equipamento, $equip_patrimonio) {
         $this->codigo = $codigo;
         $this->data_inicial = $data_inicial;
         $this->data_final = $data_final;
@@ -21,7 +22,26 @@ class Chamado
         $this->solicitante = $solicitante;
         $this->tecnico = $tecnico;
         $this->status = $status;
+        $this->solucao = $solucao;
         $this->tipoChamado = $tipoChamado;
+        $this->local_equipamento = $local_equipamento;
+        $this->equip_patrimonio = $equip_patrimonio;
+    }
+    
+    public function getLocal_equipamento() {
+        return $this->local_equipamento;
+    }
+
+    public function setLocal_equipamento($local_equipamento) {
+        $this->local_equipamento = $local_equipamento;
+    }
+
+    public function getEquip_patrimonio() {
+        return $this->equip_patrimonio;
+    }
+
+    public function setEquip_patrimonio($equip_patrimonio) {
+        $this->equip_patrimonio = $equip_patrimonio;
     }
     
     public function getCodigo() {
@@ -54,14 +74,6 @@ class Chamado
 
     public function setDescricao($descricao) {
         $this->descricao = $descricao;
-    }
-
-    public function getComentarioChamado() {
-        return $this->comentarioChamado;
-    }
-
-    public function setComentarioChamado($comentarioChamado) {
-        $this->comentarioChamado = $comentarioChamado;
     }
 
     public function getSolicitante() {
