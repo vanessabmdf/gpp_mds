@@ -1,7 +1,7 @@
 <?php
 
 require_once "/../lib/Conection.php";
-require_once "/../model/Solicitante.class.php";
+require_once "/../NewModel/Solicitante.class.php";
 
 class SolicitanteDAO {
 
