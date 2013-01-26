@@ -15,7 +15,7 @@ class SolucaoDAOTest extends PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->object = new SolucaoDAO;
+        $this->object = new SolucaoDAO();
     }
 
     /**
@@ -23,12 +23,18 @@ class SolucaoDAOTest extends PHPUnit_Framework_TestCase {
      * This method is called after a test is executed.
      */
     protected function tearDown() {
-        
+        unset($this->object);
     }
 
     public function testVerificar() {
         // Remove the following lines when you implement this test.
-        $this->assertNotNull($this->object);
+        
+        //Testa se o objeto foi criado.
+        $this->assertNotNull($this->object, "Objeto nao criado.");
+    }
+    
+    public function testFechaConexao(){
+        $this->assertNull($this->object->fechaConexão(), "Conexao nao foi finalizada.");
     }
 
 }

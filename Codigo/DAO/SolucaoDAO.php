@@ -97,6 +97,7 @@ class SolucaoDAO
     public function fechaConexão() {
         try {
             $this->con = null;
+            return $this->con;
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
