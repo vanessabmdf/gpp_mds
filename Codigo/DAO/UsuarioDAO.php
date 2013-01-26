@@ -17,18 +17,16 @@ class UsuarioDAO {
     public function inserirUsuario(Usuario $usuario) {
         try {
  
-                $query = "INSERT INTO usuario (codigo, tipo, login, senha, nome, email, matricula, data_nascimento) 
-                          VALUES (:codigo, :tipo, :login, :senha, :nome, :email, :matricula, :data_nascimento)";
+                $query = "INSERT INTO usuario (login, cod_perfil, senha, email, nome, matricula) 
+                          VALUES (:login, :cod_perfil, :senha, :email, :nome, :matricula)";
             
                 $stm = $this->con->prepare($query);
-                $stm->bindParam(":codigo", $usuario->getCodigo());
-                $stm->bindParam(":tipo", $usuario->getTipo());
+                $stm->bindParam(":cod_perfil", $usuario->getCodigo());
                 $stm->bindParam(":login", $usuario->getLogin());
                 $stm->bindParam(":senha", $usuario->getSenha());
                 $stm->bindParam(":nome", $usuario->getNome());
                 $stm->bindParam(":email", $usuario->getEmail());
                 $stm->bindParam(":matricula", $usuario->getMatricula());
-                $stm->bindParam(":data_nascimento", $usuario->getData_nascimento());
                 $stm->execute();
              
             } catch (PDOException $erro) {
@@ -36,21 +34,19 @@ class UsuarioDAO {
             }
     }
     
-        public function alterarUsuario(Usuario $usuario, $codigo_usuario) {
+        public function alterarUsuario(Usuario $usuario, $login_usuario) {
         try {
-                $query = "UPDATE usuario SET codigo=:codigo, tipo=:tipo, login=:login, senha=:senha, nome=:nome, email=:email, matricula=:matricula, data_nascimento=:data_nascimento
-                          WHERE codigo = ".$codigo_usuario; 
+                $query = "UPDATE usuario SET cod_perfil=:cod_perfil, login=:login, senha=:senha, nome=:nome, email=:email, matricula=:matricula,
+                          WHERE cod_perfil = ".$login_usuario; 
                       
                 $stm = $this->con->prepare($query);
                 
-                $stm->bindParam(":codigo", $usuario->getCodigo());
-                $stm->bindParam(":tipo", $usuario->getTipo());
+                $stm->bindParam(":cod_perfil", $usuario->getCodigo());
                 $stm->bindParam(":login", $usuario->getLogin());
                 $stm->bindParam(":senha", $usuario->getSenha());
                 $stm->bindParam(":nome", $usuario->getNome());
                 $stm->bindParam(":email", $usuario->getEmail());
-                $stm->bindParam(":matricula", $usuario->getMatricula());
-                $stm->bindParam(":data_nascimento", $usuario->getData_nascimento());    
+                $stm->bindParam(":matricula", $usuario->getMatricula());    
                 $stm->execute();
                 $this->con->commit();
                 
@@ -60,22 +56,20 @@ class UsuarioDAO {
         }
 
 
-    public function obterUsuario_Especifico($codigo_usuario) {
+    public function obterUsuario_Especifico($login_usuario) {
         try {
-            $stm = $this->con->query("SELECT * FROM usuario WHERE codigo = ".$codigo_usuario);
+            $stm = $this->con->query("SELECT * FROM usuario WHERE cod_perfil = ".$login_usuario);
             
             $usuario = new Usuario();
             //Como so 1 registro é retornado, executa o foreach 1 vez somente.
             foreach($stm as $row)
             { 
-                $usuario->setCodigo($row['codigo']);
-                $usuario->setTipo($row['tipo']);
+                $usuario->setCodigo($row['cod_perfil']);
                 $usuario->setLogin($row['login']);
                 $usuario->setSenha($row['senha']);
                 $usuario->setNome($row['nome']);
                 $usuario->setEmail($row['email']);
                 $usuario->setMatricula($row['matricula']);
-                $usuario->setData_nascimento($row['data_nascimento']);
             }
             
             return $usuario;
@@ -98,9 +92,9 @@ class UsuarioDAO {
         }
     }
     
-    public function deletarUsuario($codigo_usuario) {
+    public function deletarUsuario($login_usuario) {
         try {
-                $this->con->query("DELETE FROM usuario WHERE codigo = ".$codigo_usuario);
+                $this->con->query("DELETE FROM usuario WHERE codigo = ".$login_usuario);
             
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();

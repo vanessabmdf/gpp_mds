@@ -3,7 +3,6 @@
 //Inclusao de classes necessarias.
 require_once "/../lib/Conection.php";
 require_once "/../NewModel/Chamado.php";
-require_once "/../NewModel/Comentario.php";
 require_once "/../NewModel/Solucao.php";
 require_once "/../NewModel/Status.php";
 require_once "/../NewModel/Tipo_Chamado.php";
@@ -11,7 +10,6 @@ require_once "/../NewModel/Usuario.php";
 require_once "/../DAO/UsuarioDAO.php";
 require_once "/../DAO/SolucaoDAO.php";
 require_once "/../DAO/StatusDAO.php";
-require_once "/../DAO/ComentarioDAO.php";
 require_once "/../DAO/Tipo_ChamadoDAO.php";
 
 class ChamadoDAO
@@ -28,22 +26,19 @@ class ChamadoDAO
     public function inserirChamado(Chamado $chamado) {
         try {
             
-                $query = "INSERT INTO chamado (codigo, data_inicial, data_final, descricao, comentarioChamado, solicitante, tecnico, status, solucao, tipoChamado) 
-                          VALUES (:codigo, :data_inicial, :data_final, :descricao, :comentarioChamado, :solicitante, :tecnico, :status, :solucao, :tipoChamado)";
+                //
+            
+                $query = "INSERT INTO chamado (descricao, patrimonio_equip, localizacao_equip, login_tecnico) 
+                          VALUES (:descricao, :patrimonio_equip, :localizacao_equip, :login_tecnico)";
             
                 //Insere no banco de dados, os dados do objeto $chamado(parametro da função).
                 $stm = $this->con->prepare($query);
-                $stm->bindParam(":codigo", $chamado->getCodigo());
-                $stm->bindParam(":data_inicial", $chamado->getData_inicial());
-                $stm->bindParam(":data_final", $chamado->getData_final());
                 $stm->bindParam(":descricao", $chamado->getDescricao());
-                $stm->bindParam(":comentarioChamado", $chamado->getComentarioChamado()->getCodigo());
-                $stm->bindParam(":solicitante",$chamado->getSolicitante()->getCodigo());
-                $stm->bindParam(":tecnico", $chamado->getTecnico()->getCodigo());
-                $stm->bindParam(":status", $chamado->getStatus()->getCodigo());
-                $stm->bindParam(":solucao", $chamado->getSolucao()->getCodigo());
-                $stm->bindParam(":tipo_chamado", $chamado->getTipoChamado()->getCodigo());
-            
+                $stm->bindParam(":patrimonio_equip", $chamado->getEquip_patrimonio());
+                $stm->bindParam(":localizacao_equip", $chamado->getLocal_equipamento());
+                
+                
+                $stm->bindParam(":login_tecnico", $chamado->getTecnico());
                 $stm->execute();
              
             } catch (PDOException $erro) {
