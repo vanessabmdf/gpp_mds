@@ -1,45 +1,45 @@
 #boxcadastro{
     height: 250px;
 }
-#boxcadastro label.nomeSolicitante{
+#boxcadastro label.nomeUsuario{
     width: 99%;
 }
-#boxcadastro label.emailSolicitante{
+#boxcadastro label.emailUsuario{
     width: 32%;
 }
-#boxcadastro label.dtNascSolicitante{
+#boxcadastro label.dtNascUsuario{
     width: 32%;
 }
-#boxcadastro label.matriculaSolicitante{
+#boxcadastro label.matriculaUsuario{
     width: 32%;
 }
-#boxcadastro label.nomeUsuario{
+#boxcadastro label.loginUsuario{
     width: 49%;
 }
 #boxcadastro label.senhaUsuario{
     width: 48%;
 }
-#boxcadastro input.nomeSolicitante{   
-    display: block;
-    position: relative;
-    width: 100%;
-}
-#boxcadastro input.emailSolicitante{   
-    display: block;
-    position: relative;
-    width: 100%;
-}
-#boxcadastro input.dtNascSolicitante{ 
-    display: block;
-    position: relative;
-    width: 100%;
-}
-#boxcadastro input.matriculaSolicitante{   
-    display: block;
-    position: relative;
-    width: 100%;
-}
 #boxcadastro input.nomeUsuario{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.emailUsuario{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.dtNascUsuario{ 
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.matriculaUsuario{   
+    display: block;
+    position: relative;
+    width: 100%;
+}
+#boxcadastro input.loginUsuario{   
     display: block;
     position: relative;
     width: 100%;

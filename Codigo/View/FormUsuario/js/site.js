@@ -10,7 +10,7 @@ function load_grid(){
             imprime(data);
         }
     });
-    $("#nomeSolicitante").focus();    
+    $("#nomeUsuario").focus();    
     limpa_form();
 }
 
@@ -43,7 +43,7 @@ function limpa_form(){
                 submit:function(v,m,f){
                     if(!v) 
                     {
-                        $("#nomeSolicitante").focus();
+                        $("#nomeUsuario").focus();
                         retorno=0;
                         $.prompt.close()
                     }		
@@ -56,21 +56,21 @@ function limpa_form(){
         $("#acao").val("inserir");
         $("#botao").val("Salvar");
         $("#limpar").val("Limpar");
-        $("#nomeSolicitante").val("");
-        $("#emailSolicitante").val("");
-        $("#dtNascSolicitante").val("");
-        $("#matriculaSolicitante").val("");
         $("#nomeUsuario").val("");
+        $("#emailUsuario").val("");
+        $("#dtNascUsuario").val("");
+        $("#matriculaUsuario").val("");
+        $("#loginUsuario").val("");
         $("#senhaUsuario").val("");
 
         $("#botao").show();
-        $("#nomeSolicitante").attr("disabled", false);
-        $("#emailSolicitante").attr("disabled", false);
-        $("#dtNascSolicitante").attr("disabled", false);
-        $("#matriculaSolicitante").attr("disabled", false);
         $("#nomeUsuario").attr("disabled", false);
+        $("#emailUsuario").attr("disabled", false);
+        $("#dtNascUsuario").attr("disabled", false);
+        $("#matriculaUsuario").attr("disabled", false);
+        $("#loginUsuario").attr("disabled", false);
         $("#senhaUsuario").attr("disabled", false);
-        $("#nomeSolicitante").focus();
+        $("#nomeUsuario").focus();
     }
 }
 
@@ -89,11 +89,11 @@ function enviar(){
                             async: false,
                             type: "POST",
                             data: {
-                                nomeSolicitante: $("#nomeSolicitante").val(),
-                                emailSolicitante: $("#emailSolicitante").val(),
-                                dtNascSolicitante: $("#dtNascSolicitante").val(),
-                                matriculaSolicitante: $("#matriculaSolicitante").val(),
                                 nomeUsuario: $("#nomeUsuario").val(),
+                                emailUsuario: $("#emailUsuario").val(),
+                                dtNascUsuario: $("#dtNascUsuario").val(),
+                                matriculaUsuario: $("#matriculaUsuario").val(),
+                                loginUsuario: $("#loginUsuario").val(),
                                 senhaUsuario: $("#senhaUsuario").val()														
                             },
                             success: function (data) {
@@ -103,7 +103,7 @@ function enviar(){
                         });
                         $.prompt.close()
                     }
-                    $("#nomeSolicitante").focus();
+                    $("#nomeUsuario").focus();
                     return false;
                 }
             }
@@ -125,11 +125,11 @@ function enviar(){
                             type: "POST",
                             data: {
                                 id: array[0],
-                                nomeSolicitante: $("#nomeSolicitante").val(),
-                                emailSolicitante: $("#emailSolicitante").val(),
-                                dtNascSolicitante: $("#dtNascSolicitante").val(),
-                                matriculaSolicitante: $("#matriculaSolicitante").val(),
                                 nomeUsuario: $("#nomeUsuario").val(),
+                                emailUsuario: $("#emailUsuario").val(),
+                                dtNascUsuario: $("#dtNascUsuario").val(),
+                                matriculaUsuario: $("#matriculaUsuario").val(),
+                                loginUsuario: $("#loginUsuario").val(),
                                 senhaUsuario: $("#senhaUsuario").val()
                             },
                             success: function (data) {
@@ -151,7 +151,7 @@ function enviar(){
                 focus: 1,
                 submit:function(v,m,f){
                     if(v==0) {
-                        $("#nomeSolicitante").focus();
+                        $("#nomeUsuario").focus();
                         retorno = 0;
                         $.prompt.close()
                     }
@@ -192,7 +192,7 @@ function apagar(id){
                 focus: 1,
                 submit:function(v,m,f){
                     if(v==0){
-                        $("#nomeSolicitante").focus();
+                        $("#nomeUsuario").focus();
                         $.prompt.close()
                     }
                 }
@@ -249,18 +249,18 @@ function editar(texto){
     }
     if(retorno == 0){
 
-        $("#nomeSolicitante").val(array[1]);
-        $("#emailSolicitante").val(array[2]);		
-        $("#matriculaSolicitante").val(array[3]);
-        $("#dtNascSolicitante").val(array[4]);
-        $("#nomeUsuario").val(array[5]);		
+        $("#nomeUsuario").val(array[1]);
+        $("#emailUsuario").val(array[2]);		
+        $("#matriculaUsuario").val(array[3]);
+        $("#dtNascUsuario").val(array[4]);
+        $("#loginUsuario").val(array[5]);		
 
 
-        $("#nomeSolicitante").attr("disabled", false);
-        $("#emailSolicitante").attr("disabled", false);
-        $("#dtNascSolicitante").attr("disabled", false);
-        $("#matriculaSolicitante").attr("disabled", false);
         $("#nomeUsuario").attr("disabled", false);
+        $("#emailUsuario").attr("disabled", false);
+        $("#dtNascUsuario").attr("disabled", false);
+        $("#matriculaUsuario").attr("disabled", false);
+        $("#loginUsuario").attr("disabled", false);
         $("#senhaUsuario").attr("disabled", false);
 
         retorno++;
@@ -269,7 +269,7 @@ function editar(texto){
         $("#acao").val("alterar");
         $("#botao").val("Salvar");
         $("#limpar").val("Cancelar");
-        $("#nomeSolicitante").focus();
+        $("#nomeUsuario").focus();
         
     }else{
         $.prompt("Conclua ou cancele alteração pendente!");
@@ -327,17 +327,17 @@ function detalhes(texto){
             array=texto.split('</td>');
         }
 
-        $("#nomeSolicitante").val(array[1]);
-        $("#emailSolicitante").val(array[2]);		
-        $("#matriculaSolicitante").val(array[3]);
-        $("#dtNascSolicitante").val(array[4]);
-        $("#nomeUsuario").val(array[5]);            
+        $("#nomeUsuario").val(array[1]);
+        $("#emailUsuario").val(array[2]);		
+        $("#matriculaUsuario").val(array[3]);
+        $("#dtNascUsuario").val(array[4]);
+        $("#loginUsuario").val(array[5]);            
 
-        $("#nomeSolicitante").attr("disabled", true);
-        $('#emailSolicitante').attr("disabled", true);
-        $('#dtNascSolicitante').attr("disabled", true);
-        $("#matriculaSolicitante").attr("disabled", true);
         $("#nomeUsuario").attr("disabled", true);
+        $('#emailUsuario').attr("disabled", true);
+        $('#dtNascUsuario').attr("disabled", true);
+        $("#matriculaUsuario").attr("disabled", true);
+        $("#loginUsuario").attr("disabled", true);
         $("#senhaUsuario").attr("disabled", true);
 
         $("#acao").val("detalhar");
@@ -352,15 +352,15 @@ function valida_form(){
    
     var er = RegExp(/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za-z0-9])?/);
     
-    if($("#nomeSolicitante").val().length<5){
+    if($("#nomeUsuario").val().length<5){
         var erroNome = {
             erroNomeMenor: {
-                html:'Preencha o campo Solicitante corretamente!',
+                html:'Preencha o campo Usuario corretamente!',
                 buttons: {Ok: 0},
                 focus: 1,
                 submit:function(v,m,f){
                     if(v==0){
-                        $("#nomeSolicitante").focus();
+                        $("#nomeUsuario").focus();
                         $.prompt.close()
                     }
                     return false;
@@ -371,8 +371,8 @@ function valida_form(){
         return false;
     }
  
-    if($("#emailSolicitante").val().length!=0){
-        if(er.test($("#emailSolicitante").val()) == false){
+    if($("#emailUsuario").val().length!=0){
+        if(er.test($("#emailUsuario").val()) == false){
             var emailInvalido = {
                 erroEmailInvalido: {
                     html:'Email inválido! Preencha um Email correto!',
@@ -380,7 +380,7 @@ function valida_form(){
                     focus: 1,
                     submit:function(v,m,f){
                         if(v==0){
-                            $("#emailSolicitante").focus();
+                            $("#emailUsuario").focus();
                             $.prompt.close()
                         }
                         return false;
@@ -391,7 +391,7 @@ function valida_form(){
             return false;
         }
     }
-    if($("#nomeUsuario").val().length<6){
+    if($("#loginUsuario").val().length<6){
         var UsuarioMenor = {
             erroUsuarioMenor: {
                 html:'Preencha o campo nome de usuário corretamente!',
@@ -399,7 +399,7 @@ function valida_form(){
                 focus: 1,
                 submit:function(v,m,f){
                     if(v==0){
-                        $("#nomeUsuario").focus();
+                        $("#loginUsuario").focus();
                         $.prompt.close()
                     }
                     return false;
@@ -429,7 +429,7 @@ function valida_form(){
         return false;
     }
 
-    if($("#dtNascSolicitante").val().length!=0 && $("#dtNascSolicitante").val().length<10){
+    if($("#dtNascUsuario").val().length!=0 && $("#dtNascUsuario").val().length<10){
         var dtNascInvalido = {
             errodtNascInvalido: {
                 html:'Data de nascimento inválida! Preencha um data correta!',
@@ -437,7 +437,7 @@ function valida_form(){
                 focus: 1,
                 submit:function(v,m,f){
                     if(v==0){
-                        $("#dtNascSolicitante").focus();
+                        $("#dtNascUsuario").focus();
                         $.prompt.close()
                     }
                     return false;
@@ -447,7 +447,7 @@ function valida_form(){
         $.prompt(dtNascInvalido);
         return false;
     }   
-    if(!(verificaData($("#dtNascSolicitante").val()))){
+    if(!(verificaData($("#dtNascUsuario").val()))){
         var dtNascRange = {
             errodtNascInvalido: {
                 html:'Data de nascimento inválida! Preencha um data correta!',
@@ -455,7 +455,7 @@ function valida_form(){
                 focus: 1,
                 submit:function(v,m,f){
                     if(v==0){
-                        $("#dtNascSolicitante").focus();
+                        $("#dtNascUsuario").focus();
                         $.prompt.close()
                     }
                     return false;

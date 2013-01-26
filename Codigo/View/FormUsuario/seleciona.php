@@ -4,9 +4,9 @@
  * Arquivo onde é montada a tabela de dados.
  * Todos os registros encontrados são passados para XML, para ser montada no site.js
  */
-require_once("../../controller/SolicitanteCtrl.php");
+require_once("../../controller/UsuarioCtrl.php");
 
-$solicitante = new SolicitanteCtrl();
+$solicitante = new UsuarioCtrl();
 
 //se encontrar registros	
 
@@ -36,7 +36,7 @@ $solicitante = new SolicitanteCtrl();
 	$xml.="</cabecalho>";
 	
 	//Corpo da Tabela - Setando os valores de cada campo
-	foreach($solicitante->listaSolicitante() as $sol){
+	foreach($solicitante->listaUsuario() as $sol){
 		$xml.="<registro>";	
                         $xml.="<item>".$sol["codigo"]."</item>";
 			$xml.="<item>".$sol["nome"]."</item>";

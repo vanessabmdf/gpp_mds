@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../css/superfish.css" media="screen" />
         <link href="../css/examples.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" href="../css/blue/style.css" type="text/css" media="print, projection, screen" />
-        <link href="css/formSolicitante.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/formUsuario.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
 
 
@@ -45,10 +45,10 @@
                     return false;
                 }
                 if (e.ctrlKey && keychar == '2') {
-                    $("#nomeSolicitante").addClass('marcado');
-                    $("#emailSolicitante").removeClass('marcado');
-                    $("#dtNascSolicitante").removeClass('marcado');
-                    $("#matriculaSolicitante").removeClass('marcado');
+                    $("#nomeUsuario").addClass('marcado');
+                    $("#emailUsuario").removeClass('marcado');
+                    $("#dtNascUsuario").removeClass('marcado');
+                    $("#matriculaUsuario").removeClass('marcado');
                     $("#nomeUsuario").removeClass('marcado'); 
                     $("#senhaUsuario").removeClass('marcado');
                     limpa_form();
@@ -67,21 +67,21 @@
             }); 
     
             $(document).ready(function() {
-                validacao = $("#formSolicitante").validate({
+                validacao = $("#formUsuario").validate({
                     rules: {
-                        nomeSolicitante: {nome: 5},
-                        emailSolicitante: {email: true},
-                        dtNascSolicitante: {required: true, date: true},
-                        matriculaSolicitante: {nome: 4},
+                        nomeUsuario: {nome: 5},
+                        emailUsuario: {email: true},
+                        dtNascUsuario: {required: true, date: true},
+                        matriculaUsuario: {nome: 4},
                         nomeUsuario: {nome: 6},
                         senhaUsuario: {nome: 6}
                 
                     },
                     messages: {
-                        nomeSolicitante: { nome: "&nbsp;Mínimo de 5 caracteres!"}, 
-                        emailSolicitante: { email: '&nbsp;E-mail inválido!'},
-                        dtNascSolicitante: { required: '&nbsp;Preencha uma data válida!', date: '&nbsp;Preencha uma data válida!'},
-                        matriculaSolicitante: { nome: '&nbsp;Mínimo de 4 caracteres!'},
+                        nomeUsuario: { nome: "&nbsp;Mínimo de 5 caracteres!"}, 
+                        emailUsuario: { email: '&nbsp;E-mail inválido!'},
+                        dtNascUsuario: { required: '&nbsp;Preencha uma data válida!', date: '&nbsp;Preencha uma data válida!'},
+                        matriculaUsuario: { nome: '&nbsp;Mínimo de 4 caracteres!'},
                         nomeUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"},
                         senhaUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"}
                     },
@@ -89,7 +89,7 @@
                         alert('ok');
                     }
                 });
-                $("#dtNascSolicitante").mask("9?9/99/9999");
+                $("#dtNascUsuario").mask("9?9/99/9999");
 	
             });
        
@@ -129,31 +129,31 @@
                     <div id="boxconteudo">
                         <h1>Cadastro de Usuário</h1>
                         <div id="boxcadastro">                            	
-                            <form id="formSolicitante" action="#" method="POST" class="form">
+                            <form id="formUsuario" action="#" method="POST" class="form">
                                 <fieldset>
-                                    <label class="nomeSolicitante" for="nomeSolicitante">
+                                    <label class="nomeUsuario" for="nomeUsuario">
                                         Nome Completo:
-                                        <input class="nomeSolicitante" id="nomeSolicitante" type="text" name="nomeSolicitante" size="25" />              
+                                        <input class="nomeUsuario" id="nomeUsuario" type="text" name="nomeUsuario" size="25" />              
                                     </label>                                                                      
                                 </fieldset>
                                 <fieldset>
-                                    <label class="emailSolicitante" for="emailSolicitante">
+                                    <label class="emailUsuario" for="emailUsuario">
                                         Email:
-                                        <input class="emailSolicitante" id="emailSolicitante" type="text" name="emailSolicitante" size="25">   
+                                        <input class="emailUsuario" id="emailUsuario" type="text" name="emailUsuario" size="25">   
                                     </label> 
-                                    <label class="matriculaSolicitante" for="matriculaSolicitante">
+                                    <label class="matriculaUsuario" for="matriculaUsuario">
                                         Matricula:
-                                        <input class="matriculaSolicitante" id="matriculaSolicitante" type="text" name="matriculaSolicitante" size="25" />  
+                                        <input class="matriculaUsuario" id="matriculaUsuario" type="text" name="matriculaUsuario" size="25" />  
                                     </label> 
-                                    <label class="dtNascSolicitante" for="dtNascSolicitante">
+                                    <label class="dtNascUsuario" for="dtNascUsuario">
                                         Data de Nascimento:
-                                        <input class="dtNascSolicitante" id="dtNascSolicitante" type="text" name="dtNascSolicitante" size="25" /> 
+                                        <input class="dtNascUsuario" id="dtNascUsuario" type="text" name="dtNascUsuario" size="25" /> 
                                     </label>  
                                 </fieldset>
                                 <fieldset>
-                                    <label class="nomeUsuario" for="nomeUsuario">
+                                    <label class="loginUsuario" for="loginUsuario">
                                         Nome de Usuário:
-                                        <input class="nomeUsuario" id="nomeUsuario" type="text" name="nomeUsuario" size="25" />  
+                                        <input class="loginUsuario" id="loginUsuario" type="text" name="loginUsuario" size="25" />  
                                     </label>  
                                     <label class="senhaUsuario" for="senhaUsuario">
                                         Senha(Mínimo 6 caracteres):
