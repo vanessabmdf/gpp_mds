@@ -1,7 +1,7 @@
 <?php
 require_once "/../DAO/SolicitanteDAO.php";
-require_once "/../model/Solicitante.class.php";
-require_once "/../model/Usuario.class.php";
+require_once "/../NewModel/Solicitante.class.php";
+require_once "/../NewModel/Usuario.class.php";
 
 /**
  * Description of SolicitanteCtrl
