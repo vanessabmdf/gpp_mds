@@ -56,14 +56,10 @@ class SolucaoDAO
                 if($stm == false)
                     return $stm;
                 else{
-                 
-                    $solucao = new Solucao(null, null, null);
                     //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                     foreach($stm as $row)
                     {
-                        $solucao->setCodigo($row['cod']);
-                        $solucao->setDescricao($row['descricao']);
-                        $solucao->setData($row['dt_solucao']);
+                        $solucao = new Solucao($row['cod'], $row['descricao'], $row['dt_solucao']);
                     }
                     return $solucao;
                 }

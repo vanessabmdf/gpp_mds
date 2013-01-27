@@ -1,7 +1,7 @@
 <?php
 
 require_once "/../lib/Conection.php";
-require_once "/../model/Usuario.class.php";
+require_once "/../NewModel/Usuario.php";
 
 class UsuarioDAO {
 
@@ -13,7 +13,7 @@ class UsuarioDAO {
         $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    public function insereUsuario(Usuario $usuario) {
+    public function inserirUsuario(Usuario $usuario) {
         try {
             /* Sem passagem por referência
               $nome = $usuario->getNome();
@@ -21,49 +21,62 @@ class UsuarioDAO {
               $matricula = $usuario->getMatricula();
               $data = $usuario->getData();
              */
-            $query = "INSERT INTO usuario (nome, email, matricula, data_nascimento, nome_usuario, senha_usuario) 
-                      VALUES (:nome, :email, :matricula, :data_nascimento, :nome_usuario, :senha_usuario)";
+            $query = "INSERT INTO usuario (login, senha, email, nome, matricula, perfil_cod) 
+                      VALUES (:login, :senha, :email, :nome, :matricula, :perfil_cod)";
             $stm = $this->con->prepare($query);
-            $stm->bindParam(":nome", $usuario->getNome());
-            $stm->bindParam(":email", $usuario->getEmail());
-            $stm->bindParam(":matricula", $usuario->getMatricula());
-            $stm->bindParam(":data_nascimento", $usuario->getData());
-            $stm->bindParam(":nome_usuario", $usuario->getNomeUsuario());
-            $stm->bindParam(":senha_usuario", $usuario->getSenhaUsuario());
-            $exec = $stm->execute();
+            $stm->bindValue(":login", $usuario->getLogin());
+            $stm->bindValue(":senha", $usuario->getSenha());
+            $stm->bindValue(":email", $usuario->getEmail());
+            $stm->bindValue(":nome", $usuario->getNome());
+            $stm->bindValue(":matricula", $usuario->getMatricula());
+            $stm->bindValue(":perfil_cod", $usuario->getCodigo());
+            return $stm->execute();
              
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
     
-        public function alteraUsuario(Usuario $usuario, $codigo) {
+        public function alterarUsuario(Usuario $usuario, $login) {
         try {
-            /* Sem passagem por referência
-              $nome = $usuario->getNome();
-              $email = $usuario->getEmail();
-              $matricula = $usuario->getMatricula();
-              $data = $usuario->getData();
-             */
-            $query = "UPDATE usuario SET nome=:nome, email=:email, matricula=:matricula, data_nascimento=:data_nascimento,
-                      nome_usuario=:nome_usuario, senha_usuario=:senha_usuario
-                      WHERE codigo = ".$codigo.""; 
+            
+            $query = "UPDATE usuario SET login = :login, senha = :senha, email = :email, nome = :nome, 
+                      matricula = :matricula, perfil_cod = :perfil_cod WHERE login = ".$login; 
                       
             $stm = $this->con->prepare($query);
-            $stm->bindParam(":nome", $usuario->getNome());
-            $stm->bindParam(":email", $usuario->getEmail());
-            $stm->bindParam(":matricula", $usuario->getMatricula());
-            $stm->bindParam(":data_nascimento", $usuario->getData());  
-            $stm->bindParam(":nome_usuario", $usuario->getNomeUsuario());
-            $stm->bindParam(":senha_usuario", $usuario->getSenhaUsuario());
-            $stm->execute();
-            $this->con->commit();
+            $stm->bindValue(":login", $usuario->getLogin());
+            $stm->bindValue(":senha", $usuario->getSenha());
+            $stm->bindValue(":email", $usuario->getEmail());
+            $stm->bindValue(":nome", $usuario->getNome());  
+            $stm->bindValue(":matricula", $usuario->getMatricula());
+            $stm->bindValue(":perfil_cod", $usuario->getCodigo());
+            return $stm->execute();
+            //$this->con->commit();
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
 
-
+    public function obterUsuario_Especifico($login) {
+        try {
+                $stm = $this->con->query("SELECT * FROM usuario WHERE login = ".$login);
+                
+                if($stm == false)
+                    return $stm;
+                else{
+                    //Como so 1 registro é retornado, executa o foreach 1 vez somente.
+                    foreach($stm as $row)
+                    {
+                        $usuario = new Usuario($row['perfil_cod'], $row['login'], $row['senha'], $row['nome'], $row['email'], $row['matricula']);               
+                    }
+                    return $usuario;
+                }
+        } catch (PDOException $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
+    
+    
     public function obterUsuario() {
         try {
             $stm = $this->con->query("SELECT * FROM usuario");
@@ -73,13 +86,16 @@ class UsuarioDAO {
         }
     }
     
-    public function deleteUsuario($codigo) {
+    public function deletarUsuario($login) {
         try {
-            $stm = $this->con->query("DELETE FROM usuario WHERE codigo = ".$codigo."");
-            return $stm;
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+                $resultado = $this->con->query("DELETE FROM usuario WHERE login = ".$login);
+                if($resultado != false)
+                    return true;
+                else
+                    return $resultado;
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
     public function numColUsuario() {
         try {

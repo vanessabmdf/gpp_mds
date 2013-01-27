@@ -5,33 +5,25 @@ require_once "/../NewModel/Solucao.php";
 
 
 class SolucaoCtrl {
-
-    private $DAO;
-    /*
-    public function SolicitanteDAO() {
-        $this->DAO = new SolicitanteDAO();
-    }
-    */
-    function __construct() {
-        $this->DAO = new SolucaoDAO();
-    }
    
     public function insSolucao($codigo, $descricao, $data) {
-        //try {
+        try {
                 $solucao = new Solucao($codigo, $descricao, $data);
 
-                $resultado = $this->DAO->inserirSolucao($solucao);
-                $this->DAO->fechaConexão();
+                $DAO = new SolucaoDAO();
+                $resultado = $DAO->inserirSolucao($solucao);
+                $DAO->fechaConexão();
                 return $resultado;
-        //} catch (Exception $erro) {
-          //  echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        //}
+            } catch (Exception $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
 
     public function delSolucao($codigo_solucao) {
         try {
-                $resultado = $this->DAO->deletarSolucao($codigo_solucao);
-                $this->DAO->fechaConexão();
+                $DAO = new SolucaoDAO();
+                $resultado = $DAO->deletarSolucao($codigo_solucao);
+                $DAO->fechaConexão();
                 return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -51,7 +43,9 @@ class SolucaoCtrl {
    
    public function obterSolucao_Especifico($codigo_solucao)
    {
-       $solucao = $this->DAO->obterSolucao_Especifico($codigo_solucao);
+       $DAO = new SolucaoDAO();
+       $solucao = $DAO->obterSolucao_Especifico($codigo_solucao);
+       $DAO->fechaConexão();
        return $solucao;
    }
     
@@ -59,8 +53,9 @@ class SolucaoCtrl {
         try {     
                 $solucao = new Solucao($codigo, $descricao, $data);
             
-                $resultado = $this->DAO->alterarSolucao($solucao, $cod_busca_solucao);
-                $this->DAO->fechaConexão();
+                $DAO = new SolucaoDAO();
+                $resultado = $DAO->alterarSolucao($solucao, $cod_busca_solucao);
+                $DAO->fechaConexão();
                 return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();

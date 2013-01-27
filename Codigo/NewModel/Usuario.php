@@ -8,8 +8,11 @@ class Usuario
     private $nome;
     private $email;
     private $matricula;
-
     
+    //O código tem que ser gerado pelo sistema, e não pode ser informado pelo usuário no ato do cadastro.
+    /*Agente pode fazer um cod. sequencial de acordo com os usuarios que forem sendo cadastrados
+     * por exemplo: 01, 02, 03, 04, 05, ...
+     */
     function __construct($codigo, $login, $senha, $nome, $email, $matricula) {
         $this->codigo = $codigo;
         $this->login = $login;
@@ -65,6 +68,7 @@ class Usuario
 
     public function setMatricula($matricula) {
         $this->matricula = $matricula;
-    } 
+    }
+
 }
 ?>

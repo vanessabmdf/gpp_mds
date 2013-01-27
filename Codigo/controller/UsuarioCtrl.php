@@ -1,6 +1,6 @@
 <?php
 require_once "/../DAO/UsuarioDAO.php";
-require_once "/../model/Usuario.class.php";
+require_once "/../NewModel/Usuario.php";
 
 /**
  * Description of UsuarioCtrl
@@ -8,38 +8,26 @@ require_once "/../model/Usuario.class.php";
  * @author Luiz
  */
 class UsuarioCtrl {
-
-    private $DAO;
-    /*
-    public function UsuarioDAO() {
-        $this->DAO = new UsuarioDAO();
-    }
-    */
    
-    public function instUsuario($nome, $email, $matricula, $dataNascimento, $login, $senha) {
+    public function insUsuario($login, $senha, $email, $nome, $matricula, $perfil_cod) {
         try {
-            $usuario = new Usuario();
-            $usuario = new Usuario();
+                $usuario = new Usuario($perfil_cod, $login, $senha, $nome, $email, $matricula);
 
-            $usuario->setNome($nome);
-            $usuario->setEmail($email);
-            $usuario->setMatricula($matricula);
-            $usuario->setData($dataNascimento);
-            $usuario->setNomeUsuario($login);
-            $usuario->setSenhaUsuario($senha);
-            $DAO = new UsuarioDAO();
-            $DAO->insereUsuario($usuario);
-            $DAO->fechaConexão();
-        } catch (Exception $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+                $DAO = new UsuarioDAO();
+                $resultado = $DAO->inserirUsuario($usuario);
+                $DAO->fechaConexão();
+                return $resultado;
+            } catch (Exception $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
 
-    public function delUsuario($codigoUsuario) {
+    public function delUsuario($login) {
         try {
-            $DAO = new UsuarioDAO();
-            $DAO->deleteUsuario($codigoUsuario);
-            $DAO->fechaConexão();
+                $DAO = new UsuarioDAO();
+                $resultado = $DAO->deletarUsuario($login);
+                $DAO->fechaConexão();
+                return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
@@ -47,33 +35,36 @@ class UsuarioCtrl {
     
         public function listaUsuario() {
         try {
-            $DAO = new UsuarioDAO();
-            $lista = $DAO->obterUsuario();
-            $DAO->fechaConexão();
-            return $lista;
+                $DAO = new UsuarioDAO();
+                $lista = $DAO->obterUsuario();
+                $DAO->fechaConexão();
+                return $lista;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
-        public function alteraUsuario($nome, $email, $matricula, $dataNascimento, $login, $senha, $codigo) {
+        public function alteraUsuario($login, $senha, $email, $nome, $matricula, $codigo, $login_busca) {
         try {     
-            $usuario = new Usuario();
+                $usuario = new Usuario($codigo, $login, $senha, $nome, $email, $matricula);
             
-            $usuario->setNome($nome);
-            $usuario->setEmail($email);
-            $usuario->setMatricula($matricula);
-            $usuario->setData($dataNascimento);
-            $usuario->setNomeUsuario($login);
-            $usuario->setSenhaUsuario($senha);
-            
-            $DAO = new UsuarioDAO();
-            $DAO->alteraUsuario($usuario, $codigo);
-            $DAO->fechaConexão();
+                $DAO = new UsuarioDAO();
+                $resultado = $DAO->alterarUsuario($usuario, $login_busca);
+                $DAO->fechaConexão();
+                return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
-     public function getNumCols() {
+    
+    public function obterUsuario_Especifico($login)
+    {
+       $DAO = new UsuarioDAO();
+       $usuario = $DAO->obterUsuario_Especifico($login);
+       $DAO->fechaConexão();
+       return $usuario;
+    }
+    
+    public function getNumCols() {
         try {
             $DAO = new UsuarioDAO();
             $col = $DAO->numColUsuario();
