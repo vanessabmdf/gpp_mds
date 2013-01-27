@@ -1,7 +1,7 @@
 <?php
 
-require_once "/../lib/Conection.php";
-require_once "/../NewModel/Solucao.php";
+require_once "../lib/Conection.php";
+require_once "../Model/Solucao.php";
 
 class SolucaoDAO 
 {

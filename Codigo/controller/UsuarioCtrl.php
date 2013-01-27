@@ -1,6 +1,6 @@
 <?php
-require_once "/../DAO/UsuarioDAO.php";
-require_once "/../NewModel/Usuario.php";
+require_once "../DAO/UsuarioDAO.php";
+require_once "../Model/Usuario.php";
 
 /**
  * Description of UsuarioCtrl

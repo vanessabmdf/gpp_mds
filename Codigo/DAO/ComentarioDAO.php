@@ -1,11 +1,11 @@
 <?php
 
-require_once "/../lib/Conection.php";
-require_once "/../NewModel/Comentario.php";
-require_once "/../DAO/ChamadoDAO.php";
-require_once "/../DAO/UsuarioDAO.php";
-require_once "/../NewModel/Chamado.php";
-require_once "/../NewModel/Usuario.php";
+require_once "../lib/Conection.php";
+require_once "../Model/Comentario.php";
+require_once "../DAO/ChamadoDAO.php";
+require_once "../DAO/UsuarioDAO.php";
+require_once "../Model/Chamado.php";
+require_once "../Model/Usuario.php";
 
 class ComentarioDAO 
 {

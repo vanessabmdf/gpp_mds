@@ -1,7 +1,7 @@
 <?php
 
-require_once "/../lib/Conection.php";
-require_once "/../NewModel/Tipo_Chamado.php";
+require_once "../lib/Conection.php";
+require_once "../Model/Tipo_Chamado.php";
 
 class Tipo_ChamadoDAO 
 {

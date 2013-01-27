@@ -1,12 +1,12 @@
 <?php
 
 //Inclusao de classes necessarias.
-require_once "/../lib/Conection.php";
-require_once "/../NewModel/Chamado.php";
-require_once "/../NewModel/Solucao.php";
-require_once "/../NewModel/Status.php";
-require_once "/../NewModel/Tipo_Chamado.php";
-require_once "/../NewModel/Usuario.php";
+require_once "../lib/Conection.php";
+require_once "../Model/Chamado.php";
+require_once "../Model/Solucao.php";
+require_once "/../Model/Status.php";
+require_once "/../Model/Tipo_Chamado.php";
+require_once "/../Model/Usuario.php";
 require_once "/../DAO/UsuarioDAO.php";
 require_once "/../DAO/SolucaoDAO.php";
 require_once "/../DAO/StatusDAO.php";

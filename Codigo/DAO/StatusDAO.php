@@ -1,7 +1,7 @@
 <?php
 
-require_once "/../lib/Conection.php";
-require_once "/../NewModel/Status.php";
+require_once "../lib/Conection.php";
+require_once "../Model/Status.php";
 
 class StatusDAO 
 {

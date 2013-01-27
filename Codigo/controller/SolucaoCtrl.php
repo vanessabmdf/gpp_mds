@@ -1,7 +1,7 @@
 <?php
 
-require_once "/../DAO/SolucaoDAO.php";
-require_once "/../NewModel/Solucao.php";
+require_once "../DAO/SolucaoDAO.php";
+require_once "../Model/Solucao.php";
 
 
 class SolucaoCtrl {
