@@ -18,13 +18,11 @@ class SolucaoDAO
     {
         try {
             
-                $query = "INSERT INTO solucao (cod, descricao, dt_solucao) 
-                          VALUES (:codigo, :descricao, :data)";
+                $query = "INSERT INTO solucao (descricao) 
+                          VALUES (:descricao)";
                 $stm = $this->con->prepare($query);
-                $stm->bindParam(":codigo", $solucao->getCodigo());
-                $stm->bindParam(":descricao", $solucao->getDescricao());
-                $stm->bindParam(":data", $solucao->getData());
-                $stm->execute();
+                $stm->bindValue(":descricao", $solucao->getDescricao());
+                return $stm->execute();
              
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -35,15 +33,13 @@ class SolucaoDAO
     {
         
         try {
-                $query = "UPDATE solucao SET cod=:codigo, descricao=:descricao, dt_solucao=:data
+                $query = "UPDATE solucao SET descricao=:descricao
                           WHERE cod = ".$codigo_solucao; 
                       
                 $stm = $this->con->prepare($query);            
-                $stm->bindParam(":codigo", $solucao->getCodigo());
-                $stm->bindParam(":descricao", $solucao->getDescricao());
-                $stm->bindParam(":data", $solucao->getData());
-                $stm->execute();
-                $this->con->commit();
+                $stm->bindValue(":descricao", $solucao->getDescricao());
+                return $stm->execute();
+                //$this->con->commit();
                 
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -53,19 +49,24 @@ class SolucaoDAO
     
     public function obterSolucao_Especifico($codigo_solucao) {
         try {
+            
+                
                 $stm = $this->con->query("SELECT * FROM solucao WHERE cod = ".$codigo_solucao);
                 
-                $solucao = new Solucao();
-                //Como so 1 registro é retornado, executa o foreach 1 vez somente.
-                foreach($stm as $row)
-                {
-                    $solucao->setCodigo($row['cod']);
-                    $solucao->setDescricao($row['descricao']);
-                    $solucao->setData($row['dt_solucao']);
+                if($stm == false)
+                    return $stm;
+                else{
+                 
+                    $solucao = new Solucao(null, null, null);
+                    //Como so 1 registro é retornado, executa o foreach 1 vez somente.
+                    foreach($stm as $row)
+                    {
+                        $solucao->setCodigo($row['cod']);
+                        $solucao->setDescricao($row['descricao']);
+                        $solucao->setData($row['dt_solucao']);
+                    }
+                    return $solucao;
                 }
-                
-                return $solucao;
-                
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
@@ -86,8 +87,11 @@ class SolucaoDAO
     
     public function deletarSolucao($codigo_solucao) {
         try {
-                $this->con->query("DELETE FROM solucao WHERE cod = ".$codigo_solucao);
-                
+                $resultado = $this->con->query("DELETE FROM solucao WHERE cod = ".$codigo_solucao);
+                if($resultado != false)
+                    return true;
+                else
+                    return $resultado;
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
