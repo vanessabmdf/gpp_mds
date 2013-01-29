@@ -1,0 +1,30 @@
+US(Inserir usuário) - Como usuário gostaria que pudesse me inserir no sistema, para que eu possa abrir uma ordem de serviço.
+
+Cenário 1: Usuário informa todos os dados.
+	
+	Obs: especificar como o usuario acessa esses dados(passo a passo).
+	Dado que todos os dados foram informados na pagina de cadastro de usuário
+	E o usuário clicar em salvar
+	E validados
+	Quando o usuário requisita a inserção de um usuário
+	Então verifique que o usuário foi inserido
+
+	-Explicitar como a validação dos dados é feita(CPF não pode ter menos de 11 dig, login nao pode ter menos de 5 caracteres, e etc...)
+
+Cenário 2: Usuário deixa um campo em branco.
+	Dado que um campo ficou em branco
+	Quando o usuário requisita a inserção
+	Então verifique que uma mensagem de erro é mostrada
+	E o usuário não é inserido
+
+US(Inserir chamado) - Como usuário quero ser capaz de inserir um chamado no sistema.
+
+Cenário 1: Usuário informa todos os dados necessários.
+
+	Dado que os dados necessários foram informados
+	E validados
+	Quando o usuário requisita a inserção de um chamado
+	Então verifique que o chamado foi inserido
+
+Cenário 2: Usuário deixa um campo em branco.
+	Dado que os da
