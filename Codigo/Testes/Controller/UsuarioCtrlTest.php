@@ -36,10 +36,7 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(true, $resultado, "A inserção do usuário no BD falhou!");
     }
 
-    /**
-     * @covers UsuarioCtrl::delUsuario
-     * @todo   Implement testDelUsuario().
-     */
+    
     
 
     /**
@@ -59,10 +56,7 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
         
     }
     
-    /**public function testDelUsuario() {
-        $resultado = $this->object->delUsuario("lucascouto");
-        $this->assertEquals(true, $resultado, "A remoção do usuário do BD falhou!");
-    }*/
+    
 
     /**
      * @covers UsuarioCtrl::alteraUsuario
@@ -92,6 +86,16 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
     public function testGetNumCols() {
        $resultado = $this->object->getNumCols();
        $this->assertEquals(6, $resultado, "A consulta retornou um número incorreto de campos");
+    }
+    
+    
+    /**
+     * @covers UsuarioCtrl::delUsuario
+     * @todo   Implement testDelUsuario().
+     */
+    public function testDelUsuario() {
+        $resultado = $this->object->delUsuario("lucascouto");
+        $this->assertEquals(true, $resultado, "A remoção do usuário do BD falhou!");
     }
 
 }

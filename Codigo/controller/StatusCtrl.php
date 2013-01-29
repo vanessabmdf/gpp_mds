@@ -1,7 +1,7 @@
 <?php
 
-require_once "../DAO/SolucaoDAO.php";
-require_once "../Model/Solucao.php";
+require_once "/../DAO/StatusDAO.php";
+require_once "/../Model/Status.php";
 
 
 class StatusCtrl {
@@ -15,14 +15,12 @@ class StatusCtrl {
    
     public function insStatus($codigo, $nome) {
         try {
-                $status = new Status();
-
-                $status->setCodigo($codigo);
-                $status->setNome($nome);
-         
+                $status = new Status($codigo, $nome);
+                
                 $DAO = new StatusDAO();
-                $DAO->inserirStatus($status);
+                $resultado = $DAO->inserirStatus($status);
                 $DAO->fechaConexão();
+                return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
@@ -56,15 +54,12 @@ class StatusCtrl {
        return $status;
    }
    
-   public function alteraStatus($codigo, $nome) {
+   public function alteraStatus($codigo, $nome, $codigo_busca) {
         try {     
-                $status = new Status();
-            
-                $status->setCodigo($codigo);
-                $status->setNome($nome);
-            
+                $status = new Status($codigo, $nome);
+           
                 $DAO = new StatusDAO();
-                $DAO->alterarStatus($status, $codigo);
+                $DAO->alterarStatus($status, $codigo_busca);
                 $DAO->fechaConexão();
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
