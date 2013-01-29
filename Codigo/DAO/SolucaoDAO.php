@@ -1,7 +1,7 @@
 <?php
 
-require_once "../lib/Conection.php";
-require_once "../Model/Solucao.php";
+require_once "/../lib/Conection.php";
+require_once "/../Model/Solucao.php";
 
 class SolucaoDAO 
 {
@@ -34,7 +34,7 @@ class SolucaoDAO
         
         try {
                 $query = "UPDATE solucao SET descricao=:descricao
-                          WHERE cod = ".$codigo_solucao; 
+                          WHERE cod = '$codigo_solucao'"; 
                       
                 $stm = $this->con->prepare($query);            
                 $stm->bindValue(":descricao", $solucao->getDescricao());
@@ -51,7 +51,7 @@ class SolucaoDAO
         try {
             
                 
-                $stm = $this->con->query("SELECT * FROM solucao WHERE cod = ".$codigo_solucao);
+                $stm = $this->con->query("SELECT * FROM solucao WHERE cod = '$codigo_solucao'");
                 
                 if($stm == false)
                     return $stm;
@@ -83,7 +83,7 @@ class SolucaoDAO
     
     public function deletarSolucao($codigo_solucao) {
         try {
-                $resultado = $this->con->query("DELETE FROM solucao WHERE cod = ".$codigo_solucao);
+                $resultado = $this->con->query("DELETE FROM solucao WHERE cod = '$codigo_solucao'");
                 if($resultado != false)
                     return true;
                 else

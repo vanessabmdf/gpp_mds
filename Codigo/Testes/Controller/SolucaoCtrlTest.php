@@ -60,6 +60,19 @@ class SolucaoCtrlTest extends PHPUnit_Framework_TestCase {
     }
     
     /**
+     * @covers SolucaoCtrl::listaSolucao
+     * @todo   Implement testListaSolucao().
+     */
+    public function testListaSolucao() {
+        $resultado = $this->object->listaSolucao();
+        foreach ($resultado as $row){
+            $this->assertArrayHasKey("cod", $row, "Não foi possível listar todas as soluções!");
+            $this->assertArrayHasKey("descricao", $row, "Não foi possível listar todas as soluções!");
+            $this->assertArrayHasKey("dt_solucao", $row, "Não foi possível listar todas as soluções!");
+        }
+    }
+    
+    /**
      * @covers SolucaoCtrl::delSolucao
      * @todo   Implement testDelSolucao().
      */
@@ -68,15 +81,6 @@ class SolucaoCtrlTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(true, $resultado, "A delecao da solucao falhou.");
     }
 
-    /**
-     * @covers SolucaoCtrl::listaSolucao
-     * @todo   Implement testListaSolucao().
-     *
-    public function testListaSolucao() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }*/
+    
     
 }
