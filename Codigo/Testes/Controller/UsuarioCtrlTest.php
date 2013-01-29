@@ -40,33 +40,37 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
      * @covers UsuarioCtrl::delUsuario
      * @todo   Implement testDelUsuario().
      */
-    public function testDelUsuario() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
+    
 
     /**
      * @covers UsuarioCtrl::listaUsuario
      * @todo   Implement testListaUsuario().
      */
     public function testListaUsuario() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $resultado = $this->object->listaUsuario();
+        foreach ($resultado as $row){
+            $this->assertArrayHasKey("login", $row, "A listagem de todos os usuários falhou!");
+            $this->assertArrayHasKey("senha", $row, "A listagem de todos os usuários falhou!");
+            $this->assertArrayHasKey("email", $row, "A listagem de todos os usuários falhou!");
+            $this->assertArrayHasKey("nome", $row, "A listagem de todos os usuários falhou!");
+            $this->assertArrayHasKey("matricula", $row, "A listagem de todos os usuários falhou!");
+            $this->assertArrayHasKey("perfil_cod", $row, "A listagem de todos os usuários falhou!");
+        }
+        
     }
+    
+    /**public function testDelUsuario() {
+        $resultado = $this->object->delUsuario("lucascouto");
+        $this->assertEquals(true, $resultado, "A remoção do usuário do BD falhou!");
+    }*/
 
     /**
      * @covers UsuarioCtrl::alteraUsuario
      * @todo   Implement testAlteraUsuario().
      */
     public function testAlteraUsuario() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $resultado = $this->object->alteraUsuario("joao", 12345, "joao@hotmail.com", "Joao Silva", 100112048, NULL, "lucascouto");
+        $this->assertEquals(true, $resultado, "A alteração nos dados do usuário falhou!");
     }
 
     /**
@@ -74,10 +78,11 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testObterUsuario_Especifico().
      */
     public function testObterUsuario_Especifico() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+       $resultado = $this->object->obterUsuario_Especifico("joao");
+       if($resultado!=false)
+           $resultado = true;
+       $this->assertEquals(true, $resultado, "A obtenção do usuaŕio falhou!");
+      
     }
 
     /**
@@ -85,10 +90,8 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testGetNumCols().
      */
     public function testGetNumCols() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+       $resultado = $this->object->getNumCols();
+       $this->assertEquals(6, $resultado, "A consulta retornou um número incorreto de campos");
     }
 
 }

@@ -1,7 +1,7 @@
 <?php
 
-require_once "../../lib/Conection.php";
-require_once "../../Model/Usuario.php";
+require_once "/../lib/Conection.php";
+require_once "/../Model/Usuario.php";
 
 class UsuarioDAO {
 
@@ -41,7 +41,7 @@ class UsuarioDAO {
         try {
             
             $query = "UPDATE usuario SET login = :login, senha = :senha, email = :email, nome = :nome, 
-                      matricula = :matricula, perfil_cod = :perfil_cod WHERE login = ".$login; 
+                      matricula = :matricula, perfil_cod = :perfil_cod WHERE login = '$login'"; 
                       
             $stm = $this->con->prepare($query);
             $stm->bindValue(":login", $usuario->getLogin());
@@ -59,7 +59,7 @@ class UsuarioDAO {
 
     public function obterUsuario_Especifico($login) {
         try {
-                $stm = $this->con->query("SELECT * FROM usuario WHERE login = ".$login);
+                $stm = $this->con->query("SELECT * FROM usuario WHERE login = '$login'");
                 
                 if($stm == false)
                     return $stm;
@@ -88,7 +88,7 @@ class UsuarioDAO {
     
     public function deletarUsuario($login) {
         try {
-                $resultado = $this->con->query("DELETE FROM usuario WHERE login = ".$login);
+                $resultado = $this->con->query("DELETE FROM usuario WHERE login = '$login'");
                 if($resultado != false)
                     return true;
                 else
@@ -102,7 +102,7 @@ class UsuarioDAO {
             $stm = $this->con->query("DESCRIBE usuario");
             $colcount = $stm->fetchAll( PDO::FETCH_ASSOC );
             echo sizeof($colcount);
-            return $colcount;
+            return sizeof($colcount);
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
