@@ -23,33 +23,76 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `solicitante`
+-- Estrutura da tabela `chamado`
 --
 
-CREATE TABLE IF NOT EXISTS `solicitante` (
-  `codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE IF NOT EXISTS `chamado` (
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo_cod` int(11) NOT NULL,
+  `usuario_login` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `descricao` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `data_inicial` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_final` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `patrimonio_equip` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `localizacao_equip` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `login_tecnico` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `solucao`
+--
+
+CREATE TABLE IF NOT EXISTS `solucao` (
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
+  `chamado_cod` int(11) NOT NULL,
+  `descricao` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `data_solucao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`cod`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `status`
+--
+
+CREATE TABLE IF NOT EXISTS `status` (
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_chamado`
+--
+
+CREATE TABLE IF NOT EXISTS `tipo_chamado` (
+  `cod` int(11) NOT NULL,
+  `descricao` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod`),
+  UNIQUE KEY `descricao` (`descricao`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `login` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `senha` varchar(8) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nome` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `matricula` int(11) NOT NULL,
-  `data_nascimento` date NOT NULL,
-  `nome_usuario` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `senha_usuario` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
-
---
--- Extraindo dados da tabela `solicitante`
---
-
-INSERT INTO `solicitante` (`codigo`, `nome`, `email`, `matricula`, `data_nascimento`, `nome_usuario`, `senha_usuario`) VALUES
-(2, 'lui111zff.mat33os@gmail.com', 'luizff.matos@gmail.com', 45355433, '1212-12-12', '123456', '1212121212'),
-(5, '1111111111', '1111111@11.com', 2147483647, '0123-01-01', '134434', '2311231231'),
-(6, 'Luiz11', '11111@lskjd.c9ojn', 23230923, '0000-00-00', '029302390', '1092303923'),
-(7, '11111111111', '11111@sddsd.com', 2938923, '0000-00-00', '20932093', '092309230932'),
-(8, '11111', '111111@sdds.com', 23232323, '0000-00-00', '232323', '323232323'),
-(9, '121212', '121221@2323.com', 82738237, '0000-00-00', '82738237832', '872873897398131231'),
-(10, '111111111', '111111111@sdsd.com', 2930293, '0120-12-21', '2300023032', '0320230203'),
-(11, 'teste123', 'teste@mail.com', 100131192, '1993-10-12', 'vanessa', 'hunhun');
+  `perfil_cod` int(11) NOT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
