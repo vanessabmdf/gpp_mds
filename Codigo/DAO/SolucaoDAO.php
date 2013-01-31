@@ -59,7 +59,7 @@ class SolucaoDAO
                     //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                     foreach($stm as $row)
                     {
-                        $solucao = new Solucao($row['cod'], $row['descricao'], $row['dt_solucao']);
+                        $solucao = new Solucao($row['cod'], $row['descricao'], $row['data_solucao']);
                     }
                     return $solucao;
                 }
