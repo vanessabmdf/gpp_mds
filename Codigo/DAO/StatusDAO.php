@@ -95,7 +95,7 @@ class StatusDAO
     //Função de fechar a conexão aberta no DAO
     public function fechaConexão() {
         try {
-            return $this->con = null;
+            $this->con = null;
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
