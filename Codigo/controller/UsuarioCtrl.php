@@ -11,7 +11,7 @@ class UsuarioCtrl {
    
     public function insUsuario($login, $senha, $email, $nome, $matricula, $perfil_cod) {
         try {
-                $usuario = new Usuario($perfil_cod, $login, $senha, $nome, $email, $matricula);
+                $usuario = new Usuario($perfil_cod ,$login, $senha, $nome, $email, $matricula);
 
                 $DAO = new UsuarioDAO();
                 $resultado = $DAO->inserirUsuario($usuario);

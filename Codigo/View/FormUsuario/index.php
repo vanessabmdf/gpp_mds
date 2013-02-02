@@ -71,7 +71,7 @@
                     rules: {
                         nomeUsuario: {nome: 5},
                         emailUsuario: {email: true},
-                        dtNascUsuario: {required: true, date: true},
+                        //dtNascUsuario: {required: true, date: true},
                         matriculaUsuario: {nome: 4},
                         nomeUsuario: {nome: 6},
                         senhaUsuario: {nome: 6}
@@ -80,7 +80,7 @@
                     messages: {
                         nomeUsuario: { nome: "&nbsp;Mínimo de 5 caracteres!"}, 
                         emailUsuario: { email: '&nbsp;E-mail inválido!'},
-                        dtNascUsuario: { required: '&nbsp;Preencha uma data válida!', date: '&nbsp;Preencha uma data válida!'},
+                        //dtNascUsuario: { required: '&nbsp;Preencha uma data válida!', date: '&nbsp;Preencha uma data válida!'},
                         matriculaUsuario: { nome: '&nbsp;Mínimo de 4 caracteres!'},
                         nomeUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"},
                         senhaUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"}
@@ -145,10 +145,10 @@
                                         Matricula:
                                         <input class="matriculaUsuario" id="matriculaUsuario" type="text" name="matriculaUsuario" size="25" />  
                                     </label> 
-                                    <label class="dtNascUsuario" for="dtNascUsuario">
+                                    <!--<label class="dtNascUsuario" for="dtNascUsuario">
                                         Data de Nascimento:
                                         <input class="dtNascUsuario" id="dtNascUsuario" type="text" name="dtNascUsuario" size="25" /> 
-                                    </label>  
+                                    </label>-->  
                                 </fieldset>
                                 <fieldset>
                                     <label class="loginUsuario" for="loginUsuario">
@@ -160,6 +160,7 @@
                                         <input class="senhaUsuario" id="senhaUsuario" type="password" name="senhaUsuario" size="25" />  
                                     </label>  
                                 </fieldset>
+                                <input type="hidden" id="perfilUsuario" type="text" name="perfilUsuario" value="1" size="25"/>
                                 <input type="button" id="botao" value="Salvar" onClick=valida_form() class="botoesInput" />
                                 <input type="button" id="limpar" value="Limpar" onClick="limpa_form();limparValidacao();" class="botoesInput" />
                                 <input type="hidden" id="acao" value="" />

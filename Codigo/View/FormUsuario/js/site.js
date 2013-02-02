@@ -10,6 +10,7 @@ function load_grid(){
             imprime(data);
         }
     });
+    $.unblockUI(); 
     $("#nomeUsuario").focus();    
     limpa_form();
 }
@@ -58,7 +59,7 @@ function limpa_form(){
         $("#limpar").val("Limpar");
         $("#nomeUsuario").val("");
         $("#emailUsuario").val("");
-        $("#dtNascUsuario").val("");
+        //$("#dtNascUsuario").val("");
         $("#matriculaUsuario").val("");
         $("#loginUsuario").val("");
         $("#senhaUsuario").val("");
@@ -66,7 +67,7 @@ function limpa_form(){
         $("#botao").show();
         $("#nomeUsuario").attr("disabled", false);
         $("#emailUsuario").attr("disabled", false);
-        $("#dtNascUsuario").attr("disabled", false);
+        //$("#dtNascUsuario").attr("disabled", false);
         $("#matriculaUsuario").attr("disabled", false);
         $("#loginUsuario").attr("disabled", false);
         $("#senhaUsuario").attr("disabled", false);
@@ -91,10 +92,11 @@ function enviar(){
                             data: {
                                 nomeUsuario: $("#nomeUsuario").val(),
                                 emailUsuario: $("#emailUsuario").val(),
-                                dtNascUsuario: $("#dtNascUsuario").val(),
+                                //dtNascUsuario: $("#dtNascUsuario").val(),
                                 matriculaUsuario: $("#matriculaUsuario").val(),
                                 loginUsuario: $("#loginUsuario").val(),
-                                senhaUsuario: $("#senhaUsuario").val()														
+                                senhaUsuario: $("#senhaUsuario").val(),
+                                perfilUsuario: $("#perfilUsuario").val()
                             },
                             success: function (data) {
                                 limparValidacao();
@@ -127,7 +129,7 @@ function enviar(){
                                 id: array[0],
                                 nomeUsuario: $("#nomeUsuario").val(),
                                 emailUsuario: $("#emailUsuario").val(),
-                                dtNascUsuario: $("#dtNascUsuario").val(),
+                                //dtNascUsuario: $("#dtNascUsuario").val(),
                                 matriculaUsuario: $("#matriculaUsuario").val(),
                                 loginUsuario: $("#loginUsuario").val(),
                                 senhaUsuario: $("#senhaUsuario").val()
@@ -425,11 +427,51 @@ function valida_form(){
                 }
             }
         };
+        
         $.prompt(SenhaMenor);
         return false;
     }
-
-    if($("#dtNascUsuario").val().length!=0 && $("#dtNascUsuario").val().length<10){
+    
+    if($("#senhaUsuario").val().length > 8){
+        var SenhaMaior = {
+            SenhaMaiorrMsg: {
+                html:'Erro! Senha maior do que 8 digitos!',
+                buttons: {Ok: 0},
+                focus: 1,
+                submit:function(v,m,f){
+                    if(v==0){
+                        $("#senhaUsuario").focus();
+                        $.prompt.close()
+                    }
+                    return false;
+                }
+            }
+        };
+        
+        $.prompt(SenhaMaior);
+        return false;
+    }
+    
+   if($("#matriculaUsuario").val().length > 11){
+        var MatriculaErro = {
+            MatriculaErroMsg: {
+                html:'Erro! Informe uma matricula de ate 11 digitos.',
+                buttons: {Ok: 0},
+                focus: 1,
+                submit:function(v,m,f){
+                    if(v==0){
+                        $("#matriculaUsuario").focus();
+                        $.prompt.close()
+                    }
+                    return false;
+                }
+            }
+        };
+        
+        $.prompt(MatriculaErro);
+        return false;
+    }
+    /*if($("#dtNascUsuario").val().length!=0 && $("#dtNascUsuario").val().length<10){
         var dtNascInvalido = {
             errodtNascInvalido: {
                 html:'Data de nascimento inválida! Preencha um data correta!',
@@ -464,7 +506,7 @@ function valida_form(){
         };
         $.prompt(dtNascRange);
         return false;
-    }  
+    }*/  
     
     
 
