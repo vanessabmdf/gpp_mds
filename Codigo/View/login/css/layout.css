@@ -1,0 +1,124 @@
+/*REGRAS GENÉRICAS APLICADAS A TODO O CORPO DA PÁGINA*/
+body{
+    background:#FFFFFF;	
+    text-align: center;
+    margin: 1px;
+    font-family: arial, helvetica, sans-serif;
+    font-size:12px;
+}
+
+/*REGRA APLICADA A CAIXA DE LOGIN*/
+#boxlogin{
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;   
+    overflow: hidden;
+    background-color: #F2F2F2;  
+    border: 1px solid #D0D0D0;
+    padding: 20px 0 10px 10px;
+    margin-bottom: 50px;
+    height: 525px;
+    width: 320px;
+}
+/*DEFINE O TOPO DA PÁGINA*/
+#topo{
+    width:100%;
+    height:115px;
+    background:#FFFFFF;	
+}
+
+/*DEFINE A CAIXA PRINCIPAL DA PÁGINA*/
+#box{
+    height:650px;
+    width:75%;        
+    min-width:982px;
+    text-align:center;
+    background:#F2F2F2;
+    border: 1px solid #D0D0D0;
+    margin: 0 auto;  
+    margin-bottom: 7px;
+}
+
+/*DEFINE A CAIXA INTERNA À CAIXA PRINCIPAL*/
+#boxconteudo{		
+    width: 95%;
+    height: 620px;
+    margin-left: 2.4%;
+    margin-top:15px;
+    background: #FFF;
+    border: 1px solid #D0D0D0;	
+}
+
+/*DEFINE O LADO DIREITO DA CAIXA INTERNA*/
+#paineldireito{
+    float:right;
+    margin-right:5%;
+}
+
+/*DEFINE O LADO ESQUERDO DA CAIXA INTERNA*/
+#painelesquerdo{
+    float:left;
+    margin-left:5%;
+    margin-top: 0.3%;
+    width: 40%;
+    height: 100%;
+}
+
+h1.painelesquerdo{
+    width: 100%;
+}
+
+#comofunciona{
+    margin-top:80px;
+    font-family: arial;
+    font-size: 14px;
+
+}
+
+/*REGRA APLICADA AOS CABEÇALHOS PRINCIPAIS DA PÁGINA*/
+h1{
+    font-size:large;
+    font-family: arial, helvetica, sans-serif;
+    color: #1353B5;
+    border-bottom: 1px solid #6CB3F5;
+    display:block;
+    margin:10px 0 20px 0px;
+    width: 331px;
+}
+
+/*REGRAS APLICADAS AOS LINKS DA PÁGINA*/
+a{
+    color:#15c;
+    text-decoration: none;
+}
+
+a:active{
+    color: #d14836;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/*REGRA APLICADO AO FORMULARIO DE CADASTRO*/
+#cadastro{
+    margin-left: 15%;
+    width: 100%;
+    
+}
+
+form.cadastro{
+    margin-left: 20%;
+}
+
+.itemDescricao{
+    margin-left: 30%; 
+    margin-right: 2%; 
+    color: gray;
+    text-align: justify;
+}
+
+.imagemDescricao{
+    width: 15%; 
+    float: left; 
+    margin-top: 5%;
+}
