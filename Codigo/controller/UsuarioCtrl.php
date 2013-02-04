@@ -15,7 +15,7 @@ class UsuarioCtrl {
 
                 $DAO = new UsuarioDAO();
                 $resultado = $DAO->inserirUsuario($usuario);
-                $DAO->fechaConexão();
+                $DAO->fechaConexao();
                 return $resultado;
             } catch (Exception $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -26,7 +26,7 @@ class UsuarioCtrl {
         try {
                 $DAO = new UsuarioDAO();
                 $resultado = $DAO->deletarUsuario($login);
-                $DAO->fechaConexão();
+                $DAO->fechaConexao();
                 return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -37,7 +37,7 @@ class UsuarioCtrl {
         try {
                 $DAO = new UsuarioDAO();
                 $lista = $DAO->obterUsuario();
-                $DAO->fechaConexão();
+                $DAO->fechaConexao();
                 return $lista;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -49,7 +49,7 @@ class UsuarioCtrl {
             
                 $DAO = new UsuarioDAO();
                 $resultado = $DAO->alterarUsuario($usuario, $login_busca);
-                $DAO->fechaConexão();
+                $DAO->fechaConexao();
                 return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -60,7 +60,7 @@ class UsuarioCtrl {
     {
        $DAO = new UsuarioDAO();
        $usuario = $DAO->obterUsuario_Especifico($login);
-       $DAO->fechaConexão();
+       $DAO->fechaConexao();
        return $usuario;
     }
     
@@ -68,12 +68,23 @@ class UsuarioCtrl {
         try {
             $DAO = new UsuarioDAO();
             $col = $DAO->numColUsuario();
-            $DAO->fechaConexão();
+            $DAO->fechaConexao();
             return $col;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
+    
+    public function validaLogin($login, $senha){
+        try{
+            $DAO = new UsuarioDAO();
+            $linhas = $DAO->valida_login($login, $senha);
+            $DAO->fechaConexao();
+            return $linhas;
+            
+        }  catch (Exception $erro){
+            return "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
 }
-
 ?>

@@ -107,6 +107,22 @@ class UsuarioDAO {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
+    
+    //funcao para validar login
+    public function valida_login($login, $senha) {
+        try{
+            $linhas=0;
+            $stm = $this->con->query("SELECT * FROM usuario WHERE login='$login' AND senha='$senha'");
+            foreach ($stm as $row){
+                $linhas++;
+           }
+           return $linhas;
+        }  catch (PDOException $erro){
+            return "Ocorreu um erro na operação, informe o erro ao CPD: ". $erro->getMessage();
+            
+        }
+    }
+    
     //Função de fechar a conexão aberta no DAO
     public function fechaConexao() {
         try {

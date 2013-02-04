@@ -66,7 +66,7 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testAlteraUsuario().
      */
     public function testAlteraUsuario() {
-        $resultado = $this->object->alteraUsuario("joao", 12345, "joao@hotmail.com", "Joao Silva", 100112048, 1, "lucascouto");
+        $resultado = $this->object->alteraUsuario("joao", "2345", "joao@hotmail.com", "Joao Silva", 100112048, 1, "lucascouto");
         $this->assertEquals(true, $resultado, "A alteração nos dados do usuário falhou!");
     }
 
@@ -91,13 +91,21 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
        $this->assertEquals(6, $resultado, "A consulta retornou um número incorreto de campos");
     }
     
+    /**
+     * @covers UsuarioCtrl::validaLogin
+     * @todo   Implement testValidaLogin().
+     */
+    public function testValidaLogin(){
+        $resultado = $this->object->validaLogin("joao", "2345");
+        $this->assertEquals(1, $resultado, "Nao foi possivel validar o login");
+    }
     
     /**
      * @covers UsuarioCtrl::delUsuario
      * @todo   Implement testDelUsuario().
      */
     public function testDelUsuario() {
-        $resultado = $this->object->delUsuario("lucascouto");
+        $resultado = $this->object->delUsuario("joao");
         $this->assertEquals(true, $resultado, "A remoção do usuário do BD falhou!");
     }
 

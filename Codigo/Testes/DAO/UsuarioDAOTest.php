@@ -46,7 +46,7 @@ class UsuarioDAOTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testAlterarUsuario().
      */
     public function testAlterarUsuario() {
-        $usuario = new Usuario(1, "lucascouto",23456, "Lucas Couto", "loc.unb@gmail.com", 100112048);
+        $usuario = new Usuario(1, "lucascouto","23456", "Lucas Couto", "loc.unb@gmail.com", 100112048);
         $resultado = $this->object->alterarUsuario($usuario, "lucascouto");
         $this->assertTrue(true, $resultado, "Impossivel alterar usuario! Talvez esse registro nao  existe!");
     }
@@ -74,6 +74,15 @@ class UsuarioDAOTest extends PHPUnit_Framework_TestCase {
             $this->assertArrayHasKey("matricula", $row, "A listagem de todos os usuários falhou!");
             $this->assertArrayHasKey("perfil_cod", $row, "A listagem de todos os usuários falhou!");
         }
+    }
+    
+    /**
+     * @covers UsuarioDAO::valida_login
+     * @todo   Implement testValida_Login().
+     */
+    public function testValida_Login(){
+        $resultado = $this->object->valida_login("lucascouto", "23456");
+        $this->assertEquals(1, $resultado, "Nao foi possivel validar o login!");
     }
     
      /**
