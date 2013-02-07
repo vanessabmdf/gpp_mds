@@ -29,8 +29,9 @@ class StatusCtrl {
     public function delStatus($codigo_status) {
         try {
                 $DAO = new StatusDAO();
-                $DAO->deletarStatus($codigo_status);
+                $resultado = $DAO->deletarStatus($codigo_status);
                 $DAO->fechaConexão();
+                return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }

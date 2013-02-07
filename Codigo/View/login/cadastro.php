@@ -1,7 +1,7 @@
 <div id="cadastro">
     <h1 class="painelesquerdo">Cadastro</h1>
 
-    <form method="POST" action="#" class="cadastro">
+    <form method="POST" action="../../Codigo/View/login/novaconta.php" class="cadastro">
         <label for="nome" class="cadastro">Nome</label><br />
         <input type="text" name="nome" size="28" class="campo" /><br />
         <label for="email" class="cadastro">E-mail</label><br />
