@@ -60,8 +60,9 @@ class StatusCtrl {
                 $status = new Status($codigo, $nome);
            
                 $DAO = new StatusDAO();
-                $DAO->alterarStatus($status, $codigo_busca);
+                $resultado = $DAO->alterarStatus($status, $codigo_busca);
                 $DAO->fechaConexão();
+                return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
