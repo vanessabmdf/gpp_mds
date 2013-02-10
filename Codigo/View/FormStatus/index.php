@@ -1,16 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<?
-//pegar a url atual com variaveis de ambiente
-$server = $_SERVER['SERVER_NAME'];
-$endereco = $_SERVER ['REQUEST_URI'];
-//echo "http://" . $server . $endereco;
-?>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>HelpDesk - Faculdade UnB Gama</title>
         <link href="../css/layout.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../css/superfish.css" media="screen" />
@@ -28,10 +20,95 @@ $endereco = $_SERVER ['REQUEST_URI'];
         <script src="../js/jquery/jquery.blockUI.js"></script>
         <script src="../js/hoverIntent.js"></script>
         <script src="../js/superfish.js"></script>
-
+        
+        <script src="../js/dataHora.js"></script>
         <script src="js/site.js"></script>
 
-        <noscript>Habilite o Javascript para visualizar esta página corretamente...</noscript>
+ <!--       <script type="text/javascript">
+            var validacao;    
+            document.onkeydown = function(e){
+                var keychar;
+        
+                // Internet Explorer
+                try {
+                    keychar = String.fromCharCode(event.keyCode);
+                    e = event;
+                }
+        
+                // Firefox, Opera, Chrome, etc...
+                catch(err) {
+                    keychar = String.fromCharCode(e.keyCode);
+                }
+        
+                if (e.ctrlKey && keychar == '1') {
+                    valida_form();
+                    return false;
+                }
+                if (e.ctrlKey && keychar == '2') {
+                    $("#nomeSolicitante").addClass('marcado');
+                    $("#emailSolicitante").removeClass('marcado');
+                    $("#dtNascSolicitante").removeClass('marcado');
+                    $("#matriculaSolicitante").removeClass('marcado');
+                    $("#nomeUsuario").removeClass('marcado'); 
+                    $("#senhaUsuario").removeClass('marcado');
+                    limpa_form();
+                    return false;
+                }
+        
+            }
+    
+            $(document).ready(function() {
+                $('input[type=text], textarea, input[type=password]').focus(function() {
+                    $(this).addClass('marcado');
+                });
+                $('input[type=text], textarea, input[type=password]').blur(function() {
+                    $(this).removeClass('marcado');
+                });
+            }); 
+    
+            $(document).ready(function() {
+                validacao = $("#formSolicitante").validate({
+                    rules: {
+                        nomeSolicitante: {nome: 5},
+                        emailSolicitante: {email: true},
+                        dtNascSolicitante: {required: true, date: true},
+                        matriculaSolicitante: {nome: 4},
+                        nomeUsuario: {nome: 6},
+                        senhaUsuario: {nome: 6}
+                
+                    },
+                    messages: {
+                        nomeSolicitante: { nome: "&nbsp;Mínimo de 5 caracteres!"}, 
+                        emailSolicitante: { email: '&nbsp;E-mail inválido!'},
+                        dtNascSolicitante: { required: '&nbsp;Preencha uma data válida!', date: '&nbsp;Preencha uma data válida!'},
+                        matriculaSolicitante: { nome: '&nbsp;Mínimo de 4 caracteres!'},
+                        nomeUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"},
+                        senhaUsuario: { nome: "&nbsp;Mínimo de 6 caracteres!"}
+                    },
+                    submitHandler:function(form) {
+                        alert('ok');
+                    }
+                });
+                $("#dtNascSolicitante").mask("9?9/99/9999");
+	
+            });
+       
+            function limparValidacao()
+            {
+                validacao.resetForm();
+            }  
+    
+    
+        </script>        
+        
+        
+        <script>
+            jQuery(function(){
+                jQuery('ul.sf-menu').superfish();
+            });
+
+         </script>-->
+        <noscript>Habilite o Javascript para visualizar esta p�gina corretamente...</noscript>
     </head>
     <body onload="dataHora();carregando()">
         <!--div's do cabecalho-->
@@ -50,18 +127,17 @@ $endereco = $_SERVER ['REQUEST_URI'];
                     require_once ("../menulateral.php");
                     ?>
                     <div id="boxconteudo">
-                        <h1>Cadastro de Status</h1>
+                        <h1>Cadastro de Usuário</h1>
                         <div id="boxcadastro">                            	
-                            <form id="formSTATUS" action="#" method="POST" class="form">
-                                
+                            <form id="formStatus" action="#" method="POST" class="form">
                                 <fieldset>
-                                    <label>
+                                    <label class="nomeSolicitante" for="nomeSolicitante">
                                         Descrição:
-                                        <input class="descricao" id="descricao" type="text" name="descricao" size="25"/>
-                                    </label>   
+                                        <input class="descricao" id="descricao" type="text" name="descricao" size="25" />              
+                                    </label>                                                                      
                                 </fieldset>
-                                <input type="button" id="botao" value="Salvar" onClick="enviar();" class="botoesInput" />
-                                <input type="button" id="limpar" value="Limpar" onClick="limpa_form();limparValidacao();" class="botoesInput" />
+                                <input type="button" id="botao" value="Salvar" onClick=enviar() class="botoesInput" />
+                                <input type="button" id="limpar" value="Limpar" onClick="limpa_form();" class="botoesInput" />
                                 <input type="hidden" id="acao" value="" />
                             </form>
                         </div>
