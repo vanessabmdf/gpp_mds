@@ -28,7 +28,7 @@ body{
 
 /*DEFINE A CAIXA PRINCIPAL DA PÁGINA*/
 #box{
-    height:650px;
+    height:700px;
     width:75%;        
     min-width:982px;
     text-align:center;
@@ -41,7 +41,7 @@ body{
 /*DEFINE A CAIXA INTERNA À CAIXA PRINCIPAL*/
 #boxconteudo{		
     width: 95%;
-    height: 620px;
+    height: 670px;
     margin-left: 2.4%;
     margin-top:15px;
     background: #FFF;
@@ -67,11 +67,14 @@ h1.painelesquerdo{
     width: 100%;
 }
 
+h1.paineldireito{
+    margin-top: 12.5px;
+}
+
 #comofunciona{
     margin-top:80px;
     font-family: arial;
     font-size: 14px;
-
 }
 
 /*REGRA APLICADA AOS CABEÇALHOS PRINCIPAIS DA PÁGINA*/
@@ -112,7 +115,7 @@ form.cadastro{
 
 .itemDescricao{
     margin-left: 30%; 
-    margin-right: 2%; 
+    margin-right: 8%; 
     color: gray;
     text-align: justify;
 }

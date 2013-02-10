@@ -86,5 +86,17 @@ class UsuarioCtrl {
             return "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
+    
+    public function validaLoginCadastro($login){
+        try{
+            $DAO = new UsuarioDAO();
+            $linhas = $DAO->validaLoginCadastro($login);
+            $DAO->fechaConexao();
+            return $linhas;
+        } catch(Exception $erro){
+            return "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+        
+    }
 }
 ?>

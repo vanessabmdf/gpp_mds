@@ -1,23 +1,29 @@
-<div id="cadastro">
-    <h1 class="painelesquerdo">Cadastro</h1>
+<?php
 
-    <form method="POST" action="../../Codigo/View/login/novaconta.php" class="cadastro">
-        <label for="nome" class="cadastro">Nome</label><br />
-        <input type="text" name="nome" size="28" class="campo" /><br />
-        <label for="email" class="cadastro">E-mail</label><br />
-        <input type="text" name="email" size="28" class="campo" /><br />
-        <label for="emailConfirma" class="cadastro">Confirma e-mail</label><br />
-        <input type="text" name="emailConfirma" size="28" class="campo" /><br />
-        <label for="nome" class="cadastro">Matrícula</label><br />
-        <input type="text" name="matricula" size="28" class="campo" /><br />
-        <label for="nomeCadastro" class="cadastro">Nome de usuário</label><br />
-        <input type="text" name="loginUsuario" size="28" class="campo" /><br />
-        <label for="senhaCadastro" class="cadastro">Senha</label><br />
-        <input type="password" name="senhaCadastro" size="28" class="campo" /><br />
-        <label for="senhaCadastroConfirma" class="cadastro">Confirma senha</label><br />
-        <input type="password" name="senhaCadastroConfirma" size="28" class="campo" /><br /><br />
+include '../../controller/UsuarioCtrl.php';
+ 
+    $nome = $_POST['nomeUsuario'];
+    $email = $_POST['emailUsuario'];
+    $matricula = $_POST['matriculaUsuario'];
+    $login = $_POST['loginUsuario'];
+    $senha = $_POST['senhaUsuario'];
+    
+    $novamatricula = explode("/", $matricula);
+    $array= array($novamatricula[0], $novamatricula[1]);
+    $matriculanew = implode('', $array);
+    $matriculanova = (int)$matriculanew;
+    
 
-        <input type="button" name="cancelarCadastro" value="CANCELAR" id ="cancela-cadastro" class="botaoCadastro botaoCadastro-green"/>
-        <input type="submit" name="cadastrar" value="CADASTRAR" class="botaoCadastro botaoCadastro-blue"/>
-    </form>
-</div>
+    $usuario = new UsuarioCtrl();
+
+    $registros = $usuario->validaLoginCadastro($login);
+   
+    if($registros==1)
+        echo "ERROR!";
+    else 
+        $usuario->insUsuario($login, $senha, $email, $nome, $matriculanova, 1);
+    
+    
+    header("Location: ../index.php");
+    
+?>

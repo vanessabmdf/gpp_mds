@@ -67,7 +67,7 @@ class UsuarioDAO {
                     //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                     foreach($stm as $row)
                     {
-                        $usuario = new Usuario($row['perfil_cod'], $row['login'], $row['senha'], $row['nome'], $row['email'], $row['matricula']);               
+                        $usuario = new Usuario($row['perfil_cod'], $row['login'], $row['senha'], $row['nome'], $row['email'], $row['matricula']);
                     }
                     return $usuario;
                 }
@@ -120,6 +120,19 @@ class UsuarioDAO {
         }  catch (PDOException $erro){
             return "Ocorreu um erro na operação, informe o erro ao CPD: ". $erro->getMessage();
             
+        }
+    }
+    
+    public function validaLoginCadastro ($login){
+        try{
+            $linhas=0;
+            $stm = $this->con->query("SELECT * FROM usuario WHERE login='$login'");
+            foreach($stm as $row){
+                $linhas++;
+            }
+            return $linhas; 
+        }catch(PDOException $erro){
+            return "Ocorreu um erro na operação, informe o erro ao CPD: ". $erro->getMessage();
         }
     }
     
