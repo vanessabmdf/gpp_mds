@@ -29,9 +29,8 @@ class StatusCtrl {
     public function delStatus($codigo_status) {
         try {
                 $DAO = new StatusDAO();
-                $resultado = $DAO->deletarStatus($codigo_status);
+                $DAO->deletarStatus($codigo_status);
                 $DAO->fechaConexão();
-                return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
@@ -60,13 +59,12 @@ class StatusCtrl {
                 $status = new Status($codigo, $nome);
            
                 $DAO = new StatusDAO();
-                $resultado = $DAO->alterarStatus($status, $codigo_busca);
-                $DAO->fechaConexão();
-                return $resultado;
-        } catch (Exception $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+                    $DAO->alterarStatus($status, $codigo_busca);
+                    $DAO->fechaConexão();
+            } catch (Exception $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
         }
     }
-}
 
-?>
+    ?>

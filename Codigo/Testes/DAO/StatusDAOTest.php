@@ -34,36 +34,24 @@ class StatusDAOTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testInserirStatus().
      */
     public function testInserirStatus() {
-        $status = new Status(1, "Em Aberto");
+        $status = new Status(NULL, "Em Aberto");
         $resultado = $this->object->inserirStatus($status);
         $this->assertTrue(true, $resultado, "Nao foi possivel inserir o status no BD!");
     }
-
-    /**
-     * @covers StatusDAO::alterarStatus
-     * @todo   Implement testAlterarStatus().
-     */
+    
     public function testAlterarStatus() {
-       $status = new Status(2, "Concluido");
+       $status = new Status(NULL, "Concluido");
        $resultado = $this->object->alterarStatus($status, 1);
        $this->assertTrue(true, $resultado, "Nao foi possivel alterar O status!");
     }
-
-    /**
-     * @covers StatusDAO::obterStatus_Especifico
-     * @todo   Implement testObterStatus_Especifico().
-     */
+     
     public function testObterStatus_Especifico() {
-        $resultado = $this->object->obterStatus_Especifico(2);
+        $resultado = $this->object->obterStatus_Especifico(1);
         if ($resultado!=false)
             $resultado = true;
         $this->assertTrue(true, $resultado, "Nao foi possivel obter o status especifico!");
     }
-
-    /**
-     * @covers StatusDAO::obterStatus_Geral
-     * @todo   Implement testObterStatus_Geral().
-     */
+     
     public function testObterStatus_Geral() {
        $resultado = $this->object->obterStatus_Geral();
        foreach($resultado as $row){
@@ -71,20 +59,12 @@ class StatusDAOTest extends PHPUnit_Framework_TestCase {
             $this->assertArrayHasKey("descricao", $row, "Nao foi possivel retornar todos os campos!");
         }
     }
-
-    /**
-     * @covers StatusDAO::deletarStatus
-     * @todo   Implement testDeletarStatus().
-     */
-    public function testDeletarStatus() {
+    
+    /*public function testDeletarStatus() {
       $resultado = $this->object->deletarStatus(1);
        $this->assertTrue(true, $resultado, "Impossivel deletar status!");
     }
-
-    /**
-     * @covers StatusDAO::fechaConexão
-     * @todo   Implement testFechaConexão().
-     */
+*/
     public function testFechaConexão() {
         $resultado = $this->object->fechaConexão();
        $this->assertEquals(NULL, $resultado, "Impossivel fechar conexao!");
