@@ -1,9 +1,9 @@
 <?php
 
-require_once("../../controller/UsuarioCtrl.php");
+require_once("../../controller/StatusCtrl.php");
 
 $id=$_POST["id"];
 	
-$solicitante = new UsuarioCtrl();
-$solicitante->delUsuario($id);
+$solicitante = new StatusCtrl();
+$solicitante->delStatus($id);
 ?>

@@ -17,8 +17,9 @@ $status = new StatusCtrl();
 	
 	
 	//Titulo dos campos da tabela
-	$camposTitulo = array("codigo",
-            "descricao"
+	$camposTitulo = array("cod",
+            "Codigo",
+            "Descricao"
 	);
 
 	$xml.="<dados>";
@@ -35,7 +36,8 @@ $status = new StatusCtrl();
 	foreach($status->listaStatus() as $sol){
 		$xml.="<registro>";	
                         $xml.="<item>".$sol["cod"]."</item>";
-			$xml.="<item>".$sol["descricao"]."</item>";                
+			$xml.="<item>".$sol["cod"]."</item>"; 
+                        $xml.="<item>".$sol["descricao"]."</item>";
 		$xml.="</registro>";		
 	}
 	
