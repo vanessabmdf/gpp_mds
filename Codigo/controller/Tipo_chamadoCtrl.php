@@ -5,7 +5,7 @@
     
     class Tipo_chamadoCtrl{
         
-        public function insChamado($codigo,$descricao){
+        public function insTipo_Chamado($codigo,$descricao){
             try {
                 $tipo_chamado = new Tipo_Chamado($codigo, $descricao);
                 
