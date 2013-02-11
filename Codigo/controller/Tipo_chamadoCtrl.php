@@ -1,7 +1,7 @@
 <?php
 
     require_once "/../DAO/Tipo_ChamadoDAO.php";
-    require_once '/../Model/Tipo_Chamado.php';
+    require_once "/../Model/Tipo_Chamado.php";
     
     class Tipo_chamadoCtrl{
         
