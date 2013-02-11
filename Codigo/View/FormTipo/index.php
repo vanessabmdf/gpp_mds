@@ -127,11 +127,11 @@
                     require_once ("../menulateral.php");
                     ?>
                     <div id="boxconteudo">
-                        <h1>Cadastro de Status</h1>
+                        <h1>Cadastro de Tipo de chamado</h1>
                         <div id="boxcadastro">                            	
-                            <form id="formStatus" action="#" method="POST" class="form">
+                            <form id="formTipo" action="#" method="POST" class="form">
                                 <fieldset>
-                                    <label class="nomeStatus" for="nomeStatus">
+                                    <label class="nomeTipo" for="nomeTipo">
                                         Descrição:
                                         <input class="descricao" id="descricao" type="text" name="descricao" size="25" />              
                                     </label>                                                                      

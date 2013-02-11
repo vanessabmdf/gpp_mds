@@ -1,7 +1,7 @@
 <?php
 
-require_once "../lib/Conection.php";
-require_once "../Model/Tipo_Chamado.php";
+require_once "/../lib/Conection.php";
+require_once "/../Model/Tipo_Chamado.php";
 
 class Tipo_ChamadoDAO 
 {
@@ -18,85 +18,88 @@ class Tipo_ChamadoDAO
     {
         try {
             
-                $query = "INSERT INTO tipo_servico (cod, descricao) 
+                $query = "INSERT INTO tipo_chamado (cod, descricao) 
                           VALUES (:codigo, :descricao)";
                 $stm = $this->con->prepare($query);
-                $stm->bindParam(":codigo", $tipo_chamado->getCodigo());
-                $stm->bindParam(":descricao", $tipo_chamado->getDescricao());
-                $stm->execute();
+                $stm->bindValue(":codigo", $tipo_chamado->getCodigo());
+                $stm->bindValue(":descricao", $tipo_chamado->getDescricao());
+                return $stm->execute();
              
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }   
     }
     
-    public function alterarTipo_Chamado(Tipo_Chamado $tipo_chamado, $codigoTipo_Chamado)
+    public function alterarTipo_Chamado(Tipo_Chamado $tipo_chamado, $codigo_tipo_chamado)
     {
         
-        try {
-                $query = "UPDATE tipo_servico SET cod=:codigo, descricao=:descricao
-                          WHERE cod = ".$codigoTipo_Chamado; 
+       try {
+                $query = "UPDATE $tipo_chamado SET cod=:codigo, descricao=:descricao WHERE cod = '$codigo_tipo_chamado' "; 
                       
                 $stm = $this->con->prepare($query);            
-                $stm->bindParam(":codigo", $tipo_chamado->getCodigo());
-                $stm->bindParam(":descricao", $tipo_chamado->getDescricao());
-                $stm->execute();
-                $this->con->commit();
+                $stm->bindValue(":codigo", $tipo_chamado->getCodigo());
+                $stm->bindValue(":nome", $tipo_chamado->getDescricao());
+                return $stm->execute();
+         
                 
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
+    
     }
-    //Obtém um Tipo_Chamado especifico, de acordo com o codigo passado como parametro.
-    public function obterTipo_Chamado_Especifico($codigoTipo_Chamado) {
+    
+    
+    public function obterTipo_Chamado_Especifico($codigo_tipo_chamado) {
         try {
-                $stm = $this->con->query("SELECT * FROM tipo_servico WHERE cod = ".$codigoTipo_Chamado);
+                $stm = $this->con->query("SELECT * FROM tipo_chamado WHERE cod = '$codigo_tipo_chamado'");
                 
-                $tipo_chamado = new Tipo_Chamado();
+                
                 //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                 foreach($stm as $row)
                 {
-                    $tipo_chamado->setCodigo($row['cod']);
-                    $tipo_chamado->setDescricao($row['descricao']);
+                    $tipo_chamado = new Tipo_Chamado($row['cod'], $row['descricao']);
                 }
                 
                 return $tipo_chamado;
                 
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
+    
     //Obtém todos os Tipo_Chamado salvos no banco de dados.
     //O objeto retornado, precisa passar pela função foreach(), para obter cada registro.
     public function obterTipo_Chamado_Geral()
     {
         try
         {
-            $stm = $this->con->query("SELECT * FROM tipo_servico");
+            $stm = $this->con->query("SELECT * FROM tipo_chamado");
             return $stm;
         }catch(PDOException $erro){
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
     }
     
-    public function deletarTipo_Chamado($codigoTipo_Chamado) {
-        try {
-                $this->con->query("DELETE FROM tipo_servico WHERE cod = ".$codigoTipo_Chamado);
-            
+    public function deletarTipo_Chamado($codigo_tipo_chamado) {
+       try {
+                $resultado = $this->con->query("DELETE FROM tipo_chamado WHERE cod = '$codigo_tipo_chamado'");
+                if($resultado != false)
+                    return true;
+                else
+                    return $resultado;
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
     }
     
-    //Função de fechar a conexão aberta no Banco de Dados.
+    //Função de fechar a conexão aberta no DAO
     public function fechaConexão() {
         try {
-                $this->con = null;
-            } catch (PDOException $erro) {
-                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-            }
+            return $this->con = null;
+        } catch (PDOException $erro) {
+            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
     }
-    
 }
 
 ?>
