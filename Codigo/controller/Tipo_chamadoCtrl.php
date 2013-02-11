@@ -19,12 +19,12 @@
             
     }
     
-        Public function alterarTipo_Chamado($codigo, $descricao, $cod_busca_chamado){
+        public function alterarTipo_Chamado($codigo, $descricao, $codigoTipo_Chamado){
             try{
                     $tipo_chamado = new Tipo_Chamado($codigo, $descricao);
                     
                     $DAO = new Tipo_ChamadoDAO();
-                    $resultado = $DAO->alterarTipo_Chamado($tipo_chamado, $cod_busca_chamado);
+                    $resultado = $DAO->alterarTipo_Chamado($tipo_chamado, $codigoTipo_Chamado);
                     $DAO->fechaConexão();
                     return $resultado; 
                 } catch (Exception $erro){
@@ -32,7 +32,7 @@
         }
         }
         
-        Public function obterTipo_Chamado_Especifico($codigoTipo_Chamado){
+        public function obterTipo_Chamado_Especifico($codigoTipo_Chamado){
             
                     $tipo_chamado = new Tipo_chamado($codigoTipo_Chamado);
                     $DAO = new Tipo_ChamadoDAO();
@@ -40,7 +40,7 @@
                     return $tipo_chamado;
         }
         
-        Public function deletarTipo_Chamado($codigoTipo_Chamado){
+        public function deletarTipo_Chamado($codigoTipo_Chamado){
             try{
                 
                     $tipo_chamado = new Tipo_Chamado($codigoTipo_Chamado);
