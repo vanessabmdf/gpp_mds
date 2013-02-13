@@ -57,24 +57,28 @@ class ChamadoDAO
     public function alterarChamado(Chamado $chamado, $codigo_chamado)
     {
         try {
+                /*Alterar tipo_cod
+                 * usuario_login(Em aberto)
+                 * descricao
+                 * patrimonio_equip
+                 * localizacao_equip
+                 * login_tecnico
+                 * status_cod
+                 */
             
-                $query = "UPDATE chamado SET codigo=:codigo, data_inicial=:data_inicial, data_final=:data_final, descricao=:descricao, comentarioChamado=:comentarioChamado, 
-                          solicitante=:solicitante, tecnico=:tecnico, status=:status, solucao=:solucao, tipoChamado=:tipo_chamado
-                          WHERE codigo = ".$codigo_chamado; 
+                $query = "UPDATE chamado SET tipo_cod=:tipo_cod, descricao=:descricao, patrimonio_equip=:patrimonio_equip,
+                          localizacao_equip=:localizacao_equip, login_tecnico=:login_tecnico, status_cod=:status_cod
+                          WHERE cod = '$codigo_chamado'";
                       
                 $stm = $this->con->prepare($query);
-                //Os dados contidos no objeto $chamado(parametro da função), sao passados ao banco de dados, alterando os dados do chamado.
-                $stm->bindParam(":codigo", $chamado->getCodigo());
-                $stm->bindParam(":data_inicial", $chamado->getData_inicial());
-                $stm->bindParam(":data_final", $chamado->getData_final());
-                $stm->bindParam(":descricao", $chamado->getDescricao());
-                $stm->bindParam(":comentarioChamado", $chamado->getComentarioChamado()->getCodigo());
-                $stm->bindParam(":solicitante",$chamado->getSolicitante()->getCodigo());
-                $stm->bindParam(":tecnico", $chamado->getTecnico()->getCodigo());
-                $stm->bindParam(":status", $chamado->getStatus()->getCodigo());
-                $stm->bindParam(":solucao", $chamado->getSolucao()->getCodigo());
-                $stm->bindParam(":tipo_chamado", $chamado->getTipoChamado()->getCodigo());
-
+                
+                $stm->bindValue(":tipo_cod", $chamado->getTipoChamado()->getCodigo());
+                $stm->bindValue(":descricao", $chamado->getDescricao());
+                $stm->bindValue(":patrimonio_equip", $chamado->getEquip_patrimonio());
+                $stm->bindValue(":localizacao_equip", $chamado->getLocal_equipamento());
+                $stm->bindValue(":login_tecnico", $chamado->getTecnico()->getCodigo());
+                $stm->bindValue(":status_cod", $chamado->getStatus()->getCodigo());
+                
                 $stm->execute();
                 $this->con->commit();
                 
