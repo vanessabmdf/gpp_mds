@@ -56,11 +56,6 @@ body{
     padding: 0 10px 0 10px;
     font-weight: bold;
 }
-#boxcadastro label.error{ 
-    color:#FF0000; 
-    font-size: 9px;
-    margin-top: -1px;
-}
 .cursor{
     background: #F2F2F2
 }

@@ -32,7 +32,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Hist�rico</a>
+                                    <a href="#">Histórico</a>
                                     <ul>
                                         <li><a href="#">menu item</a></li>
                                         <li><a href="#">menu item</a></li>
@@ -134,7 +134,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Relat�rios</a>
+                            <a href="#">Relatórios</a>
                             <ul>
 
                                 <li>

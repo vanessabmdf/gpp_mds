@@ -1,12 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<?
-//pegar a url atual com variaveis de ambiente
-$server = $_SERVER['SERVER_NAME'];
-$endereco = $_SERVER ['REQUEST_URI'];
-//echo "http://" . $server . $endereco;
-?>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
@@ -16,11 +9,11 @@ $endereco = $_SERVER ['REQUEST_URI'];
         <link rel="stylesheet" type="text/css" href="../css/superfish.css" media="screen" />
         <link href="../css/examples.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" href="../css/blue/style.css" type="text/css" media="print, projection, screen" />
-        <link href="css/formSolicitante.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/formChamado.css" rel="stylesheet" type="text/css" media="screen" />
 
 
-        <script src="../js/jquery/jquery-1.4.2.min.js"></script> 
+        <script src="../js/jquery/jquery-1.8.3.min.js"></script> 
         <script src="../js/jquery/jquery.validate.js"></script>
         <script src="../js/jquery/jquery-impromptu.3.1.js"></script>
         <script src="../js/jquery/jquery.maskedimput-1.3.js"></script>
@@ -28,85 +21,59 @@ $endereco = $_SERVER ['REQUEST_URI'];
         <script src="../js/jquery/jquery.blockUI.js"></script>
         <script src="../js/hoverIntent.js"></script>
         <script src="../js/superfish.js"></script>
+        <script src="../js/jquery/customSelect.jquery.min.js"></script>
 
         <script src="js/site.js"></script>
-
+        
         <script type="text/javascript">
-            var validacao;
-    
-            document.onkeydown = function(e){
-                var keychar;
-        
-                // Internet Explorer
-                try {
-                    keychar = String.fromCharCode(event.keyCode);
-                    e = event;
-                }
-        
-                // Firefox, Opera, Chrome, etc...
-                catch(err) {
-                    keychar = String.fromCharCode(e.keyCode);
-                }
-        
-                if (e.ctrlKey && keychar == '1') {
-                    valida_form();
-                    return false;
-                }
-                if (e.ctrlKey && keychar == '2') {
-                    $("#nomeSolicitante").addClass('marcado');
-                    $("#emailSolicitante").removeClass('marcado');
-                    $("#dtNascSolicitante").removeClass('marcado');
-                    $("#matriculaSolicitante").removeClass('marcado');
-                    $("#nomeUsuario").removeClass('marcado');                    
-                    limpa_form();
-                    return false;
-                }
-        
-            }
-    
+             $.validator.addMethod("valueNotEquals", function(value, element, arg){
+                return arg != value;
+             }, "Value must not equal arg.");
+             
             $(document).ready(function() {
-                $('input[type=text], textarea').focus(function() {
-                    $(this).addClass('marcado');
-                });
-                $('input[type=text], textarea').blur(function() {
-                    $(this).removeClass('marcado');
-                });
-            }); 
-    
-            $(document).ready(function() {
-                validacao = $("#formSolicitante").validate({
+                validacao = $("#formChamado").validate({
                     rules: {
-                        nomeSolicitante: {nome: 5},
-                        emailSolicitante: {email: true},
-                        dtNascSolicitante: {dtnasc: true},
-                        matriculaSolicitante: {matricula: 5},
-                        nomeUsuario: {usuario: 4},
-                        senhaUsuario: {senha: 6}
+                        local:{
+                            required: true,
+                            minlength: 2
+                        },
+                        descricao:{
+                            required: true,
+                            minlength: 12
+                        },
+                        tipoChamado: { 
+                            valueNotEquals: "default" 
+                        }
                 
                     },
                     messages: {
-                        nomeSolicitante: { nome: "&nbsp;Mínimo de 5 caracteres!"},
-                        emailSolicitante: { email: '&nbsp;Email inválido!'},
-                        dtNascSolicitante: { dtnasc: '&nbsp;Data de Nascimento inválida!'},
-                        matriculaSolicitante: { matricula: '&nbsp;Matricula inválida!'},
-                        nomeUsuario: { usuario: "&nbsp;Mínimo de 4 caracteres!"},
-                        senhaUsuario: { senha: "&nbsp;Mínimo de 5 caracteres!"}
-                    },
-                    submitHandler:function(form) {
-                        alert('ok');
+                        local:{
+                            required: "Digite o local do ocorrido",
+                            minlength: "Minimo 2 caracteres"
+                        },
+                         descricao:{
+                            required: "Forneça uma descrição do problema",
+                            minlength: "Mínimo 12 caracteres"
+                        },
+                        tipoChamado: {
+                            valueNotEquals: "Selecione um tipo"
+                        }
+                        
+                        
+                        
+                        
                     }
+                    
                 });
-                $("#dtNascSolicitante").mask("9?9/99/9999");
 	
             });
        
             function limparValidacao()
             {
                 validacao.resetForm();
-            }  
-    
-    
+            }
         </script>
+        
         <script>
             // initialise plugins
             jQuery(function(){
@@ -114,6 +81,9 @@ $endereco = $_SERVER ['REQUEST_URI'];
             });
 
         </script>
+        
+       
+        
         <script type="text/javascript" language="JavaScript">
             function dataHora(){
                 momento = new Date()
@@ -157,7 +127,16 @@ $endereco = $_SERVER ['REQUEST_URI'];
                 setTimeout("dataHora()",1000)
             }
         </script>
+        
+        <script type="text/javascript">
+        $(function(){
+            $('#tipoChamado').customSelect();
+        });
+        </script>
+       
         <noscript>Habilite o Javascript para visualizar esta página corretamente...</noscript>
+        
+
     </head>
     <body onload="dataHora();carregando()">
         <!--div's do cabecalho-->
@@ -178,42 +157,44 @@ $endereco = $_SERVER ['REQUEST_URI'];
                     <div id="boxconteudo">
                         <h1>Cadastro de Chamados</h1>
                         <div id="boxcadastro">                            	
-                            <form id="formSolicitante" action="#" method="POST" class="form">
-                                <fieldset>
-                                    <label class="nomeSolicitante" for="nomeSolicitante">
-                                        Tipo de Chamado:
-                                        <select name="TipoChamado" size="1">
-                                        	<option value=""></option>
-                                        	<option value=""></option>
-                                        	<option value=""></option>
-                                        </select>              
-                                    </label>   
-                                                                     
+                            <form id="formChamado" action="#" method="POST" class="form">
+                              <fieldset>
+                                <label for="local" style="margin-top: 5px;">Local do Equipamento</label>
+                                <input type="text" name="local" id="local" class="campo" size="40"/><br /><br />
+                                
+                                <!--<input type="text" name="codEquipamento" id="codEquipamento"/>-->
+                  
+                                    <label>
+                                        Tipo de Chamado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        
+                                            <select id="tipoChamado" name="tipoChamado">
+                                                
+                                                    <option value="0" selected>selecione</option>
+                                                    <option value="1">Periféricos do Computador</option>
+                                                    <option value="2">Projetores</option>
+                                            </select>
+                                    </label>                                   
                                 </fieldset>
-
                                 <fieldset>
-                                    <label class="emailSolicitante" for="emailSolicitante">
-                                        Descrição:
-                                        <textarea name="descricao" rows="12" cols="70"></textarea>
+                                    <br /><br /><span style="font-size: 12px;"> Descrição</span>
+                                        <textarea name="descricao" class="descricao" rows="15" cols="125"></textarea>
+                                        <span class="contagemLetras"></span>
                                 </fieldset>
-                                <input type="button" id="botao" value="Salvar" onClick=valida_form() class="botoesInput" />
-                                <input type="button" id="limpar" value="Limpar" onClick="limpa_form();limparValidacao();" class="botoesInput" />
+                                <div id="botoes">
+                                    <input type="submit" id="botao" value="REALIZAR CHAMADO" class="botaoCadastro botaoCadastro-blue" />
+                                    <input type="reset" id="limpar" value="Limpar" class="botaoCadastro botaoCadastro-green" />
+                                </div>
                                 <input type="hidden" id="acao" value="" />
                             </form>
                         </div>
 
 
-                        <script src="../js/jquery/jquery.tablesorter.js"></script>
-                        <script src="../js/jquery/jquery.tablesorter.pager.js"></script>
-                        <script src="../js/jquery/jquery.tablesorter.filter.js"></script>
+                       
 
-                        <div id="boxtabela">
-                            <div id="resultado" class></div>   
-                        </div>
+                       
                     </div>
                 </div> <!--fim div boxbaixo -->
 
-                <div id="clear"></div> <!--Inicio e fim da div clear-->
             </div>  	
         </div> <!-- fim div box-->
     </body>
