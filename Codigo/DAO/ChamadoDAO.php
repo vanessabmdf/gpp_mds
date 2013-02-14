@@ -3,12 +3,10 @@
 //Inclusao de classes necessarias.
 require_once "../lib/Conection.php";
 require_once "../Model/Chamado.php";
-require_once "../Model/Solucao.php";
 require_once "/../Model/Status.php";
 require_once "/../Model/Tipo_Chamado.php";
 require_once "/../Model/Usuario.php";
 require_once "/../DAO/UsuarioDAO.php";
-require_once "/../DAO/SolucaoDAO.php";
 require_once "/../DAO/StatusDAO.php";
 require_once "/../DAO/Tipo_ChamadoDAO.php";
 
@@ -24,28 +22,18 @@ class ChamadoDAO
     }
 
     public function inserirChamado(Chamado $chamado) {
-        try {
-            
-                /*Chamado cadastrado possui os objetos:
-                    Usuario(Solicitante)
-                 *  Usuario(Tecnico)
-                 *  Status
-                 *  Solucao
-                 *  Tipo_Chamado
-                 */
-                
-                $query = "INSERT INTO chamado (tipo_cod, usuario_login, descricao, patrimonio_equip, localizacao_equip, login_tecnico, status_cod) 
-                          VALUES (:tipo_cod, :usuario_login, :descricao, :patrimonio_equip, :localizacao_equip, :login_tecnico, :status_cod)";
+        try {   
+                $query = "INSERT INTO chamado (tipo_cod, usuario_login, descricao, patrimonio_equip, localizacao_equip, status_cod) 
+                          VALUES (:tipo_cod, :usuario_login, :descricao, :patrimonio_equip, :localizacao_equip, :status_cod)";
             
                 //Insere no banco de dados, os dados do objeto $chamado(parametro da função).
                 $stm = $this->con->prepare($query);
-                $stm->bindValue(":tipo_cod", $chamado->getCodigo());
-                $stm->bindValue(":usuario_login", $chamado->getSolicitante()->getCodigo());
+                $stm->bindValue(":tipo_cod", $chamado->getCodigo());//Passa o cod ou a descricao???
+                $stm->bindValue(":usuario_login", $chamado->getSolicitante());//Passa login do solicitante.
                 $stm->bindValue(":descricao", $chamado->getDescricao());
                 $stm->bindValue(":patrimonio_equip", $chamado->getEquip_patrimonio());
                 $stm->bindValue(":localizacao_equip", $chamado->getLocal_equipamento());
-                $stm->bindValue(":login_tecnico", $chamado->getTecnico()->getCodigo());
-                $stm->bindValue(":status_cod", $chamado->getStatus()->getCodigo());
+                $stm->bindValue(":status_cod", $chamado->getStatus());//Passa o cod do status.
                 
                 return $stm->execute();
              
@@ -54,33 +42,30 @@ class ChamadoDAO
         }
     }
     
-    public function alterarChamado(Chamado $chamado, $codigo_chamado)
+    public function alterarChamado($codigo_chamado, $login_tecnico, $status_cod)
     {
         try {
-                /*Alterar tipo_cod
-                 * usuario_login(Em aberto)
-                 * descricao
-                 * patrimonio_equip
-                 * localizacao_equip
-                 * login_tecnico
-                 * status_cod
-                 */
-            
-                $query = "UPDATE chamado SET tipo_cod=:tipo_cod, descricao=:descricao, patrimonio_equip=:patrimonio_equip,
-                          localizacao_equip=:localizacao_equip, login_tecnico=:login_tecnico, status_cod=:status_cod
+                //Status_cod = 3 é o chamado FINALIZADO.
+                //So executa se um chamado for FINALIZADO.
+                if($status_cod == 3)
+                {
+                    //O Comando SELECT NOW() retorna a data atual do sistema.
+                    $query = "UPDATE chamado SET status_cod=:status_cod, data_final = (SELECT NOW()) WHERE cod = '$codigo_chamado'";
+                    $stm = $this->con->prepare($query);
+                    
+                    $stm->bindValue(":status_cod", $status_cod);
+                    return $stm->execute();
+                }
+                
+                $query = "UPDATE chamado SET login_tecnico=:login_tecnico, status_cod=:status_cod 
                           WHERE cod = '$codigo_chamado'";
                       
                 $stm = $this->con->prepare($query);
                 
-                $stm->bindValue(":tipo_cod", $chamado->getTipoChamado()->getCodigo());
-                $stm->bindValue(":descricao", $chamado->getDescricao());
-                $stm->bindValue(":patrimonio_equip", $chamado->getEquip_patrimonio());
-                $stm->bindValue(":localizacao_equip", $chamado->getLocal_equipamento());
-                $stm->bindValue(":login_tecnico", $chamado->getTecnico()->getCodigo());
-                $stm->bindValue(":status_cod", $chamado->getStatus()->getCodigo());
-                
-                $stm->execute();
-                $this->con->commit();
+                $stm->bindValue(":login_tecnico", $login_tecnico);
+                $stm->bindValue(":status_cod", $status_cod);
+               
+                return $stm->execute();
                 
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -92,7 +77,11 @@ class ChamadoDAO
             
                 $chamado = new Chamado();
                 //Busca os dados do chamado com o codigo_chamado informado.
-                $stm = $this->con->query("SELECT * FROM chamado WHERE codigo = '$codigo_chamado'");
+                $stm = $this->con->query("SELECT * FROM chamado WHERE cod = '$codigo_chamado'");
+                
+                //Se a consulta falhar.
+                if($stm == false)
+                    return $stm;
     
                 //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                 foreach($stm as $row)
@@ -118,18 +107,7 @@ class ChamadoDAO
                     $buscarStatus = new StatusDAO();
                     $status = $buscarStatus->obterStatus($row['status_cod']);
                     $chamado->setStatus($status);
-                
-                    //Bucando solucao, para criar o objeto e atribuir a variavel $chamado.
-                    $stm2 = $this->con->query("SELECT * FROM solucao WHERE chamado_cod = '$chamado->getCoddigo'");
-                    $solucao = new Solucao();
-                    foreach($stm2 as $row2)
-                    {
-                        $solucao->setCodigo($row2['cod']);
-                        $solucao->setDescricao($row2['descricao']);
-                        $solucao->setData($row2['data_solucao']);
-                    }
-                    $chamado->setSolucao($solucao);
-                
+
                     //Buscando tipo_chamado, para criar o objeto e atribuir a variavel $chamado.
                     $buscarTipo_Chamado = new Tipo_ChamadoDAO();
                     $tipoChamado = $buscarTipo_Chamado->obterTipo_Chamado_Especifico($row['tipo_cod']);
@@ -159,7 +137,7 @@ class ChamadoDAO
      public function deletarChamado($codigo_chamado) {
         try {
                 //Deleta um chamado atraves do codigo informado.
-                $this->con->query("DELETE FROM chamado WHERE codigo = '$codigo_chamado'");
+                return $this->con->query("DELETE FROM chamado WHERE cod = '$codigo_chamado'");
                  
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -169,10 +147,10 @@ class ChamadoDAO
     //Função de fechar a conexão aberta no Banco de Dados.
     public function fechaConexão() {
         try {
-            $this->con = null;
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+                $this->con = null;
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
     
 }

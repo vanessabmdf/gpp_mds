@@ -14,15 +14,10 @@ class Chamado
     private $local_equipamento;
     private $equip_patrimonio;
     
-    function __construct($codigo, $data_inicial, $data_final, $descricao, $solicitante, $tecnico, $status, $solucao, $tipoChamado, $local_equipamento, $equip_patrimonio) {
-        $this->codigo = $codigo;
-        $this->data_inicial = $data_inicial;
-        $this->data_final = $data_final;
+    function __construct($descricao, $solicitante, $status, $tipoChamado, $local_equipamento, $equip_patrimonio) {
         $this->descricao = $descricao;
         $this->solicitante = $solicitante;
-        $this->tecnico = $tecnico;
         $this->status = $status;
-        $this->solucao = $solucao;
         $this->tipoChamado = $tipoChamado;
         $this->local_equipamento = $local_equipamento;
         $this->equip_patrimonio = $equip_patrimonio;
