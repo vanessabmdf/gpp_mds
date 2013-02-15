@@ -93,7 +93,7 @@ class Tipo_ChamadoDAO
     }
     
     //Função de fechar a conexão aberta no DAO
-    public function fechaConexão() {
+    public function fechaConexao() {
         try {
             return $this->con = null;
         } catch (PDOException $erro) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<?php include '../../controller/Tipo_chamadoCtrl.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
@@ -170,8 +170,15 @@
                                             <select id="tipoChamado" name="tipoChamado">
                                                 
                                                     <option value="0" selected>selecione</option>
-                                                    <option value="1">Periféricos do Computador</option>
-                                                    <option value="2">Projetores</option>
+                                                    <?php 
+                                                        $tipo = new Tipo_chamadoCtrl();
+                                                        $stm = $tipo->listaTipo_Chamado();
+                                                        foreach ($stm as $row){
+                                                            $tipoChamado = utf8_encode($row['descricao']);
+                                                            echo '<option value=\'$tipoChamado\'>'.$tipoChamado.'</option>';
+                                                        }
+                                                    ?>
+                                                    
                                             </select>
                                     </label>                                   
                                 </fieldset>

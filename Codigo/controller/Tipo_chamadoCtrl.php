@@ -19,7 +19,7 @@ class Tipo_ChamadoCtrl {
                 
                 $DAO = new Tipo_ChamadoDAO();
                 $resultado = $DAO->inserirTipo_Chamado($tipo_chamado);
-                $DAO->fechaConexão();
+                $DAO->fechaConexao();
                 return $resultado;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -30,7 +30,7 @@ class Tipo_ChamadoCtrl {
         try {
                 $DAO = new Tipo_ChamadoDAO();
                 $DAO->deletarTipo_Chamado($codigo_tipo_chamado);
-                $DAO->fechaConexão();
+                $DAO->fechaConexao();
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
         }
@@ -40,7 +40,7 @@ class Tipo_ChamadoCtrl {
         try {
                 $DAO = new Tipo_ChamadoDAO();
                 $lista = $DAO->obterTipo_Chamado_Geral();
-                $DAO->fechaConexão();
+                $DAO->fechaConexao();
             return $lista;
         } catch (Exception $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -60,7 +60,7 @@ class Tipo_ChamadoCtrl {
            
                 $DAO = new Tipo_ChamadoDAO();
                     $DAO->alterarTipo_Chamado($tipo_chamado, $codigo_busca);
-                    $DAO->fechaConexão();
+                    $DAO->fechaConexao();
             } catch (Exception $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
