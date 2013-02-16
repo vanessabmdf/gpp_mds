@@ -104,8 +104,8 @@ class UsuarioDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @covers UsuarioDAO::fechaConexão
-     * @todo   Implement testFechaConexão().
+     * @covers UsuarioDAO::fechaConexao
+     * @todo   Implement testFechaConexao().
      */
     public function testFechaConexao() {
         $resultado = $this->object->fechaConexao();
