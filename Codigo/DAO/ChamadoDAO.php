@@ -72,6 +72,32 @@ class ChamadoDAO
             }
     }
     
+    public function obterChamadoPorStatus($cod_status)
+    {
+        $query = "SELECT a.cod, a.data_inicial, a.data_final, a.descricao, a.usuario_login, a.login_tecnico,
+                  b.descricao AS desc_status, c.descricao AS desc_tipo_chamado, a.localizacao_equip, 
+                  a.patrimonio_equip FROM chamado AS a INNER JOIN status AS b INNER JOIN tipo_chamado AS c 
+                  ON a.status_cod = b.cod = '$cod_status' AND c.cod = a.tipo_cod";
+        
+        $stm = $this->con->query($query);
+        /*
+         * Nome das colunas retornadas:
+         * 
+         * cod - codigo do chamado
+         * data_inicial - dt. inicial do chamado
+         * data_final - dt. de finalizacao do chamado
+         * descricao - descricao do chamado
+         * usuario_login - login do usuario
+         * login_tecnico - login do tecnico
+         * desc_status - descricao do status
+         * desc_tipo_chamado - descricao do tipo_chamado
+         * localizacao_equip - localizacao do equipamento
+         * patrimonio_equip - patrimonio do equip
+         */
+        //Se a consulta falhar, retorna FALSE.
+        return $stm;        
+    }
+    
     public function obterChamado_Especifico($codigo_chamado) {
         try {
             

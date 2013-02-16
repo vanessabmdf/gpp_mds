@@ -49,6 +49,14 @@ class ChamadoCtrl{
             }
       }
       
+      public function obterChamadoPorStatus($cod_status)
+      {
+          $DAO = new ChamadoDAO();
+          $resultado = $DAO->obterChamadoPorStatus($cod_status);
+          $DAO->fechaConexão();
+          return $resultado;
+      }
+      
       public function deletarChamado($codigo_chamado)
       {
           try{              

@@ -58,9 +58,8 @@ class StatusDAO
                 foreach($stm as $row)
                 {
                     $status = new Status($row['cod'], $row['descricao']);
+                    return $status;
                 }
-                
-                return $status;
                 
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
