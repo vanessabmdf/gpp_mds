@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<div id="erroLoginHidden"><?php include 'login/login.php'; ?></div>
 <html>
     <head>
         <title>Login</title>
@@ -17,7 +18,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 // validate signup form on keyup and submit
-               validacao = $("#formCadastro").validate({
+               validacaoCadastro = $("#formCadastro").validate({
                         rules: {
                             nomeUsuario: {
                                 required: true,
@@ -79,19 +80,48 @@
                             }
                         }
                 });
-            });
-            
+                
+                validacaoLogin = $("#formLogin").validate({
+                        submitHandler: function(form) {
+                            form.submit();
+                        },
+                        rules: {
+                            nomeLogin: {
+                                required: true,
+                                minlength: 6
+                            },
+                            senhaLogin: {
+                                required: true,
+                                minlength: 6
+                            } 
+                        }, 
+                        messages: {
+                            nomeLogin: {
+                                required: "Digite seu nome de usuário",
+                                minlength: "Mínimo 6 caracteres"
+                            },
+                            senhaLogin: {
+                                required: "Digite a sua senha",
+                                minlength: "Mínimo 6 dígitos"
+                            }
+                        }
+                    });
+                });
+                
             jQuery(function($){
                 $("#matriculaUsuario").mask("99/9999999",{placeholder:" "});
             });
             
-            function limparValidacao(){
-                validacao.resetForm();
-            }  
+            function limpaValidacaoCadastro(){
+                validacaoCadastro.resetForm();
+            }
+            function limpaValidacaoLogin(){
+                validacaoLogin.resetForm();
+            }
         </script>  
         <script type="text/javascript" src="login/js/cadastro.js"></script>
     </head>
-    <body>
+    <body onload="escondeErro();">
         <div id="topo">
             <img src="imagens/LogoGTI_menor.jpg" align="center" />
         </div>

@@ -125,3 +125,22 @@ form.cadastro{
     float: left; 
     margin-top: 5%;
 }
+
+#erroLogin{
+    border: 1px solid #FF0000;
+    color: #FF0000;
+    height: 60px;
+    background: #FFF0F0 url('../../imagens/error.png') no-repeat left;
+    margin-right: 3.5%;
+}
+
+#erroLoginHidden{
+    display:none;
+}
+
+.msgError{
+    font-size: 13px;
+    margin-top: 20px;
+    float: right;
+    margin-right: 7%;
+}

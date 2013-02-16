@@ -142,11 +142,17 @@ fieldset {
     padding: 20%;
 }
 
-label.error{ 
+#formCadastro label.error{ 
     color:#FF0000; 
     font-size: 12px;
     margin-right: 98px;
     margin-bottom: -10px;
+}
+
+#formLogin label.error{
+    color:#FF0000; 
+    font-size: 12px;
+    display: block;
 }
 
 input.error{
@@ -163,5 +169,3 @@ input.error:focus{
     border: 1px solid red;
     background-color: #FFF0F0;
 }
-
-
