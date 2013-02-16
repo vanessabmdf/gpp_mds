@@ -1,8 +1,8 @@
 <?php
 
 //Inclusao de classes necessarias.
-require_once "../lib/Conection.php";
-require_once "../Model/Chamado.php";
+require_once "/../lib/Conection.php";
+require_once "/../Model/Chamado.php";
 require_once "/../Model/Status.php";
 require_once "/../Model/Tipo_Chamado.php";
 require_once "/../Model/Usuario.php";
@@ -28,7 +28,7 @@ class ChamadoDAO
             
                 //Insere no banco de dados, os dados do objeto $chamado(parametro da função).
                 $stm = $this->con->prepare($query);
-                $stm->bindValue(":tipo_cod", $chamado->getCodigo());//Passa o cod ou a descricao???
+                $stm->bindValue(":tipo_cod", $chamado->getTipoChamado());//Passa o cod ou a descricao???
                 $stm->bindValue(":usuario_login", $chamado->getSolicitante());//Passa login do solicitante.
                 $stm->bindValue(":descricao", $chamado->getDescricao());
                 $stm->bindValue(":patrimonio_equip", $chamado->getEquip_patrimonio());
@@ -75,7 +75,7 @@ class ChamadoDAO
     public function obterChamado_Especifico($codigo_chamado) {
         try {
             
-                $chamado = new Chamado();
+                $chamado = new Chamado(NULL, NULL, NULL, NULL, NULL, NULL);
                 //Busca os dados do chamado com o codigo_chamado informado.
                 $stm = $this->con->query("SELECT * FROM chamado WHERE cod = '$codigo_chamado'");
                 
@@ -96,16 +96,24 @@ class ChamadoDAO
                     
                     //Buscando solicitante, para criar o objeto e atribuir a variavel $chamado.
                     $buscarUsuario = new UsuarioDAO();
-                    $solicitante = $buscarUsuario->obterUsuario($row['solicitante']);
+                    $solicitante = $buscarUsuario->obterUsuario_Especifico($row['usuario_login']);
+                    //Caso nao exista um solicitante cadastrado no sistema.
+                    if($solicitante == false)
+                        $solicitante = NULL;
+
                     $chamado->setSolicitante($solicitante);
              
                     //Buscando tecnico, para criar o objeto e atribuir a variavel $chamado.
-                    $tecnico = $buscarUsuario->obterUsuario($row['tecnico']);
+                    $tecnico = $buscarUsuario->obterUsuario_Especifico($row['login_tecnico']);
+                    //Caso nao exista um tecnico cadastrado no sistema.
+                    if($tecnico == false)
+                        $tecnico = NULL;
+                    
                     $chamado->setTecnico($tecnico);
                 
                     //Bucando status, para criar o objeto e atribuir a variaval $chamado.
                     $buscarStatus = new StatusDAO();
-                    $status = $buscarStatus->obterStatus($row['status_cod']);
+                    $status = $buscarStatus->obterStatus_Especifico($row['status_cod']);
                     $chamado->setStatus($status);
 
                     //Buscando tipo_chamado, para criar o objeto e atribuir a variavel $chamado.
@@ -137,8 +145,11 @@ class ChamadoDAO
      public function deletarChamado($codigo_chamado) {
         try {
                 //Deleta um chamado atraves do codigo informado.
-                return $this->con->query("DELETE FROM chamado WHERE cod = '$codigo_chamado'");
-                 
+                $resultado = $this->con->query("DELETE FROM chamado WHERE cod = '$codigo_chamado'");
+                if($resultado != false)
+                    return true;
+                else
+                    return $resultado;      
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }

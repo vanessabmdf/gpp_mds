@@ -68,8 +68,9 @@ class UsuarioDAO {
                     foreach($stm as $row)
                     {
                         $usuario = new Usuario($row['perfil_cod'], $row['login'], $row['senha'], $row['nome'], $row['email'], $row['matricula']);
+                        return $usuario;
+                        
                     }
-                    return $usuario;
                 }
         } catch (PDOException $erro) {
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
