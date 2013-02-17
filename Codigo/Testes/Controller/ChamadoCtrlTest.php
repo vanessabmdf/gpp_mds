@@ -48,6 +48,28 @@ class ChamadoCtrlTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(true, $resultado2, "A finalização de um chamado falhou!");
     }
 
+     /**
+     * @covers ChamadoCtrl::obterChamadoPorStatus
+     * @todo   Implement testObterChamadoPorStatus().
+     */
+    
+    public function testObterChamadoPorStatus()
+    {
+        $resultado = $this->object->obterChamadoPorStatus(1);
+        foreach ($resultado as $row){
+            $this->assertArrayHasKey("cod", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("data_inicial", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("data_final", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("descricao", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("usuario_login", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("login_tecnico", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("desc_status", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("desc_tipo_chamado", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("localizacao_equip", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("patrimonio_equip", $row, "A listagem de todos os chamados falhou!");  
+        }
+    }
+    
     /**
      * @covers ChamadoCtrl::obterChamado_Especifico
      * @todo   Implement testObterChamado_Especifico().
