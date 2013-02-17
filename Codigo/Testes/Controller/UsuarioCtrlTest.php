@@ -81,7 +81,11 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
        $this->assertEquals(true, $resultado, "A obtenção do usuaŕio falhou!");
       
     }
-
+    
+    public function testvalidaLoginCadastro(){
+        $resultado = $this->object->validaLoginCadastro('joao');
+        $this->assertEquals($resultado,1);
+    }
     /**
      * @covers UsuarioCtrl::getNumCols
      * @todo   Implement testGetNumCols().

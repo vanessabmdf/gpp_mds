@@ -105,10 +105,8 @@ class ChamadoDAOTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testFechaConexão().
      */
     public function testFechaConexão() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+       $resultado = $this->object->fechaConexão();
+       $this->assertEquals(NULL, $resultado, "Impossivel fechar conexao!");
     }
 
 }
