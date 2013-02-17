@@ -85,6 +85,15 @@ class UsuarioDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(1, $resultado, "Nao foi possivel validar o login!");
     }
     
+    /**
+     * @covers UsuarioDAO::verificaLogin
+     * @todo   Implement testVerificaLogin().
+     */
+    public function testVerificaLogin(){
+        $resultado = $this->object->verificaLogin("lucascouto");
+        $this->assertEquals(1, $resultado);
+    }
+    
      /**
      * @covers UsuarioDAO::deletarUsuario
      * @todo   Implement testDeletarUsuario().
@@ -102,7 +111,7 @@ class UsuarioDAOTest extends PHPUnit_Framework_TestCase {
        $resultado = $this->object->numColUsuario();
        $this->assertEquals(6, $resultado, "A consulta retornou um número incorreto de campos");
     }
-
+    
     /**
      * @covers UsuarioDAO::fechaConexao
      * @todo   Implement testFechaConexao().

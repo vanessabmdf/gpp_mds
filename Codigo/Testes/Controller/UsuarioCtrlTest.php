@@ -100,6 +100,18 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(1, $resultado, "Nao foi possivel validar o login");
     }
     
+     /**
+     * @covers UsuarioCtrl::verificalogin
+     * @todo   Implement testVerificalogin().
+     */
+    
+    public function testVerificalogin(){
+        $resultado = $this->object->verificalogin("joao");
+        $this->assertEquals(1, $resultado, "Não foi possível verificar o login");
+    }
+    
+
+    
     /**
      * @covers UsuarioCtrl::delUsuario
      * @todo   Implement testDelUsuario().
@@ -108,5 +120,5 @@ class UsuarioCtrlTest extends PHPUnit_Framework_TestCase {
         $resultado = $this->object->delUsuario("joao");
         $this->assertEquals(true, $resultado, "A remoção do usuário do BD falhou!");
     }
-
+      
 }
