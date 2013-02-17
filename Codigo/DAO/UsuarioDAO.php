@@ -137,6 +137,19 @@ class UsuarioDAO {
         }
     }
     
+    public function verificaLogin($login){
+        try{
+            $stm = $this->con->query("SELECT * FROM usuario WHERE login='$login'");
+            foreach ($stm as $row){
+                $perfil_cod = $row['perfil_cod'];
+            }
+            return $perfil_cod;
+        }catch (PDOException $erro){
+            return "Ocorreu um erro na operação, informe o erro ao CPD: ". $erro->getMessage();
+        }
+    }
+
+
     //Função de fechar a conexão aberta no DAO
     public function fechaConexao() {
         try {

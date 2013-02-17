@@ -2,13 +2,14 @@
      require_once '../../Codigo/controller/UsuarioCtrl.php';
      
      $aux = 0;
-    //OBTÉM OS VALORES DIGITADOS NO FORMULÁRIO PELO JQUERY.AJAX
+    //OBTÉM OS VALORES DIGITADOS NO FORMULÁRIO 
     if(isset($_POST['enviar'])){
         $nome_usuario = $_POST["nomeLogin"];
         $senha_usuario = $_POST["senhaLogin"];
-
+        
         $usuario = new UsuarioCtrl();
         $linhas = $usuario->validaLogin($nome_usuario, $senha_usuario);
+        $perfil_cod = $usuario->verificalogin($nome_usuario);
         
         $aux++;
         //TESTA SE A CONSULTA RETORNOU UM REGISTRO. SE RETORNAR, CRIAR COOKIES

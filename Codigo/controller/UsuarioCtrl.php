@@ -98,5 +98,15 @@ class UsuarioCtrl {
         }
         
     }
+    
+    public function verificalogin($login){
+        try{
+            $DAO = new UsuarioDAO();
+            $perfil_cod = $DAO->verificaLogin($login);
+            return $perfil_cod;
+        }catch(Exception $erro){
+             return "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+        }
+    }
 }
 ?>

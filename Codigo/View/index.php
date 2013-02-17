@@ -88,21 +88,21 @@
                         rules: {
                             nomeLogin: {
                                 required: true,
-                                minlength: 6
+                                minlength: 5
                             },
                             senhaLogin: {
                                 required: true,
-                                minlength: 6
+                                minlength: 5
                             } 
                         }, 
                         messages: {
                             nomeLogin: {
                                 required: "Digite seu nome de usuário",
-                                minlength: "Mínimo 6 caracteres"
+                                minlength: "Mínimo 5 caracteres"
                             },
                             senhaLogin: {
                                 required: "Digite a sua senha",
-                                minlength: "Mínimo 6 dígitos"
+                                minlength: "Mínimo 5 dígitos"
                             }
                         }
                     });
