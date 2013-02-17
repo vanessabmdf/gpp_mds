@@ -9,7 +9,7 @@
         
         $usuario = new UsuarioCtrl();
         $linhas = $usuario->validaLogin($nome_usuario, $senha_usuario);
-        $perfil_cod = $usuario->verificalogin($nome_usuario);
+        
         
         $aux++;
         //TESTA SE A CONSULTA RETORNOU UM REGISTRO. SE RETORNAR, CRIAR COOKIES
