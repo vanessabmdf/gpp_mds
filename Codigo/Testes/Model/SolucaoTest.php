@@ -25,7 +25,10 @@ class SolucaoTest extends PHPUnit_Framework_TestCase {
     protected function tearDown() {
         unset($this->object);
     }
-
+    public function testConstrutor() {
+        $resultado = $this->object;
+        $this->assertNotNull($resultado);
+       }
     /**
      * @covers Solucao::getCodigo
      * @todo   Implement testGetCodigo().

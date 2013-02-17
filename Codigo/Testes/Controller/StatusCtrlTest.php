@@ -31,7 +31,7 @@ class StatusCtrlTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testInsStatus().
      */
     public function testInsStatus() {
-        $resultado = $this->object->insStatus(1, "Em Andamento");
+        $resultado = $this->object->insStatus(NULL, "Em Andamento");
         $this->assertEquals(true, $resultado, "Impossível inserir status!");
     }
 
@@ -75,9 +75,9 @@ class StatusCtrlTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testDelStatus().
      */
     
-    //public function testDelStatus() {
-      // $resultado = $this->object->delStatus(1);
-     //  $this->assertTrue(true, $resultado, "Impossivel deletar status!");
-//    }
+    public function testDelStatus() {
+       $resultado = $this->object->delStatus(1);
+       $this->assertTrue(true, $resultado, "Impossivel deletar status!");
+    }
 
 }

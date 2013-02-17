@@ -31,8 +31,8 @@ class Tipo_ChamadoCtrlTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testInsTipo_Chamado().
      */
     public function testInsTipo_Chamado() {
-        $resultado = $this->object->insTipo_Chamado(1, "Hardware");
-        $this->assertEquals(true, $resultado, "Impossível inserir tupo_chamado!");
+        $resultado = $this->object->insTipo_Chamado(NULL, "Hardware");
+        $this->assertEquals(true, $resultado, "Impossível inserir tipo_chamado!");
     }
 
    

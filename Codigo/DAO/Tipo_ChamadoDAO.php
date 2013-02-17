@@ -34,7 +34,7 @@ class Tipo_ChamadoDAO
     {
         
        try {
-                $query = "UPDATE $tipo_chamado SET cod=:codigo, descricao=:descricao WHERE cod = '$codigo_tipo_chamado' "; 
+                $query = "UPDATE tipo_chamado SET cod=:codigo, descricao=:descricao WHERE cod = '$codigo_tipo_chamado' "; 
                       
                 $stm = $this->con->prepare($query);            
                 $stm->bindValue(":codigo", $tipo_chamado->getCodigo());

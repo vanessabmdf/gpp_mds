@@ -24,6 +24,10 @@ class SolucaoDAOTest extends PHPUnit_Framework_TestCase {
         $this->object = new SolucaoDAO();
     }
 
+    public function testConstrutor() {
+        $resultado = $this->object;
+        $this->assertNotNull($resultado);
+    }
     /**
      * Tears down the fixture, for example, closes a network connection.
      * This method is called after a test is executed.

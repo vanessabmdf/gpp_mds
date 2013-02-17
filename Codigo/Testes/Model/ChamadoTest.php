@@ -23,13 +23,17 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
      * This method is called after a test is executed.
      */
     protected function tearDown() {
-        
+        unset($this->object);
     }
 
     /**
      * @covers Chamado::getLocal_equipamento
      * @todo   Implement testGetLocal_equipamento().
      */
+    public function testConstrutor() {
+        $resultado = $this->object;
+        $this->assertNotNull($resultado);
+    }
     public function testGetLocal_equipamento() {
         
         $resultado = $this->object->getLocal_equipamento();
@@ -72,7 +76,7 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
     public function testGetCodigo() {
         
         $resultado = $this->object->getCodigo();
-        $this->assertEquals($resultado,'codigo');
+        $this->assertEquals($resultado,NULL);
     }
 
     /**
@@ -91,7 +95,7 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
      */
     public function testGetData_inicial() {
         $resultado = $this->object->getData_inicial();
-        $this->assertEquals($resultado,'data_inicial');
+        $this->assertEquals($resultado,NULL);
     }
 
     /**
@@ -110,7 +114,7 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
      */
     public function testGetData_final() {
         $resultado = $this->object->getData_final();
-        $this->assertEquals($resultado,'data_final');
+        $this->assertEquals($resultado,NULL);
     }
 
     /**
@@ -118,8 +122,8 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testSetData_final().
      */
     public function testSetData_final() {
-        $this->object->setData_inicial('data');
-        $resultado = $this->object->getData_inicial();
+        $this->object->setData_final('data');
+        $resultado = $this->object->getData_final();
         $this->assertEquals($resultado,'data');
     }
 
@@ -130,7 +134,7 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
     public function testGetDescricao() {
         
         $resultado = $this->object->getDescricao();
-        $this->assertEquals($resultado,'data');
+        $this->assertEquals($resultado,'descricao');
     }
 
     /**
@@ -158,7 +162,7 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testSetSolicitante().
      */
     public function testSetSolicitante() {
-        $this->object->setData_inicial('usuario');
+        $this->object->setSolicitante('usuario');
         $resultado = $this->object->getSolicitante();
         $this->assertEquals($resultado,'usuario');
     }
@@ -170,7 +174,7 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
     public function testGetTecnico() {
         
         $resultado = $this->object->getTecnico();
-        $this->assertEquals($resultado,'tecnico');
+        $this->assertEquals($resultado,NULL);
     }
 
     /**
@@ -210,7 +214,7 @@ class ChamadoTest extends PHPUnit_Framework_TestCase {
     public function testGetSolucao() {
         
         $resultado = $this->object->getSolucao();
-        $this->assertEquals($resultado,'solucao');
+        $this->assertEquals($resultado,NULL);
     }
 
     /**

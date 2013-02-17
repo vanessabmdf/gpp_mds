@@ -28,7 +28,11 @@ class StatusDAOTest extends PHPUnit_Framework_TestCase {
     protected function tearDown() {
         unset($this->object);
     }
-
+    
+    public function testConstrutor() {
+        $resultado = $this->object;
+        $this->assertNotNull($resultado);
+    }
     /**
      * @covers StatusDAO::inserirStatus
      * @todo   Implement testInserirStatus().
@@ -41,12 +45,12 @@ class StatusDAOTest extends PHPUnit_Framework_TestCase {
     
     public function testAlterarStatus() {
        $status = new Status(NULL, "Concluido");
-       $resultado = $this->object->alterarStatus($status, 1);
+       $resultado = $this->object->alterarStatus($status, 2);
        $this->assertTrue(true, $resultado, "Nao foi possivel alterar O status!");
     }
      
     public function testObterStatus_Especifico() {
-        $resultado = $this->object->obterStatus_Especifico(1);
+        $resultado = $this->object->obterStatus_Especifico(0);
         if ($resultado!=false)
             $resultado = true;
         $this->assertTrue(true, $resultado, "Nao foi possivel obter o status especifico!");
@@ -60,11 +64,11 @@ class StatusDAOTest extends PHPUnit_Framework_TestCase {
         }
     }
     
-    /*public function testDeletarStatus() {
+    public function testDeletarStatus() {
       $resultado = $this->object->deletarStatus(1);
        $this->assertTrue(true, $resultado, "Impossivel deletar status!");
     }
-*/
+
     public function testFechaConexão() {
         $resultado = $this->object->fechaConexão();
        $this->assertEquals(NULL, $resultado, "Impossivel fechar conexao!");
