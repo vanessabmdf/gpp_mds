@@ -58,9 +58,9 @@ class Tipo_ChamadoDAO
                 foreach($stm as $row)
                 {
                     $tipo_chamado = new Tipo_Chamado($row['cod'], $row['descricao']);
+                    return $tipo_chamado;
                 }
                 
-                return $tipo_chamado;
                 
             } catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
