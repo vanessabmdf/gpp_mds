@@ -127,7 +127,7 @@
                     require_once ("../menulateral.php");
                     ?>
                     <div id="boxconteudo">
-                        <h1>Cadastro de Usuário</h1>
+                        <h1>Cadastro de Técnicos</h1>
                         <div id="boxcadastro">                            	
                             <form id="formUsuario" action="#" method="POST" class="form">
                                 <fieldset>
@@ -160,7 +160,7 @@
                                         <input class="senhaUsuario" id="senhaUsuario" type="password" name="senhaUsuario" size="25" />  
                                     </label>  
                                 </fieldset>
-                                <input type="hidden" id="perfilUsuario" type="text" name="perfilUsuario" value="1" size="25"/>
+                                <input type="hidden" id="perfilUsuario" name="perfilUsuario" value="2" />
                                 <input type="button" id="botao" value="Salvar" onClick=valida_form() class="botoesInput" />
                                 <input type="button" id="limpar" value="Limpar" onClick="limpa_form();limparValidacao();" class="botoesInput" />
                                 <input type="hidden" id="acao" value="" />

@@ -9,6 +9,8 @@
         
         $usuario = new UsuarioCtrl();
         $linhas = $usuario->validaLogin($nome_usuario, $senha_usuario);
+        $perfil_cod = $usuario->verificalogin($nome_usuario);
+        
         
         
         $aux++;
@@ -21,8 +23,13 @@
             setcookie("nome_usuario", $nome_usuario); 
             setcookie("senha_usuario", $senha_usuario); 
 
-            //DIRECIONA PARA A PÁGINA INICIAL DO SITE
-            header("Location:../../Codigo/View/FormChamado/index.php");//COLOCAR AQUI A PÁGINA INICIAL DO SITE      
+            
+            if($perfil_cod==1)
+                header("Location:../../Codigo/View/FormChamado/index.php");//REDIRECIONA A HOME DO USUARIO
+           elseif($perfil_cod==2)
+               header("Location:../../Codigo/View/provisorio.php");//REDIRECIONA A HOME TECNICO
+            elseif($perfil_cod==3)
+                header("Location:../../Codigo/View/FormUsuario/index.php");//REDIRECIONA A HOME DO GERENTE
         } 
         
     }
