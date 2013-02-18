@@ -57,6 +57,22 @@ class ChamadoCtrl{
           return $resultado;
       }
       
+      public function obterChamadoPorSolicitante($login_usuario)
+      {
+          $DAO = new ChamadoDAO();
+          $resultado = $DAO->obterChamadoPorSolicitante($login_usuario);
+          $DAO->fechaConexão();
+          return $resultado;
+      }
+      
+      public function obterChamadoPorTecnico($login_tecnico)
+      {
+          $DAO = new ChamadoDAO();
+          $resultado = $DAO->obterChamadoPorTecnico($login_tecnico);
+          $DAO->fechaConexão();
+          return $resultado;
+      }
+      
       public function deletarChamado($codigo_chamado)
       {
           try{              

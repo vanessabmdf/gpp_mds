@@ -72,6 +72,30 @@ class ChamadoDAO
             }
     }
     
+    public function obterChamadoPorSolicitante($login_usuario)
+    {
+        $query = "SELECT a.cod, a.data_inicial, a.data_final, a.descricao, a.usuario_login, a.login_tecnico,
+                  b.descricao AS desc_status, c.descricao AS desc_tipo_chamado, a.localizacao_equip, 
+                  a.patrimonio_equip FROM chamado AS a INNER JOIN status AS b INNER JOIN tipo_chamado AS c 
+                  ON a.status_cod = b.cod AND c.cod = a.tipo_cod AND a.usuario_login = '$login_usuario'";
+        
+        $stm = $this->con->query($query);
+        
+        return $stm;
+    }
+    
+    public function obterChamadoPorTecnico($login_tecnico)
+    {
+        $query = "SELECT a.cod, a.data_inicial, a.data_final, a.descricao, a.usuario_login, a.login_tecnico,
+                  b.descricao AS desc_status, c.descricao AS desc_tipo_chamado, a.localizacao_equip, 
+                  a.patrimonio_equip FROM chamado AS a INNER JOIN status AS b INNER JOIN tipo_chamado AS c 
+                  ON a.status_cod = b.cod AND c.cod = a.tipo_cod AND a.login_tecnico = '$login_tecnico'";
+        
+        $stm = $this->con->query($query);
+        
+        return $stm;
+    }
+    
     public function obterChamadoPorStatus($cod_status)
     {
         $query = "SELECT a.cod, a.data_inicial, a.data_final, a.descricao, a.usuario_login, a.login_tecnico,
