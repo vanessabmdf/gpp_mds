@@ -312,7 +312,7 @@ function detalhes(texto){
 
 function carregando(){	
     $.blockUI({ 
-        message: ("<img style='background-color: #000;' src='../imagens/carregando.gif'> Processando..."),
+        message: ("<img style='background-color: #000;' src='../../imagens/carregando.gif'> Processando..."),
         css: {border: 'none',padding: '15px',backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', 
             opacity: .5, 
             color: '#fff' 
@@ -355,11 +355,11 @@ function imprime(xmldoc){
         tabela+="<tfoot id='pager'>";
         tabela+="<tr class='pager' align='center'>";
         tabela+="<th class='pager1' colspan='8'>";
-        tabela+="<img src='../imagens/first.png' alt='Primeira página' class='first'/>";
-        tabela+="<img src='../imagens/prev.png' alt='Página anterior' class='prev'/>";
+        tabela+="<img src='../../imagens/first.png' alt='Primeira página' class='first'/>";
+        tabela+="<img src='../../imagens/prev.png' alt='Página anterior' class='prev'/>";
         tabela+="<input type='text' class='pagedisplay' Readonly/>";
-        tabela+="<img src='../imagens/next.png' alt='Próxima página' class='next'/>";
-        tabela+="<img src='../imagens/last.png' alt='Última página' class='last'/>";
+        tabela+="<img src='../../imagens/next.png' alt='Próxima página' class='next'/>";
+        tabela+="<img src='../../imagens/last.png' alt='Última página' class='last'/>";
         tabela+="<select class='pagesize'>";
         tabela+="<option selected='selected'  value='10'>10</option>";
         tabela+="<option value='20'>20</option>";
@@ -389,9 +389,9 @@ function imprime(xmldoc){
                     }                                                        
                 }							
             }
-            tabela+="<td style='cursor: pointer' class='botoes'><img src='../imagens/detalhes.gif' alt='detalhes' onClick=\"detalhes($('#linha"+i+"').html());\")></td>";
-            tabela+="<td style='cursor: pointer' class='botoes'><img src='../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linha"+i+"').html());\"></td>";
-            tabela+="<td style='cursor: pointer' class='botoes'><img src='../imagens/delete.gif' alt='excluir' onClick=apagar(" + itens[0].firstChild.data + ")></td>";
+            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/detalhes.gif' alt='detalhes' onClick=\"detalhes($('#linha"+i+"').html());\")></td>";
+            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linha"+i+"').html());\"></td>";
+            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/delete.gif' alt='excluir' onClick=apagar(" + itens[0].firstChild.data + ")></td>";
             tabela+="</tr>";
         }
         tabela+="</tbody>";	

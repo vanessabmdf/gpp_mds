@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../controller/StatusCtrl.php");
+require_once("../../../controller/StatusCtrl.php");
 
 $id=$_POST["id"];
 	

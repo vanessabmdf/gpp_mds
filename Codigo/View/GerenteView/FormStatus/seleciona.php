@@ -4,7 +4,7 @@
  * Arquivo onde é montada a tabela de dados.
  * Todos os registros encontrados são passados para XML, para ser montada no site.js
  */
-require_once("../../controller/StatusCtrl.php");
+require_once("../../../controller/StatusCtrl.php");
 
 $status = new StatusCtrl();
 

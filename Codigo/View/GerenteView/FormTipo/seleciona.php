@@ -4,7 +4,7 @@
  * Arquivo onde é montada a tabela de dados.
  * Todos os registros encontrados são passados para XML, para ser montada no site.js
  */
-require_once("../../controller/Tipo_ChamadoCtrl.php");
+require_once("../../../controller/Tipo_ChamadoCtrl.php");
 
 $tipo_chamado = new Tipo_ChamadoCtrl();
 

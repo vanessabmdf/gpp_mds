@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../controller/UsuarioCtrl.php");
+require_once("../../../controller/UsuarioCtrl.php");
 
 $id=$_POST["id"];
 	

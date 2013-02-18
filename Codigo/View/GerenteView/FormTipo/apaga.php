@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../controller/Tipo_ChamadoCtrl.php");
+require_once("../../../controller/Tipo_ChamadoCtrl.php");
 
 $id=$_POST["id"];
 	

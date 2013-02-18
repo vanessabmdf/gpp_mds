@@ -4,24 +4,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>HelpDesk - Faculdade UnB Gama</title>
-        <link href="../css/layout.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" type="text/css" href="../css/superfish.css" media="screen" />
-        <link href="../css/examples.css" rel="stylesheet" type="text/css" media="screen" />
-        <link rel="stylesheet" href="../css/blue/style.css" type="text/css" media="print, projection, screen" />
+        <link href="../../css/layout.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="../../css/superfish.css" media="screen" />
+        <link href="../../css/examples.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../../css/blue/style.css" type="text/css" media="print, projection, screen" />
         <link href="css/formSolicitante.css" rel="stylesheet" type="text/css" media="screen" />
-        <link href="../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
 
 
-        <script src="../js/jquery/jquery-1.4.2.min.js"></script> 
-        <script src="../js/jquery/jquery.validate.js"></script>
-        <script src="../js/jquery/jquery-impromptu.3.1.js"></script>
-        <script src="../js/jquery/jquery.maskedimput-1.3.js"></script>
-        <script src="../js/jquery/jquery.limit-1.2.js"></script>
-        <script src="../js/jquery/jquery.blockUI.js"></script>
-        <script src="../js/hoverIntent.js"></script>
-        <script src="../js/superfish.js"></script>
+        <script src="../../js/jquery/jquery-1.4.2.min.js"></script> 
+        <script src="../../js/jquery/jquery.validate.js"></script>
+        <script src="../../js/jquery/jquery-impromptu.3.1.js"></script>
+        <script src="../../js/jquery/jquery.maskedimput-1.3.js"></script>
+        <script src="../../js/jquery/jquery.limit-1.2.js"></script>
+        <script src="../../js/jquery/jquery.blockUI.js"></script>
+        <script src="../../js/hoverIntent.js"></script>
+        <script src="../../js/superfish.js"></script>
         
-        <script src="../js/dataHora.js"></script>
+        <script src="../../js/dataHora.js"></script>
         <script src="js/site.js"></script>
 
  <!--       <script type="text/javascript">
@@ -99,7 +99,7 @@
             }  
     
     
-        </script>        
+        </script>-->    
         
         
         <script>
@@ -107,24 +107,24 @@
                 jQuery('ul.sf-menu').superfish();
             });
 
-         </script>-->
+         </script>
         <noscript>Habilite o Javascript para visualizar esta p�gina corretamente...</noscript>
     </head>
     <body onload="dataHora();carregando()">
         <!--div's do cabecalho-->
         <div id="box"> <!-- Inicio div box-->
             <?php
-            require_once ("../topo.php");
+            require_once ("../../topo.php");
             ?>
             <!--div's do conteudo-->
             <div id="boxcaixabaixo">                
                 <?php
-                require_once ("../menu.php");
-                require_once ("../ondeestou.php");
+                require_once ("../../menu.php");
+                require_once ("../../ondeestou.php");
                 ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
                     <?php
-                    require_once ("../menulateral.php");
+                    require_once ("../../menulateral.php");
                     ?>
                     <div id="boxconteudo">
                         <h1>Cadastro de Tipo de chamado</h1>
@@ -143,9 +143,9 @@
                         </div>
 
 
-                        <script src="../js/jquery/jquery.tablesorter.js"></script>
-                        <script src="../js/jquery/jquery.tablesorter.pager.js"></script>
-                        <script src="../js/jquery/jquery.tablesorter.filter.js"></script>
+                        <script src="../../js/jquery/jquery.tablesorter.js"></script>
+                        <script src="../../js/jquery/jquery.tablesorter.pager.js"></script>
+                        <script src="../../js/jquery/jquery.tablesorter.filter.js"></script>
 
                         <div id="boxtabela">
                             <div id="resultado" class></div>   
