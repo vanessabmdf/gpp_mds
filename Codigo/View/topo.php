@@ -9,10 +9,10 @@
             </div> <!-- fim div datahora-->
             <div id="controllogin"> <!--Inicio div controllogin-->
                 <div class="controlusuario">
-                    <b>Usuário: Luiz Fernando de Freitas Matos</b>
+                    <b>Usuário: </b>
                 </div>
                 <div class="controlperfil">
-                    <b>Perfil: Gerente</b>
+                    <b>Perfil: </b>
                 </div>
             </div> <!-- fim div contrologin-->
         </div>	<!-- fim div controles-->

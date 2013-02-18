@@ -9,7 +9,11 @@
         
         $usuario = new UsuarioCtrl();
         $linhas = $usuario->validaLogin($nome_usuario, $senha_usuario);
-        $perfil_cod = $usuario->verificalogin($nome_usuario);
+        
+        $verifica_usuario = $usuario->obterUsuario_Especifico($nome_usuario);
+        
+        if($verifica_usuario!=FALSE)
+            $perfil_cod = $usuario->verificalogin($nome_usuario);
         
         
         
