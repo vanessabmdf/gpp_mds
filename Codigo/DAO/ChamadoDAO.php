@@ -104,21 +104,7 @@ class ChamadoDAO
                   ON a.status_cod = b.cod = '$cod_status' AND c.cod = a.tipo_cod";
         
         $stm = $this->con->query($query);
-        /*
-         * Nome das colunas retornadas:
-         * 
-         * cod - codigo do chamado
-         * data_inicial - dt. inicial do chamado
-         * data_final - dt. de finalizacao do chamado
-         * descricao - descricao do chamado
-         * usuario_login - login do usuario
-         * login_tecnico - login do tecnico
-         * desc_status - descricao do status
-         * desc_tipo_chamado - descricao do tipo_chamado
-         * localizacao_equip - localizacao do equipamento
-         * patrimonio_equip - patrimonio do equip
-         */
-        //Se a consulta falhar, retorna FALSE.
+ 
         return $stm;        
     }
     
@@ -186,6 +172,7 @@ class ChamadoDAO
         try
         {
             $stm = $this->con->query("SELECT * FROM chamado");
+            
             return $stm;
         }catch(PDOException $erro){
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -207,15 +194,9 @@ class ChamadoDAO
     
     //Função de fechar a conexão aberta no Banco de Dados.
     public function fechaConexão() {
-        try {
                 $this->con = null;
-            } catch (PDOException $erro) {
-                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-            }
     }
     
 }
-
-
 
 ?>

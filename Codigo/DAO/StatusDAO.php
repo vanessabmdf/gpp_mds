@@ -9,9 +9,9 @@ class StatusDAO
     
     function __construct() 
     {
-        $this->con = new Conection();
-        //Função para aparecer os erros e warnings
-        $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->con = new Conection();
+            //Função para aparecer os erros e warnings
+            $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     
     public function inserirStatus(Status $status)
@@ -23,11 +23,11 @@ class StatusDAO
                 $stm = $this->con->prepare($query);
                 $stm->bindValue(":codigo", $status->getCodigo());
                 $stm->bindValue(":nome", $status->getNome());
+                
                 return $stm->execute();
-             
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }   
+            }   
     }
     
     public function alterarStatus(Status $status, $codigo_status)
@@ -39,21 +39,19 @@ class StatusDAO
                 $stm = $this->con->prepare($query);            
                 $stm->bindValue(":codigo", $status->getCodigo());
                 $stm->bindValue(":nome", $status->getNome());
-                return $stm->execute();
-         
                 
+                return $stm->execute();    
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
-    
     }
     
     
-    public function obterStatus_Especifico($codigo_status) {
+    public function obterStatus_Especifico($codigo_status) 
+    {
         try {
                 $stm = $this->con->query("SELECT * FROM status WHERE cod = '$codigo_status'");
-                
-                
+              
                 //Como so 1 registro é retornado, executa o foreach 1 vez somente.
                 foreach($stm as $row)
                 {
@@ -73,6 +71,7 @@ class StatusDAO
         try
         {
             $stm = $this->con->query("SELECT * FROM status");
+            
             return $stm;
         }catch(PDOException $erro){
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -93,11 +92,7 @@ class StatusDAO
     
     //Função de fechar a conexão aberta no DAO
     public function fechaConexão() {
-        try {
             return $this->con = null;
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
     }
 }
 

@@ -27,7 +27,7 @@ class Tipo_ChamadoDAO
              
             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }   
+            }   
     }
     
     public function alterarTipo_Chamado(Tipo_Chamado $tipo_chamado, $codigo_tipo_chamado)
@@ -71,34 +71,34 @@ class Tipo_ChamadoDAO
     //O objeto retornado, precisa passar pela função foreach(), para obter cada registro.
     public function obterTipo_Chamado_Geral()
     {
-        try
-        {
-            $stm = $this->con->query("SELECT * FROM tipo_chamado");
-            return $stm;
-        }catch(PDOException $erro){
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+         try
+            {
+                $stm = $this->con->query("SELECT * FROM tipo_chamado");
+                return $stm;
+            }catch(PDOException $erro){
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
     
     public function deletarTipo_Chamado($codigo_tipo_chamado) {
-       try {
+         try {
                 $resultado = $this->con->query("DELETE FROM tipo_chamado WHERE cod = '$codigo_tipo_chamado'");
                 if($resultado != false)
                     return true;
                 else
                     return $resultado;
-            } catch (PDOException $erro) {
+             }catch (PDOException $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-            }
+             }
     }
     
     //Função de fechar a conexão aberta no DAO
     public function fechaConexao() {
         try {
-            return $this->con = null;
-        } catch (PDOException $erro) {
-            echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
-        }
+                return $this->con = null;
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
 }
 
