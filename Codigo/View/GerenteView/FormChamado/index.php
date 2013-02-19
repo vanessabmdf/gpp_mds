@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php include '../../../controller/Tipo_chamadoCtrl.php'; ?>
-<?php include 'cadastra.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
@@ -156,52 +155,7 @@
                     require_once ("../../menulateral.php");
                     ?>
                     <div id="boxconteudo">
-                        <h1>Cadastro de Chamados</h1>
-                        <div id="boxcadastro">                            	
-                            <form id="formChamado" action="" method="POST" class="form">
-                              <fieldset>
-                                
-                               <label for="local" style="margin-top: 5px;">Local do Equipamento</label>
-                               <input type="text" name="local" id="local" class="campo" size="40"/><br /><br />
-                               <label for="patrimonio" style="margin-top: 5px;">Código do patrimônio</label>
-                               <input type="text" name="patrimonio" id="patrimonio" class="campo" size="15" /><br /><br />
-                                
-                                <!--<input type="text" name="codEquipamento" id="codEquipamento"/>-->
-                  
-                                    <label>
-                                        Tipo de Chamado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        
-                                            <select id="tipoChamado" name="tipoChamado">
-                                                
-                                                    <option value="0" selected>selecione</option>
-                                                    <?php 
-                                                        $tipo = new Tipo_chamadoCtrl();
-                                                        $stm = $tipo->listaTipo_Chamado();
-                                                        foreach ($stm as $row){
-                                                            $tipoChamado = utf8_encode($row['descricao']);
-                                                            $codigoTipo = $row['cod'];
-                                                            echo "<option value='$codigoTipo'>".$tipoChamado."</option>";
-                                                        }
-                                                    ?>
-                                                    
-                                            </select>
-                                    </label>                                   
-                                </fieldset>
-                                
-                                <fieldset>
-                                    <br /><br /><span style="font-size: 12px;"> Descrição</span>
-                                        <textarea name="descricao" class="descricao" rows="15" cols="125"></textarea>
-                                        <span class="contagemLetras"></span>
-                                </fieldset>
-                                <div id="botoes">
-                                    <input type="submit" id="botao" value="REALIZAR CHAMADO" name="cadastrar" class="botaoCadastro botaoCadastro-blue" />
-                                    <input type="reset" id="limpar" value="Limpar" class="botaoCadastro botaoCadastro-green" />
-                                </div>
-                                <input type="hidden" name="status" id="status" value="1" />
-                                <input type="hidden" name="nomeUsuario" value="Lucas" />
-                                
-                            </form>
-                        </div>
+                        <h1>Chamados Registrados</h1>                        
                             <div id="boxtabela">
                                 <div id="resultado" class></div>   
                         </div>

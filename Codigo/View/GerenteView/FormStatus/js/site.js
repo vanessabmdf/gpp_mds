@@ -312,7 +312,7 @@ function detalhes(texto){
 
 function carregando(){	
     $.blockUI({ 
-        message: ("<img style='background-color: #000;' src='../../imagens/carregando.gif'> Processando..."),
+        message: ("<img style='background-color: #000;' src='../imagens/carregando.gif'> Processando..."),
         css: {border: 'none',padding: '15px',backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', 
             opacity: .5, 
             color: '#fff' 

@@ -411,5 +411,3 @@ function imprime(xmldoc){
     else
         $("#resultado").html("Nenhum registro encontrado...");	
 }
-
-

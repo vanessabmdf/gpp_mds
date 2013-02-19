@@ -59,7 +59,6 @@ function limpa_form(){
         $("#limpar").val("Limpar");
         $("#nomeUsuario").val("");
         $("#emailUsuario").val("");
-        //$("#dtNascUsuario").val("");
         $("#matriculaUsuario").val("");
         $("#loginUsuario").val("");
         $("#senhaUsuario").val("");
@@ -67,7 +66,6 @@ function limpa_form(){
         $("#botao").show();
         $("#nomeUsuario").attr("disabled", false);
         $("#emailUsuario").attr("disabled", false);
-        //$("#dtNascUsuario").attr("disabled", false);
         $("#matriculaUsuario").attr("disabled", false);
         $("#loginUsuario").attr("disabled", false);
         $("#senhaUsuario").attr("disabled", false);
@@ -92,7 +90,6 @@ function enviar(){
                             data: {
                                 nomeUsuario: $("#nomeUsuario").val(),
                                 emailUsuario: $("#emailUsuario").val(),
-                                //dtNascUsuario: $("#dtNascUsuario").val(),
                                 matriculaUsuario: $("#matriculaUsuario").val(),
                                 loginUsuario: $("#loginUsuario").val(),
                                 senhaUsuario: $("#senhaUsuario").val(),
@@ -129,7 +126,6 @@ function enviar(){
                                 id: array[0],
                                 nomeUsuario: $("#nomeUsuario").val(),
                                 emailUsuario: $("#emailUsuario").val(),
-                                //dtNascUsuario: $("#dtNascUsuario").val(),
                                 matriculaUsuario: $("#matriculaUsuario").val(),
                                 loginUsuario: $("#loginUsuario").val(),
                                 senhaUsuario: $("#senhaUsuario").val()
@@ -254,13 +250,11 @@ function editar(texto){
         $("#nomeUsuario").val(array[1]);
         $("#emailUsuario").val(array[2]);		
         $("#matriculaUsuario").val(array[3]);
-        $("#dtNascUsuario").val(array[4]);
-        $("#loginUsuario").val(array[5]);		
+        $("#loginUsuario").val(array[4]);		
 
 
         $("#nomeUsuario").attr("disabled", false);
         $("#emailUsuario").attr("disabled", false);
-        $("#dtNascUsuario").attr("disabled", false);
         $("#matriculaUsuario").attr("disabled", false);
         $("#loginUsuario").attr("disabled", false);
         $("#senhaUsuario").attr("disabled", false);
@@ -332,12 +326,10 @@ function detalhes(texto){
         $("#nomeUsuario").val(array[1]);
         $("#emailUsuario").val(array[2]);		
         $("#matriculaUsuario").val(array[3]);
-        $("#dtNascUsuario").val(array[4]);
-        $("#loginUsuario").val(array[5]);            
+        $("#loginUsuario").val(array[4]);            
 
         $("#nomeUsuario").attr("disabled", true);
         $('#emailUsuario').attr("disabled", true);
-        $('#dtNascUsuario').attr("disabled", true);
         $("#matriculaUsuario").attr("disabled", true);
         $("#loginUsuario").attr("disabled", true);
         $("#senhaUsuario").attr("disabled", true);
@@ -471,47 +463,6 @@ function valida_form(){
         $.prompt(MatriculaErro);
         return false;
     }
-    /*if($("#dtNascUsuario").val().length!=0 && $("#dtNascUsuario").val().length<10){
-        var dtNascInvalido = {
-            errodtNascInvalido: {
-                html:'Data de nascimento inválida! Preencha um data correta!',
-                buttons: {Ok: 0},
-                focus: 1,
-                submit:function(v,m,f){
-                    if(v==0){
-                        $("#dtNascUsuario").focus();
-                        $.prompt.close()
-                    }
-                    return false;
-                }
-            }
-        };
-        $.prompt(dtNascInvalido);
-        return false;
-    }   
-    if(!(verificaData($("#dtNascUsuario").val()))){
-        var dtNascRange = {
-            errodtNascInvalido: {
-                html:'Data de nascimento inválida! Preencha um data correta!',
-                buttons: {Ok: 0},
-                focus: 1,
-                submit:function(v,m,f){
-                    if(v==0){
-                        $("#dtNascUsuario").focus();
-                        $.prompt.close()
-                    }
-                    return false;
-                }
-            }
-        };
-        $.prompt(dtNascRange);
-        return false;
-    }*/  
-    
-    
-
-
-
     enviar();
     return false;
 
@@ -597,7 +548,7 @@ function imprime(xmldoc){
                 }							
             }
             tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/detalhes.gif' alt='detalhes' onClick=\"detalhes($('#linha"+i+"').html());\")></td>";
-            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linha"+i+"').html());limparValidacao();\"></td>";
+            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linha"+i+"').html());\"></td>";
             tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/delete.gif' alt='excluir' onClick=apagar(" + itens[0].firstChild.data + ")></td>";
             tabela+="</tr>";
         }
@@ -618,30 +569,3 @@ function imprime(xmldoc){
     else
         $("#resultado").html("Nenhum registro encontrado...");	
 }
-
-function verificaData(data){
-        
-        var regData = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
-        arrayData = data.match(regData);
-        if (arrayData  == null) 
-            return false;    
-    
-        dtDia= arrayData[1];
-        dtMes = arrayData[3];    
-        dtAno = arrayData[5];        
-    
-        if ((dtMes < 1 || dtMes > 12) || (dtDia < 1 || dtDia> 31)) 
-            return false;  
-        
-        else if ((dtMes==4 || dtMes==6 || dtMes==9 || dtMes==11) && dtDia ==31) 
-            return false;
-        
-        else if (dtMes == 2) 
-        {
-            var anoBissexto = (dtAno % 4 == 0 && (dtAno % 100 != 0 || dtAno % 400 == 0));
-            if (dtDia> 29 || (dtDia ==29 && !anoBissexto)) 
-            return false;
-        } else
-            return true;
-    }
-
