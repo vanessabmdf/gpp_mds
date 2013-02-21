@@ -133,15 +133,15 @@ class ChamadoCtrlTest extends PHPUnit_Framework_TestCase {
         $resultado = $this->object->listaChamado();
         foreach ($resultado as $row){
             $this->assertArrayHasKey("cod", $row, "A listagem de todos os chamados falhou!");
-            $this->assertArrayHasKey("tipo_cod", $row, "A listagem de todos os chamados falhou!");
-            $this->assertArrayHasKey("usuario_login", $row, "A listagem de todos os chamados falhou!");
-            $this->assertArrayHasKey("descricao", $row, "A listagem de todos os chamados falhou!");
             $this->assertArrayHasKey("data_inicial", $row, "A listagem de todos os chamados falhou!");
             $this->assertArrayHasKey("data_final", $row, "A listagem de todos os chamados falhou!");
-            $this->assertArrayHasKey("patrimonio_equip", $row, "A listagem de todos os chamados falhou!");
-            $this->assertArrayHasKey("localizacao_equip", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("descricao", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("usuario_login", $row, "A listagem de todos os chamados falhou!");
             $this->assertArrayHasKey("login_tecnico", $row, "A listagem de todos os chamados falhou!");
-            $this->assertArrayHasKey("status_cod", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("desc_status", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("desc_tipo_chamado", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("localizacao_equip", $row, "A listagem de todos os chamados falhou!");
+            $this->assertArrayHasKey("patrimonio_equip", $row, "A listagem de todos os chamados falhou!");  
         }
     }
 
