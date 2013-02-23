@@ -1,5 +1,5 @@
 <?php
-     require_once '../../Codigo/controller/UsuarioCtrl.php';
+     require_once "/../controller/UsuarioCtrl.php";
      
      $aux = 0;
     //OBTÉM OS VALORES DIGITADOS NO FORMULÁRIO 
