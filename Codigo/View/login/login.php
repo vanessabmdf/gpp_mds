@@ -35,7 +35,7 @@
             }
            elseif($perfil_cod==2){
                 setcookie("perfil_usuario", "Tecnico", 0, "/");
-                header("Location:../../Codigo/View/TecnicoView/FormChamado/login.php");//REDIRECIONA A HOME TECNICO
+                header("Location:../../Codigo/View/TecnicoView/FormChamado/index.php");//REDIRECIONA A HOME TECNICO
            }
            elseif($perfil_cod==3){
                 setcookie("perfil_usuario", "Gerente", 0, "/");
