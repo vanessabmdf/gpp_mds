@@ -191,64 +191,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#">Contatos</a>
-                            <ul>
-
-                                <li>
-                                    <a href="#">menu item</a>
-                                    <ul>
-                                        <li><a href="#">short</a></li>
-                                        <li><a href="#">short</a></li>
-                                        <li><a href="#">short</a></li>
-                                        <li><a href="#">short</a></li>
-                                        <li><a href="#">short</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">menu item</a>
-                                    <ul>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-
-                                    <a href="#">menu item</a>
-                                    <ul>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">menu item</a>
-                                    <ul>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-
-                                    <a href="#">menu item</a>
-                                    <ul>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                        <li><a href="#">menu item</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>                        
                         
                     </ul>
                 </div> <!--Inicio div menu-->

@@ -18,16 +18,16 @@ body{
 #topo{
 	height:100px;
 	background:#FFFFFF;
-	border-bottom:#0099FF solid 3px;
+	border-bottom:#0099FF solid 2px;
 }
 #banner{
-	width:310px;
+	width:510px;
 	height:100px;
 	background:#FFFFFF url(../imagens/LogoGTI_menor.jpg) no-repeat;
 	float:left;
 }
 #controles{	
-	width: 48%;
+	width: 50%;
 	height:60px;	
 	float:right;
 }
@@ -43,10 +43,11 @@ body{
         text-align: center;
 }
 #controllogin{
+	height: 20px;	
 	font-family:Verdana,Arial,Helvetica,sans-serif;
-	font-size: 11px;
-        margin-left: 125px;
-        float: left;
+	font-size: 12.5px;
+	margin: 25px 0 0 0;
+        margin-right: 100px;
 }
  #controllogin .controlusuario{
         text-align: right;
@@ -54,12 +55,14 @@ body{
         float: left;
         padding: 2px 0 0 0;
  }
+ 
  #controllogin .controlperfil{
         text-align: right;
         width: 45%;
         float: right;
         padding: 2px 0 0 0;
 }
+
 #boxcaixabaixo{
         border: 1px solid #D0D0D0;
         
@@ -168,4 +171,52 @@ body{
 }
 #clear{
 	clear: both;
+}
+
+.botao {
+    display: inline-block;
+   
+    float:right; 
+    margin-top: -25px;
+    width: 80px;
+    text-align: center;
+    color: #444;
+    font-size: 11px;
+    font-weight: bold;
+    height: 27px;
+    margin-bottom: 10px;
+    padding: 0 8px;
+    line-height: 27px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #dcdcdc;
+  }
+
+.botao-green {
+    border: 1px solid #317A31;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    background-color: #3D993D;
+  
+}
+.botao-green:hover {
+    border: 1px solid #2C6E2C;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #378A37;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    -ms-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+ }
+.botao-green:active {
+  	border: 1px solid #286328;
+  	background-color: #327C32;
+  	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  	box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  	color: #fff;
 }

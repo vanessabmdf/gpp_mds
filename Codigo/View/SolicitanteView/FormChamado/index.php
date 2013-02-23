@@ -1,10 +1,14 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<?php include '../../../controller/Tipo_chamadoCtrl.php'; ?>
-<?php include 'cadastra.php'; ?>
+<?php include '../../../lib/valida_cookies.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
+    <?php include '../../../controller/Tipo_chamadoCtrl.php'; ?>
+    <?php include 'cadastra.php'; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta HTTP-EQUIV="Expires" CONTENT="-1" />
+        <meta HTTP-EQUIV="Pragma" CONTENT="no-cache" />
         <title>HelpDesk - Faculdade UnB Gama</title>
         <link href="../../css/layout.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../../css/superfish.css" media="screen" />
@@ -139,14 +143,15 @@
         
 
     </head>
-    <body onload="dataHora();carregando()">
+    <body onload="dataHora();">
         <!--div's do cabecalho-->
         <div id="box"> <!-- Inicio div box-->
             <?php
             require_once ("../../topo.php");
             ?>
             <!--div's do conteudo-->
-            <div id="boxcaixabaixo">                
+            <div id="boxcaixabaixo">  
+                
                 <?php
                 require_once ("../../menu.php");
                 require_once ("../../ondeestou.php");

@@ -12,11 +12,10 @@
         
         $verifica_usuario = $usuario->obterUsuario_Especifico($login_usuario);
         
-        if($verifica_usuario!=FALSE)
+        if($verifica_usuario!=FALSE){
             $perfil_cod = $usuario->verificalogin($login_usuario);
-        
-        $nome_usuario = $verifica_usuario->getNome();
-        
+            $nome_usuario = $verifica_usuario->getNome();
+        }
         
         
         $aux++;
@@ -26,20 +25,20 @@
         }
 
         else{
-            setcookie("nome_usuario", $nome_usuario); 
-            setcookie("login_usuario", $login_usuario);
-            
+            setcookie("nome_usuario", $nome_usuario, time()+3600, "/"); 
+            setcookie("login_usuario", $login_usuario, time()+3600, "/");
+            setcookie("senha_usuario", $senha_usuario, time()+3600, "/");
             
             if($perfil_cod==1){
-                setcookie("perfil_usuario", "Solicitante");
+                setcookie("perfil_usuario", "Solicitante", 0, "/");
                 header("Location:../../Codigo/View/SolicitanteView/FormChamado/index.php");//REDIRECIONA A HOME DO USUARIO
             }
            elseif($perfil_cod==2){
-                setcookie("perfil_usuario", "Tecnico");
+                setcookie("perfil_usuario", "Tecnico", 0, "/");
                 header("Location:../../Codigo/View/TecnicoView/FormChamado/login.php");//REDIRECIONA A HOME TECNICO
            }
            elseif($perfil_cod==3){
-                setcookie("perfil_usuario", "Gerente");
+                setcookie("perfil_usuario", "Gerente", 0, "/");
                 header("Location:../../Codigo/View/GerenteView/FormUsuario/index.php");//REDIRECIONA A HOME DO GERENTE
            }
         } 

@@ -13,8 +13,8 @@
                 </div>
                 <div class="controlperfil">
                     <b>Perfil: <?php echo $_COOKIE['perfil_usuario']; ?> </b>
-                    <a href="../../login/logout.php">Logout</a>
                 </div>
             </div> <!-- fim div contrologin-->
+           <a href="../../login/logout.php"><button class="botao botao-green">sair</button></a>
         </div>	<!-- fim div controles-->
     </div> <!-- fim div topo-->  
