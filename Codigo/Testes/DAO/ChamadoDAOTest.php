@@ -61,6 +61,25 @@ class ChamadoDAOTest extends PHPUnit_Framework_TestCase {
         $resultado = $this->object->obterChamadoPorStatus(2);
         $this->assertTrue(true, $resultado, "Nao foi possivel alterar O status!");
     }
+     /**
+     * @covers ChamadoDAO::obterChamadoPorSolicitante
+     * @todo   Implement testObterChamadoPorSolicitante().
+     */
+    
+    public function testObterChamadoPorSolicitante(){
+        $resultado = $this->object->obterChamadoPorSolicitante(2);
+        $this->assertTrue(true, $resultado, "Nao foi possivel obter o chamado por solicitante!");
+    }
+    
+    /**
+     * @covers ChamadoDAO::obterChamadoPorTecnico
+     * @todo   Implement testObterChamadoPorTecnico().
+     */
+    
+    public function testObterChamadoPorTecnico(){
+        $resultado = $this->object->obterChamadoPorTecnico(2);
+        $this->assertTrue(true, $resultado, "Nao foi possivel obter o chamado por tecnico!");
+    }
 
     /**
      * @covers ChamadoDAO::obterChamado_Especifico
