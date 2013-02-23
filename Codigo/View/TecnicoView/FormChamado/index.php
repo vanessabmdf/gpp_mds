@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<?php include '../../../controller/Tipo_chamadoCtrl.php'; ?>
+<?php include '../../../controller/StatusCtrl.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
@@ -154,8 +154,31 @@
                     <?php
                     require_once ("../../menulateral.php");
                     ?>
+                    
                     <div id="boxconteudo">
-                        <h1>Chamados Registrados</h1>                        
+                        <h1>Chamados Registrados Em Aberto</h1> 
+                        <div id="boxcadastro">
+                            <fieldset>
+                                <label for="codigo" >Código do chamado</label>
+                                <input type="text" name="codigo" id="codigo" class="campo" size="3"/><br>
+                                <label for="nome" >Solicitante</label>
+                                <input type="text" name="solicitante" id="solicitante" class="campo" size="20"/><br>
+                                <label for="data" >Data do Chamado</label></fieldset>
+                             <fieldset><input type="text" name="data" id="data" class="campo" size="20"/><br>
+                                <label for="descricao" >Descrição</label>
+                                <input type="text" name="descricao" id="descricao" class="campo" size="45"/><br></fieldset>
+                                <fieldset><label for="tipo" >Tipo de Chamado</label>
+                                <input type="text" name="tipo" id="tipo" class="campo" size="20"/><br>
+                                <label for="local">Local do Equipamento</label>
+                                <input type="text" name="local" id="local" class="campo" size="40"/><br /><br />
+                                <label for="patrimonio" >Código do patrimônio</label></fieldset>
+                                <input type="text" name="patrimonio" id="patrimonio" class="campo" size="15" /><br /><br /></fieldset>
+                                <fieldset><label> Status do Chamado</label></fieldset>
+                                <input type="text" name="status" id="status" class="campo" size="3"/>
+                                <input type="button" id="botao" value="Salvar" onClick=enviar() class="botoesInput" />
+                                <input type="button" id="limpar" value="Limpar" onClick="limpa_form();" class="botoesInput" />
+                                <input type="hidden" id="acao" value="" />
+                        </div> <!--fim div boxbaixo -->
                             <div id="boxtabela">
                                 <div id="resultado" class></div>   
                         </div>

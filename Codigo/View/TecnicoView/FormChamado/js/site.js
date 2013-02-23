@@ -22,8 +22,179 @@ function carregando(){
     load_grid();
 }
 
+
+function limpa_form(){
+
+    if ( $("#limpar").val() == "Cancelar" ){
+        var cancelar = 
+            {
+            cancelaralteracao: {
+                html:'Deseja cancelar a alteração?',
+                buttons: {Nao: false, Sim: true},
+                focus: 1,
+                submit:function(v,m,f){
+                    if(!v) 
+                        return true;
+                    else{
+                        $("#botao").val("Salvar");
+                        $("#limpar").val("Limpar");
+                        limpa_form();
+                        $.prompt.goToState('cancelado');
+                    }
+                    return false;
+                }
+            },
+            cancelado: {
+                html:'Alteração cancelada!',
+                buttons: {Sair: false},
+                focus: 1,
+                submit:function(v,m,f){
+                    if(!v) 
+                    {
+                        $("#status").focus();
+                        retorno=0;
+                        $.prompt.close()
+                    }		
+                }
+            }
+        };    
+        $.prompt(cancelar);
+    }
+    else{
+        
+        $("#botao").val("Salvar");
+        $("#limpar").val("Limpar");
+        $("#status").val("");
+
+        $("#botao").show();
+        $("#status").attr("disabled", false);
+    }
+}
+
+
+function enviar(){
+   if($("#acao").val()=="alterar"){
+        var alteracao = {
+            confirmaralterar: {
+                html:'Deseja realmente alterar o registro?',
+                buttons: {Nao: false, Sim: true},
+                focus: 1,
+                submit:function(v,m,f){
+                    if(!v) return true;
+                    else{
+                        $.ajax({
+                            url: 'altera.php',
+                            type: "POST",
+                            data: {
+                                id: array[0],
+                                status: $("#status").val()
+                            },
+                            success: function (data) {
+                                $("#acao").val("inserir"),
+                                $("#botao").val("Salvar"),
+                                
+                                load_grid(data);                                                        
+                            }
+                        });
+                        $.prompt.goToState('alterado');
+                    }
+                    return false;
+                }
+            },
+            alterado: {
+                html:'Registro alterado com sucesso!',
+                buttons: {Sair: 0},
+                focus: 1,
+                submit:function(v,m,f){
+                    if(v==0) {
+                        $("#status").focus();
+                        retorno = 0;
+                        $.prompt.close()
+                    }
+                }
+            }
+        };
+        $.prompt(alteracao);
+
+    } 
+}
+
+function editar(texto){
+
+if(navigator.appName=='Microsoft Internet Explorer'){
+        array=texto.split("<TD>");
+        texto=array.join("");
+        array=texto.split("</TD>");
+
+        array=texto.split('<TD style="DISPLAY: none">');
+        texto=array.join('');
+        array=texto.split('</TD>');
+    }
+    else if (/Firefox[\/\s](\d+\.\d+)/.test(navigator.userAgent)){
+        var versaoFirefox=new Number(RegExp.$1)
+        if(versaoFirefox>=4){
+            array=texto.split("<td>");
+            texto=array.join("");
+            array=texto.split("</td>")
+
+            array=texto.split('<td style="display: none">');
+            texto=array.join('');
+            array=texto.split('</td>');
+        }else{
+            array=texto.split("<td>");
+            texto=array.join("");
+            array=texto.split("</td>")
+
+            array=texto.split('<td style="display: none;">');
+            texto=array.join('');
+            array=texto.split('</td>');
+        }
+    }else{
+        array=texto.split("<td>");
+        texto=array.join("");
+        array=texto.split("</td>")
+
+        array=texto.split('<td style="display: none;">');
+        texto=array.join('');
+        array=texto.split('</td>');
+
+        array=texto.split('<td style="display: none">');
+        texto=array.join('');
+        array=texto.split('</td>');
+    }
+    if(retorno == 0){
+
+        $("#codigo").val(array[0]);
+        $("#data").val(array[2]);
+        $("#descricao").val(array[4]);
+        $("#solicitante").val(array[5]);
+        $("#tipo").val(array[7]);
+        $("#local").val(array[9]);
+        $("#patrimonio").val(array[8]);
+        $("#status").val();
+
+        $("#codigo").attr("disabled", true);
+        $("#data").attr("disabled", true);
+        $("#descricao").attr("disabled", true);
+        $("#solicitante").attr("disabled", true);
+        $("#tipo").attr("disabled", true);
+        $("#local").attr("disabled", true);
+        $("#patrimonio").attr("disabled", true);
+        $("#status").attr("disabled", false);
+
+        retorno++;
+
+        $("#botao").show();
+        $("#acao").val("alterar");
+        $("#botao").val("Salvar");
+        
+    }else{
+        $.prompt("Conclua ou cancele alteração pendente!");
+    }    
+}
+
 function imprime(xmldoc){
-    $.unblockUI();        
+    $.unblockUI();
     if(typeof(xmldoc) != "string")
     {
         var cabecalho = xmldoc.getElementsByTagName('cabecalho')[0];
@@ -90,7 +261,7 @@ function imprime(xmldoc){
                     }                                                        
                 }							
             }
-            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/detalhes.gif' alt='detalhes' onClick=\"detalhes($('#linha"+i+"').html());\")></td>";
+            
             tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linha"+i+"').html());\"></td>";            
             tabela+="</tr>";
         }

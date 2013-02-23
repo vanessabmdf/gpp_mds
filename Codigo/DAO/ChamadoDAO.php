@@ -50,10 +50,11 @@ class ChamadoDAO
                 if($status_cod == 3)
                 {
                     //O Comando SELECT NOW() retorna a data atual do sistema.
-                    $query = "UPDATE chamado SET status_cod=:status_cod, data_final = (SELECT NOW()) WHERE cod = '$codigo_chamado'";
+                    $query = "UPDATE chamado SET status_cod=:status_cod, data_final = (SELECT NOW()), login_tecnico=:login_tecnico WHERE cod = '$codigo_chamado'";
                     $stm = $this->con->prepare($query);
                     
                     $stm->bindValue(":status_cod", $status_cod);
+                    $stm->bindValue(":login_tecnico", $login_tecnico);
                     return $stm->execute();
                 }
                 
@@ -104,7 +105,21 @@ class ChamadoDAO
                   ON a.status_cod = b.cod = '$cod_status' AND c.cod = a.tipo_cod";
         
         $stm = $this->con->query($query);
- 
+        /*
+         * Nome das colunas retornadas:
+         * 
+         * cod - codigo do chamado
+         * data_inicial - dt. inicial do chamado
+         * data_final - dt. de finalizacao do chamado
+         * descricao - descricao do chamado
+         * usuario_login - login do usuario
+         * login_tecnico - login do tecnico
+         * desc_status - descricao do status
+         * desc_tipo_chamado - descricao do tipo_chamado
+         * localizacao_equip - localizacao do equipamento
+         * patrimonio_equip - patrimonio do equip
+         */
+        //Se a consulta falhar, retorna FALSE.
         return $stm;        
     }
     
@@ -177,7 +192,6 @@ class ChamadoDAO
                       ON a.status_cod = b.cod AND c.cod = a.tipo_cod";
             
             $stm = $this->con->query($query);
-            
             return $stm;
         }catch(PDOException $erro){
             echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
@@ -199,9 +213,15 @@ class ChamadoDAO
     
     //Função de fechar a conexão aberta no Banco de Dados.
     public function fechaConexão() {
+        try {
                 $this->con = null;
+            } catch (PDOException $erro) {
+                echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
+            }
     }
     
 }
+
+
 
 ?>

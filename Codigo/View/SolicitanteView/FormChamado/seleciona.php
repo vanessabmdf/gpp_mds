@@ -41,7 +41,7 @@ $chamado = new ChamadoCtrl();
 	
 	//Corpo da Tabela - Setando os valores de cada campo
         //Aqui passar como parâmetro a SESSION  com o login do usuário
-	foreach($chamado->obterChamadoPorSolicitante('vanessa') as $sol){
+	foreach($chamado->obterChamadoPorSolicitante($_COOKIE['login_usuario']) as $sol){
 		$xml.="<registro>";	
                         $xml.="<item>".$sol["cod"]."</item>";
 			$xml.="<item>".$sol["cod"]."</item>"; 

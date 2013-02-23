@@ -21,7 +21,7 @@ body{
 	border-bottom:#0099FF solid 3px;
 }
 #banner{
-	width:510px;
+	width:310px;
 	height:100px;
 	background:#FFFFFF url(../imagens/LogoGTI_menor.jpg) no-repeat;
 	float:left;
@@ -43,10 +43,10 @@ body{
         text-align: center;
 }
 #controllogin{
-	height: 20px;	
 	font-family:Verdana,Arial,Helvetica,sans-serif;
 	font-size: 11px;
-	margin: 25px 0 0 0;
+        margin-left: 125px;
+        float: left;
 }
  #controllogin .controlusuario{
         text-align: right;

@@ -198,7 +198,7 @@
                                     <input type="reset" id="limpar" value="Limpar" class="botaoCadastro botaoCadastro-green" />
                                 </div>
                                 <input type="hidden" name="status" id="status" value="1" />
-                                <input type="hidden" name="nomeUsuario" value="Lucas" />
+                                <input type="hidden" name="nomeUsuario"/>
                                 
                             </form>
                         </div>
