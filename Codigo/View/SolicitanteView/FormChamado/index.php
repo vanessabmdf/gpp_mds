@@ -138,7 +138,10 @@
             $('#tipoChamado').customSelect();
         });
         </script>
-       
+        
+        <script type="text/javascript">
+            window.history.forward(1);
+        </script>
         <noscript>Habilite o Javascript para visualizar esta página corretamente...</noscript>
         
 

@@ -147,7 +147,7 @@
             <!--div's do conteudo-->
             <div id="boxcaixabaixo">                
                 <?php
-                require_once ("../../menu.php");
+                require_once ("../menusuperior.php");
                 require_once ("../../ondeestou.php");
                 ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 

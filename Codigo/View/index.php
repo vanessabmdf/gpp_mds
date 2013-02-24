@@ -121,7 +121,7 @@
         </script>  
         <script type="text/javascript" src="login/js/cadastro.js"></script>
     </head>
-    <body onload="escondeErro();">
+    <body onload="escondeErro();window.clear.history(1);">
         <div id="topo">
             <img src="imagens/LogoGTI_menor.jpg" align="center" />
         </div>

@@ -119,7 +119,7 @@
             <!--div's do conteudo-->
             <div id="boxcaixabaixo">                
                 <?php
-                require_once ("../../menu.php");
+                require_once ("../menusuperior.php");
                 require_once ("../../ondeestou.php");
                 ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
@@ -167,7 +167,7 @@
                             </form>
                         </div>
 
-
+                        <h1>Consultar Usuários Cadastrados</h1>
                         <script src="../../js/jquery/jquery.tablesorter.js"></script>
                         <script src="../../js/jquery/jquery.tablesorter.pager.js"></script>
                         <script src="../../js/jquery/jquery.tablesorter.filter.js"></script>
