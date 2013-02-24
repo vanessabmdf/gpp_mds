@@ -30,15 +30,14 @@ class Tipo_ChamadoDAO
         }   
     }
     
-    public function alterarTipo_Chamado(Tipo_Chamado $tipo_chamado, $codigo_tipo_chamado)
+    public function alterarTipo_Chamado($nomeTipoChamado, $codigo_tipo_chamado)
     {
         
        try {
-                $query = "UPDATE tipo_chamado SET cod=:codigo, descricao=:descricao WHERE cod = '$codigo_tipo_chamado' "; 
+                $query = "UPDATE tipo_chamado SET descricao=:descricao WHERE cod = '$codigo_tipo_chamado' "; 
                       
                 $stm = $this->con->prepare($query);            
-                $stm->bindValue(":codigo", $tipo_chamado->getCodigo());
-                $stm->bindValue(":nome", $tipo_chamado->getDescricao());
+                $stm->bindValue(":descricao", $nomeTipoChamado);
                 return $stm->execute();
          
                 

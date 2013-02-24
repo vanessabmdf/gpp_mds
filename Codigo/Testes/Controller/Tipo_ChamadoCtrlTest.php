@@ -66,8 +66,8 @@ class Tipo_ChamadoCtrlTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testAlteraTipo_Chamado().
      */
     public function testAlteraTipo_Chamado() {
-        $resultado = $this->object->alteraTipo_Chamado(1, "Software", 1);
-        $this->assertTrue (true, $resultado, "impossivel alterar tupo_chamado");
+        $resultado = $this->object->alteraTipo_Chamado("Software", 1);
+        $this->assertTrue (true, $resultado, "impossivel alterar tipo_chamado");
     }
     
      /**

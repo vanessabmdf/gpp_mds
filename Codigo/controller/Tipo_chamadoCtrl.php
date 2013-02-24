@@ -54,13 +54,13 @@ class Tipo_ChamadoCtrl {
        return $tipo_chamado;
    }
    
-   public function alteratipo_chamado($codigo, $descricao, $codigo_busca) {
+   public function alteratipo_chamado($descricao, $codigo_busca) {
         try {     
-                $tipo_chamado = new Tipo_Chamado($codigo, $descricao);
-           
-                $DAO = new Tipo_ChamadoDAO();
-                    $DAO->alterarTipo_Chamado($tipo_chamado, $codigo_busca);
+                    $DAO = new Tipo_ChamadoDAO();
+                    $resultado = $DAO->alterarTipo_Chamado($descricao, $codigo_busca);
                     $DAO->fechaConexao();
+                    
+                    return $resultado;
             } catch (Exception $erro) {
                 echo "Ocorreu um erro na operação, informe o erro ao CPD: " . $erro->getMessage();
             }
