@@ -150,8 +150,10 @@
                 require_once ("../menusuperior.php");
                 ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
+                    
+                    
                     <div id="boxconteudo">
-                        <h1>Minhas responsabilidades</h1> 
+                        <h1>Minhas Responsabilidades</h1> 
                         <div id="boxcadastro">
                             
                                 <label for="codigo" >Código do chamado</label>
@@ -168,9 +170,25 @@
                                 <input type="text" name="local" id="local" class="campo" size="40" disabled/><br /><br />
                                 <label for="patrimonio" >Código do patrimônio</label>
                                 <input type="text" name="patrimonio" id="patrimonio" class="campo" size="15" disabled/><br /><br />
-                                <label> Status do Chamado</label>
-                                Em andamento<input type="radio" name="status" id="status" value="2" />
-                                Finalizado<input type="radio" name="status" id="status" value="3" />
+                                
+                                <label>
+                                        Status<br /><br />
+                                        
+                                            <select id="status" name="status">
+                                                
+                                                    <option value="0" selected>selecione</option>
+                                                    <?php 
+                                                        $status = new StatusCtrl();
+                                                        $stm = $status->listaStatus();
+                                                        foreach ($stm as $row){
+                                                            $status = utf8_encode($row['descricao']);
+                                                            $codigo = $row['cod'];
+                                                            echo "<option value='$codigo'>".$status."</option>";
+                                                        }
+                                                    ?>
+                                                    
+                                            </select>
+                                    </label>
 
                                 
                                 <input type="button" id="botao" value="Salvar" onClick=enviar() class="botoesInput" />
@@ -178,9 +196,13 @@
                                 <input type="hidden" id="acao" value="" />
                         </div> <!--fim div boxbaixo -->
                             <div id="boxtabela">
-                                <div id="tabelas" class></div>
+                                <div id="resultado" class></div>
                                 
                         </div>
+
+                       
+
+                       
                     </div>
                 </div> <!--fim div boxbaixo -->
 
