@@ -142,17 +142,16 @@
         <!--div's do cabecalho-->
         <div id="box"> <!-- Inicio div box-->
             <?php
-            require_once ("../../topo.php");
+            require_once ("../topo.php");
             ?>
             <!--div's do conteudo-->
             <div id="boxcaixabaixo">                
                 <?php
                 require_once ("../menusuperior.php");
-                require_once ("../../ondeestou.php");
                 ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
                     <?php
-                    require_once ("../../menulateral.php");
+                    require_once ("../menulateral.php");
                     ?>
                     <div id="boxconteudo">
                         <h1>Chamados Registrados</h1>                        

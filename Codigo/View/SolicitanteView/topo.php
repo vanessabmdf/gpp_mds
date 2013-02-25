@@ -9,10 +9,10 @@
             </div> <!-- fim div datahora-->
             <div id="controllogin"> <!--Inicio div controllogin-->
                 <div class="controlusuario">
-                    <b>Usuário: <?php echo  $_COOKIE['nome_usuario']; ?></b>
+                    <b>Bem-vindo(a), <?php echo  $_COOKIE['nome_usuario']; ?> !</b>
                 </div>
                 <div class="controlperfil">
-                    <b>Perfil: <?php echo $_COOKIE['perfil_usuario']; ?> </b>
+                    <b><?php echo $_COOKIE['perfil_usuario']; ?> </b>
                 </div>
             </div> <!-- fim div contrologin-->
            <a href="../../login/logout.php"><button class="botao botao-green">sair</button></a>

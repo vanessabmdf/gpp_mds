@@ -5,12 +5,14 @@ body{
 #boxcadastro{
     font-family: Verdana,Arial,Helvetica,sans-serif;; 
     font-size: 12px;
-        
+    
+    
     overflow: hidden;
     background-color: #F2F2F2;  
     border: 1px solid #D0D0D0;
     padding: 20px 0 10px 10px;
     margin-bottom: 50px;
+   
 }
 #boxconteudo h1{
     font-size:large;
@@ -20,7 +22,7 @@ body{
     margin:10px 0 30px 0px;
 }
 #boxcadastro input{   
-    display: block;
+    
 }
 #boxcadastro label{
     display:block;
@@ -34,7 +36,7 @@ body{
     font-family: verdana;
     font-size: 12px;
     color: #ffffff; 
-    background: url('../imagens/up.gif') no-repeat top left;
+    background: url('../../imagens/up.gif') no-repeat top left;
     padding: 2px 8px;
     height: 22px;
     display: block;
@@ -83,7 +85,11 @@ td{
     display:block; 
     margin-bottom: 10px;
 }
-
+input.marcado, textarea.marcado {
+    border: 1px solid #000000;
+    background: #F2F2F2;
+    
+} 
 .boxes{
     width: 1em;
 }

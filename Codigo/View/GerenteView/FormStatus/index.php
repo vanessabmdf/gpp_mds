@@ -1,5 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -114,17 +113,16 @@
         <!--div's do cabecalho-->
         <div id="box"> <!-- Inicio div box-->
             <?php
-            require_once ("../../topo.php");
+            require_once ("../topo.php");
             ?>
             <!--div's do conteudo-->
             <div id="boxcaixabaixo">                
                 <?php
                 require_once ("../menusuperior.php");
-                require_once ("../../ondeestou.php");
                 ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
                     <?php
-                    require_once ("../../menulateral.php");
+                    require_once ("../menulateral.php");
                     ?>
                     <div id="boxconteudo">
                         <h1>Cadastro de Status</h1>

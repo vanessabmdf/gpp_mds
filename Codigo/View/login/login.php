@@ -34,12 +34,12 @@
                 header("Location:../../Codigo/View/SolicitanteView/FormChamado/index.php");//REDIRECIONA A HOME DO USUARIO
             }
            elseif($perfil_cod==2){
-                setcookie("perfil_usuario", "Tecnico", 0, "/");
+                setcookie("perfil_usuario", "Técnico", 0, "/");
                 header("Location:../../Codigo/View/TecnicoView/FormChamado/index.php");//REDIRECIONA A HOME TECNICO
            }
            elseif($perfil_cod==3){
                 setcookie("perfil_usuario", "Gerente", 0, "/");
-                header("Location:../../Codigo/View/GerenteView/FormUsuario/index.php");//REDIRECIONA A HOME DO GERENTE
+                header("Location:../../Codigo/View/GerenteView/FormChamado/index.php");//REDIRECIONA A HOME DO GERENTE
            }
         } 
         

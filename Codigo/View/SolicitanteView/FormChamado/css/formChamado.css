@@ -201,9 +201,9 @@ textarea.error{
 
 
 #botoes{
-    float: right;
-    width: 27%;
-    margin-right: 10%;
+    
+    width:  300px;
+    margin-left: 55px;
 }
 
 .customSelect { 

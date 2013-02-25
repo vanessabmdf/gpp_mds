@@ -5,12 +5,14 @@ body{
 #boxcadastro{
     font-family: Verdana,Arial,Helvetica,sans-serif;; 
     font-size: 12px;
-        
+    
+    width: 65%;
     overflow: hidden;
     background-color: #F2F2F2;  
     border: 1px solid #D0D0D0;
     padding: 20px 0 10px 10px;
     margin-bottom: 50px;
+    margin-left: 18%;
 }
 #boxconteudo h1{
     font-size:large;
@@ -83,7 +85,11 @@ td{
     display:block; 
     margin-bottom: 10px;
 }
-
+input.marcado, textarea.marcado {
+    border: 1px solid #000000;
+    background: #F2F2F2;
+    
+} 
 .boxes{
     width: 1em;
 }

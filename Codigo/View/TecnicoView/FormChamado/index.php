@@ -5,11 +5,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>HelpDesk - Faculdade UnB Gama</title>
-        <link href="../../css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="../css/layout.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../../css/superfish.css" media="screen" />
         <link href="../../css/examples.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" href="../../css/blue/style.css" type="text/css" media="print, projection, screen" />
-        <link href="../../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="css/formChamado.css" rel="stylesheet" type="text/css" media="screen" />
 
 
@@ -142,39 +142,36 @@
         <!--div's do cabecalho-->
         <div id="box"> <!-- Inicio div box-->
             <?php
-            require_once ("../../topo.php");
+            require_once ("../topo.php");
             ?>
             <!--div's do conteudo-->
             <div id="boxcaixabaixo">                
-                <?php
-                require_once ("../../menu.php");
-                require_once ("../../ondeestou.php");
-                ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
-                    <?php
-                    require_once ("../../menulateral.php");
-                    ?>
+                    
                     
                     <div id="boxconteudo">
                         <h1>Chamados Registrados Em Aberto</h1> 
                         <div id="boxcadastro">
-                            <fieldset>
+                            
                                 <label for="codigo" >Código do chamado</label>
-                                <input type="text" name="codigo" id="codigo" class="campo" size="3"/><br>
+                                <input type="text" name="codigo" id="codigo" class="campo" size="3" disabled />
                                 <label for="nome" >Solicitante</label>
-                                <input type="text" name="solicitante" id="solicitante" class="campo" size="20"/><br>
-                                <label for="data" >Data do Chamado</label></fieldset>
-                             <fieldset><input type="text" name="data" id="data" class="campo" size="20"/><br>
+                                <input type="text" name="solicitante" id="solicitante" class="campo" size="20" disabled/><br>
+                                <label for="data" >Data do Chamado</label>
+                             <input type="text" name="data" id="data" class="campo" size="20" disabled/><br>
                                 <label for="descricao" >Descrição</label>
-                                <input type="text" name="descricao" id="descricao" class="campo" size="45"/><br></fieldset>
-                                <fieldset><label for="tipo" >Tipo de Chamado</label>
-                                <input type="text" name="tipo" id="tipo" class="campo" size="20"/><br>
+                                <input type="text" name="descricao" id="descricao" class="campo" size="45" disabled/><br>
+                                <label for="tipo" >Tipo de Chamado</label>
+                                <input type="text" name="tipo" id="tipo" class="campo" size="20" disabled/><br>
                                 <label for="local">Local do Equipamento</label>
-                                <input type="text" name="local" id="local" class="campo" size="40"/><br /><br />
-                                <label for="patrimonio" >Código do patrimônio</label></fieldset>
-                                <input type="text" name="patrimonio" id="patrimonio" class="campo" size="15" /><br /><br /></fieldset>
-                                <fieldset><label> Status do Chamado</label></fieldset>
-                                <input type="text" name="status" id="status" class="campo" size="3"/>
+                                <input type="text" name="local" id="local" class="campo" size="40" disabled/><br /><br />
+                                <label for="patrimonio" >Código do patrimônio</label>
+                                <input type="text" name="patrimonio" id="patrimonio" class="campo" size="15" disabled/><br /><br />
+                                <label> Status do Chamado</label>
+                                Em andamento<input type="radio" name="status" id="status" value="2" />
+                                Finalizado<input type="radio" name="status" id="status" value="3" />
+
+                                
                                 <input type="button" id="botao" value="Salvar" onClick=enviar() class="botoesInput" />
                                 <input type="button" id="limpar" value="Limpar" onClick="limpa_form();" class="botoesInput" />
                                 <input type="hidden" id="acao" value="" />
