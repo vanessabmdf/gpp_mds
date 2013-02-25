@@ -9,12 +9,12 @@
             </div> <!-- fim div datahora-->
             <div id="controllogin"> <!--Inicio div controllogin-->
                 <div class="controlusuario">
-                    <b>Bem-vindo(a),  <?php echo  $_COOKIE['nome_usuario']; ?> </b>
+                    
                 </div>
                 <div class="controlperfil">
-                    <b> <?php echo $_COOKIE['perfil_usuario']; ?> </b>
+                   
                 </div>
             </div> <!-- fim div contrologin-->
-           <a href="../../login/logout.php"><button class="botao botao-green" style="float:right;  margin-top: -25px;width: 80px;">sair</button></a>
+           
         </div>	<!-- fim div controles-->
     </div> <!-- fim div topo-->  

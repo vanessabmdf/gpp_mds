@@ -4,7 +4,7 @@
     $usuario = new UsuarioCtrl();
     
     if(!(isset($_COOKIE['login_usuario']) or isset($_COOKIE['senha_usuario']))){
-        echo 'Voce nao efetuou o login';
+        header("Location:../../../View/login/index.php");
         exit;
         
     }
@@ -19,7 +19,7 @@
         if($valida_login===0){
             setcookie("login_usuario");
             setcookie("senha_usuario");
-            echo 'voce nao realizou o login!';
+            header("Location:../../../View/login/index.php");
             exit;
         }
         
@@ -28,7 +28,7 @@
     
     
     if(empty($login_usuario) or empty($senha_usuario)){
-        echo 'Voce nao realizou o login!';
+        header("Location:../../../View/login/index.php");
         exit;
     
     }

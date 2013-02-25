@@ -36,3 +36,9 @@ function limpaForm(){
     $("#confirmaSenha").val("");
  }
 
+function limpaLogin(){
+    $("#nomeLogin").val("");
+    $("#senhaLogin").val("");
+    
+}
+

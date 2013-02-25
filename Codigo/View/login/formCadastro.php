@@ -20,7 +20,7 @@
         <input type="password" name="confirmaSenha" size="28" maxlength="8" class="campo" id="confirmaSenha"/><br /><br />
         
         
-        <input type="button" name="cancelarCadastro" value="CANCELAR" id ="cancela-cadastro" class="botaoCadastro botaoCadastro-green" onclick="limparValidacao();limpaForm();"/>
+        <input type="button" name="cancelarCadastro" value="CANCELAR" id ="cancela-cadastro" class="botaoCadastro botaoCadastro-green" onclick="limpaValidacaoCadastro();limpaForm();"/>
         <input type="submit" name="cadastrar" value="CADASTRAR" class="botaoCadastro botaoCadastro-blue" />
     </form>
 </div>
