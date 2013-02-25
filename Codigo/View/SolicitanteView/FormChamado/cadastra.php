@@ -13,5 +13,7 @@
         $chamado = new ChamadoCtrl();
 
         $chamado->insChamado($descricao, $loginUsuario, $status, $tipoChamado, $local, $patrimonio);
+        
+        echo '<div id="msgSucesso">Seu chamado foi enviado com sucesso!</div>';
     }
 ?>

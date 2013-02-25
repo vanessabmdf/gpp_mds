@@ -21,7 +21,7 @@ body{
 #banner{
 	width:510px;
 	height:100px;
-	background:#FFFFFF url(../../imagens/LogoGTI_menor.jpg) no-repeat;
+	background:#FFFFFF url(../imagens/LogoGTI_menor.jpg) no-repeat;
 	float:left;
 }
 #controles{	
@@ -114,7 +114,7 @@ body{
         padding-bottom: 10px;
 }
 #caixacontrole1 ul{
-        list-style-image: url("../../imagens/seta.gif");    
+        list-style-image: url("../imagens/seta.gif");    
 }
 #caixacontrole1 li{  
         color: #1353B5;
@@ -153,7 +153,7 @@ body{
         margin: 5px 5px 15px 5px;
 }
 #caixacontrole2 ul{
-        list-style-image: url("../../imagens/seta.gif");    
+        list-style-image: url("../imagens/seta.gif");    
 }
 #caixacontrole2 li{  
         color: #909090;
@@ -164,8 +164,8 @@ body{
 }
 #boxconteudo{
         width: 80%;
-        height: 100%;
-        min-height: 900px;
+        height: 200px;
+        margin-top: 20px;
         margin-left: 100px;
         background: #FFF;
 	border: 1px solid #D0D0D0;
@@ -178,6 +178,7 @@ body{
 .botao {
     display: inline-block;
    
+
     float:right; 
     margin-top: -25px;
     width: 80px;
@@ -236,20 +237,10 @@ a:hover{
     text-decoration: underline;
 }
 
-#formChamado{
-    margin-left: 100px;
+#boxconteudo h1{
+    font-size:large;
+    color: #1353B5;
+    border-bottom: 2px solid #6CB3F5;
+    display:block;
+    margin:30px 0 30px 0px;
 }
-
-#msgSucesso{
-    border: 1px solid #2C6E2C;
-    color: #2C6E2C;
-    width: 420px;
-    margin-left: 155px;
-    margin-bottom: 20px;
-    padding-left: 150px;
-    padding-top: 25px;
-    height: 40px;
-    font-size: 13.5px;
-    background: #85E085  url('../../imagens/green-icon.png') no-repeat left;
-}
-
