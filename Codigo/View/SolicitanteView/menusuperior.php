@@ -4,7 +4,7 @@
                             <a href="../FormChamado/index.php">Cadastro de Chamados</a>    
                         </li>
                         <li>
-                            <a href="#">Meus Chamados</a>    
+                            <a href="../chamados/index.php">Meus Chamados</a>    
                        </li>
                     </ul>
                 </div> <!--Inicio div menu-->

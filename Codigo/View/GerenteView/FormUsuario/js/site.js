@@ -128,7 +128,8 @@ function enviar(){
                                 emailUsuario: $("#emailUsuario").val(),
                                 matriculaUsuario: $("#matriculaUsuario").val(),
                                 loginUsuario: $("#loginUsuario").val(),
-                                senhaUsuario: $("#senhaUsuario").val()
+                                senhaUsuario: $("#senhaUsuario").val(),
+                                perfilUsuario: $("#perfilUsuario").val()
                             },
                             success: function (data) {
                                 $("#acao").val("inserir"),

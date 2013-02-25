@@ -3,17 +3,14 @@
 require_once("../../../controller/UsuarioCtrl.php");
 
 $id=$_POST["id"];
-$nomeUsuario=utf8_decode($_POST["nomeUsuario"]);
-$emailUsuario=utf8_decode($_POST["emailUsuario"]);
-$matriculaUsuario=utf8_decode($_POST["matriculaUsuario"]);
-$dataNascimento=utf8_decode($_POST["dtNascUsuario"]);
-$datanova = explode("/", $dataNascimento);
-$datanova = $datanova[2] . "-" . $datanova[1] . "-" . $datanova[0];
-
-$loginUsuario=utf8_decode($_POST["loginUsuario"]);
-$senhaUsuario=utf8_decode($_POST["senhaUsuario"]);
+$nome=utf8_decode($_POST["nomeUsuario"]);
+$email=utf8_decode($_POST["emailUsuario"]);
+$matricula=utf8_decode($_POST["matriculaUsuario"]);
+$tipo=$_POST["perfilUsuario"];
+$login=utf8_decode($_POST["loginUsuario"]);
+$senha=utf8_decode($_POST["senhaUsuario"]);
 
 $solicitante = new UsuarioCtrl();
-$solicitante->alteraUsuario($nomeUsuario, $emailUsuario, $matriculaUsuario, $datanova, $loginUsuario, $senhaUsuario,$id);
+$solicitante->alteraUsuario($login, $senha, $email, $nome, $matricula,$tipo, $id)
 
 ?>

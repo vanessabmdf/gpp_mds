@@ -17,7 +17,7 @@ $solicitante = new UsuarioCtrl();
 	
 	
 	//Titulo dos campos da tabela
-	$camposTitulo = array("Codigo",
+	$camposTitulo = array("log",
         "Nome",    
 	"E-mail do solicitante",
 	"Matricula",
@@ -38,13 +38,10 @@ $solicitante = new UsuarioCtrl();
 	//Corpo da Tabela - Setando os valores de cada campo
 	foreach($solicitante->listaUsuario() as $sol){
 		$xml.="<registro>";	
-                        $xml.="<item>".$sol["perfil_cod"]."</item>";
+                        $xml.="<item>".$sol["login"]."</item>";
 			$xml.="<item>".$sol["nome"]."</item>";
                         $xml.="<item>".$sol["email"]."</item>";
-                        $xml.="<item>".$sol["matricula"]."</item>";   
-                        //$dataNasc = explode("-", $sol["data_nascimento"]);
-                        //$dataNasc = $dataNasc[2] . "/" . $dataNasc[1] . "/" . $dataNasc[0];
-                        //$xml.="<item>".$dataNasc."</item>";      
+                        $xml.="<item>".$sol["matricula"]."</item>";
 			$xml.="<item>".$sol["login"]."</item>";                
 		$xml.="</registro>";		
 	}

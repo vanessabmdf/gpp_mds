@@ -9,7 +9,7 @@
             </div> <!-- fim div datahora-->
             <div id="controllogin"> <!--Inicio div controllogin-->
                 <div class="controlusuario">
-                    <b>Bem-vindo(a), <?php echo  $_COOKIE['nome_usuario']; ?> !</b>
+                    <b>Bem-vindo(a), <?php echo  $_COOKIE['nome_usuario']; ?></b>
                 </div>
                 <div class="controlperfil">
                     <b><?php echo $_COOKIE['perfil_usuario']; ?> </b>

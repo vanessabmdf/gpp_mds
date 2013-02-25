@@ -1,15 +1,18 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<?php include '../../../controller/StatusCtrl.php'; ?>
+<?php include '../../../lib/valida_cookies.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta HTTP-EQUIV="Expires" CONTENT="-1" />
+        <meta HTTP-EQUIV="Pragma" CONTENT="no-cache" />
         <title>HelpDesk - Faculdade UnB Gama</title>
-        <link href="../css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/layout.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../../css/superfish.css" media="screen" />
         <link href="../../css/examples.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" href="../../css/blue/style.css" type="text/css" media="print, projection, screen" />
-        <link href="../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../../css/layoutform.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="css/formChamado.css" rel="stylesheet" type="text/css" media="screen" />
 
 
@@ -145,45 +148,20 @@
             require_once ("../topo.php");
             ?>
             <!--div's do conteudo-->
-            <div id="boxcaixabaixo">                
+            <div id="boxcaixabaixo">  
+                <?php
+                require_once ("../menusuperior.php");
+                ?>
+                
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
                     
-                    
                     <div id="boxconteudo">
-                        <h1>Chamados Registrados Em Aberto</h1> 
-                        <div id="boxcadastro">
-                            
-                                <label for="codigo" >Código do chamado</label>
-                                <input type="text" name="codigo" id="codigo" class="campo" size="3" disabled />
-                                <label for="nome" >Solicitante</label>
-                                <input type="text" name="solicitante" id="solicitante" class="campo" size="20" disabled/><br>
-                                <label for="data" >Data do Chamado</label>
-                             <input type="text" name="data" id="data" class="campo" size="20" disabled/><br>
-                                <label for="descricao" >Descrição</label>
-                                <input type="text" name="descricao" id="descricao" class="campo" size="45" disabled/><br>
-                                <label for="tipo" >Tipo de Chamado</label>
-                                <input type="text" name="tipo" id="tipo" class="campo" size="20" disabled/><br>
-                                <label for="local">Local do Equipamento</label>
-                                <input type="text" name="local" id="local" class="campo" size="40" disabled/><br /><br />
-                                <label for="patrimonio" >Código do patrimônio</label>
-                                <input type="text" name="patrimonio" id="patrimonio" class="campo" size="15" disabled/><br /><br />
-                                <label> Status do Chamado</label>
-                                Em andamento<input type="radio" name="status" id="status" value="2" />
-                                Finalizado<input type="radio" name="status" id="status" value="3" />
-
-                                
-                                <input type="button" id="botao" value="Salvar" onClick=enviar() class="botoesInput" />
-                                <input type="button" id="limpar" value="Limpar" onClick="limpa_form();" class="botoesInput" />
-                                <input type="hidden" id="acao" value="" />
-                        </div> <!--fim div boxbaixo -->
-                            <div id="boxtabela">
-                                <div id="resultado" class></div>
-                                <h1>Meus Chamados</h1> 
-                                <div id="tabelas" class></div>   
-                        </div>
+                        <h1>Meus Chamados</h1>
 
                        
-
+                          <div id="boxtabela">
+                                <div id="resultado" class></div>   
+                        </div>
                        
                     </div>
                 </div> <!--fim div boxbaixo -->
