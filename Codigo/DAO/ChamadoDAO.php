@@ -102,7 +102,7 @@ class ChamadoDAO
         $query = "SELECT a.cod, a.data_inicial, a.data_final, a.descricao, a.usuario_login, a.login_tecnico,
                   b.descricao AS desc_status, c.descricao AS desc_tipo_chamado, a.localizacao_equip, 
                   a.patrimonio_equip FROM chamado AS a INNER JOIN status AS b INNER JOIN tipo_chamado AS c 
-                  ON a.status_cod = b.cod = '$cod_status' AND c.cod = a.tipo_cod";
+                  ON a.status_cod = b.cod  and b.cod= '$cod_status' AND c.cod = a.tipo_cod";
         
         $stm = $this->con->query($query);
         /*

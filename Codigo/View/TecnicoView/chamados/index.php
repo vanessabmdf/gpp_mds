@@ -150,10 +150,8 @@
                 require_once ("../menusuperior.php");
                 ?>
                 <div id="boxbaixo"> <!--Inicio div boxbaixo--> 
-                    
-                    
                     <div id="boxconteudo">
-                        <h1>Chamados Pendentes</h1> 
+                        <h1>Minhas responsabilidades</h1> 
                         <div id="boxcadastro">
                             
                                 <label for="codigo" >Código do chamado</label>
@@ -180,13 +178,9 @@
                                 <input type="hidden" id="acao" value="" />
                         </div> <!--fim div boxbaixo -->
                             <div id="boxtabela">
-                                <div id="resultado" class></div>
+                                <div id="tabelas" class></div>
                                 
                         </div>
-
-                       
-
-                       
                     </div>
                 </div> <!--fim div boxbaixo -->
 

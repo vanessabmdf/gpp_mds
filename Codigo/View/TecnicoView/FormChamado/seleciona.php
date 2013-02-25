@@ -41,7 +41,7 @@ $chamado = new ChamadoCtrl();
 	
 	//Corpo da Tabela - Setando os valores de cada campo
         //Aqui passar como parâmetro a SESSION  com o login do tecnico
-	foreach($chamado->listaChamado() as $sol){
+	foreach($chamado->obterChamadoPorStatus(1) as $sol){
 		$xml.="<registro>";	
                         $xml.="<item>".$sol["cod"]."</item>";
 			$xml.="<item>".$sol["cod"]."</item>"; 

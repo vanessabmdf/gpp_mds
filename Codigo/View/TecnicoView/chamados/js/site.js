@@ -4,10 +4,10 @@ var array = new Array();
 // JavaScript Document
 function load_grid(){    
     $.ajax({
-        url: 'seleciona.php',
+        url: 'tabelas.php',
         type: "POST",
         success: function (data) {
-            imprime(data);
+            imprimet(data);
         }
     });
 }
@@ -193,7 +193,7 @@ if(navigator.appName=='Microsoft Internet Explorer'){
     }    
 }
 
-function imprime(xmldoc){
+function imprimet(xmldoc){
     $.unblockUI();
     if(typeof(xmldoc) != "string")
     {
@@ -246,7 +246,7 @@ function imprime(xmldoc){
         var registros = xmldoc.getElementsByTagName('registro');                
         for(i=0;i<registros.length;i++){
             var itens = registros[i].getElementsByTagName('item');                        
-            tabela+="<tr bgcolor='#F2F2F2' id=linha"+i+" style=\"cursor:default\" onMouseOver=\"javascript:this.style.backgroundColor='#1353B5'\" onMouseOut=\"javascript:this.style.backgroundColor='#F2F2F2'\">"
+            tabela+="<tr bgcolor='#F2F2F2' id=linhas"+i+" style=\"cursor:default\" onMouseOver=\"javascript:this.style.backgroundColor='#1353B5'\" onMouseOut=\"javascript:this.style.backgroundColor='#F2F2F2'\">"
             for(j=0;j<itens.length;j++){
                 if(itens[j].firstChild==null){					
                     if(j==0)
@@ -262,13 +262,13 @@ function imprime(xmldoc){
                 }							
             }
             
-            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linha"+i+"').html());\"></td>";            
+            tabela+="<td style='cursor: pointer' class='botoes'><img src='../../imagens/edit.gif' alt='alterar' onClick=\"editar($('#linhas"+i+"').html());\"></td>";            
             tabela+="</tr>";
         }
         tabela+="</tbody>";	
         tabela+="</table>";
 		
-        $("#resultado").html(tabela);
+        $("#tabelas").html(tabela);
         tabela=null;
         $("table")
         .tablesorter({widthFixed: false})
@@ -280,5 +280,5 @@ function imprime(xmldoc){
         });
     }
     else
-        $("#resultado").html("Nenhum registro encontrado...");	
+        $("#tabelas").html("Nenhum registro encontrado...");	
 }
