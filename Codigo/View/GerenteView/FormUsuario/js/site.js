@@ -162,7 +162,7 @@ function enviar(){
     }
 }
 
-function apagar(id){
+function apagar('admin'){
     if( $("#acao").val()!="alterar" ){
         var apagar = {
             confirmacao: {
