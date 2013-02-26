@@ -172,9 +172,25 @@
                                 <input type="text" name="local" id="local" class="campo" size="40" disabled/><br /><br />
                                 <label for="patrimonio" >Código do patrimônio</label>
                                 <input type="text" name="patrimonio" id="patrimonio" class="campo" size="15" disabled/><br /><br />
-                                <label> Status do Chamado</label>
-                                Em andamento<input type="radio" name="status" id="status" value="2" />
-                                Finalizado<input type="radio" name="status" id="status" value="3" />
+                                
+                                <label>
+                                        Status<br /><br />
+                                        
+                                            <select id="status" name="status">
+                                                
+                                                    <option value="0" selected>selecione</option>
+                                                    <?php 
+                                                        $status = new StatusCtrl();
+                                                        $stm = $status->listaStatus();
+                                                        foreach ($stm as $row){
+                                                            $status = utf8_encode($row['descricao']);
+                                                            $codigo = $row['cod'];
+                                                            echo "<option value='$codigo'>".$status."</option>";
+                                                        }
+                                                    ?>
+                                                    
+                                            </select>
+                                    </label>
 
                                 
                                 <input type="button" id="botao" value="Salvar" onClick=enviar() class="botoesInput" />
