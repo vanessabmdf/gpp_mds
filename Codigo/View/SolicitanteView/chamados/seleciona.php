@@ -51,8 +51,8 @@ $chamado = new ChamadoCtrl();
                         $xml.="<item>".$sol["login_tecnico"]."</item>";
                         $xml.="<item>".$sol["desc_status"]."</item>";
                         $xml.="<item>".$sol["desc_tipo_chamado"]."</item>";                        
-                        $xml.="<item>".$sol["localizacao_equip"]."</item>";
                         $xml.="<item>".$sol["patrimonio_equip"]."</item>";
+                        $xml.="<item>".$sol["localizacao_equip"]."</item>";
 		$xml.="</registro>";		
 	}
 	
