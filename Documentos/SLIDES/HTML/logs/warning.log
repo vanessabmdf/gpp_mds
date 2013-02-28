@@ -1,0 +1,454 @@
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Concep&ccedil;&atilde;o_625BEF67.html'
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Elabora&ccedil;&atilde;o_40A22EC4.html'
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Constru&ccedil;&atilde;o_50FAE971.html'
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Transi&ccedil;&atilde;o_D3541D76.html'
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Concep&ccedil;&atilde;o_625BEF67.html'
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Elabora&ccedil;&atilde;o_40A22EC4.html'
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Constru&ccedil;&atilde;o_50FAE971.html'
+Warning: DeliveryProcess:process_HelpDesk: missing resource file './../../Help_Desk/deliveryprocesses/Transi&ccedil;&atilde;o_D3541D76.html'
+Warning: Phase:Concepção: missing resource file './../../Help_Desk/deliveryprocesses/resources/Concep&ccedil;&atilde;o_625BEF67_Activity.jpeg'
+Warning: Phase:Concepção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Concep&ccedil;&atilde;o_D100499C.html'
+Warning: Phase:Concepção: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Concep&ccedil;&atilde;o_FD2BC53A.html'
+Warning: Phase:Concepção: missing resource file './../../Help_Desk/deliveryprocesses/resources/Concep&ccedil;&atilde;o_625BEF67_Activity.jpeg'
+Warning: Phase:Concepção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Concep&ccedil;&atilde;o_D100499C.html'
+Warning: Phase:Concepção: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Concep&ccedil;&atilde;o_FD2BC53A.html'
+Warning: Iteration:Iteração da Fase de Concepção: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Concep&ccedil;&atilde;o_D100499C_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Concepção: missing resource file './../../Help_Desk/deliveryprocesses/Concep&ccedil;&atilde;o_625BEF67.html'
+Warning: Iteration:Iteração da Fase de Concepção: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Concep&ccedil;&atilde;o_D100499C_Activity.jpeg'
+Warning: Activity:p: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Concep&ccedil;&atilde;o_D100499C.html'
+Warning: Activity:Identificar e Refinar os Requisitos: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Concep&ccedil;&atilde;o_D100499C.html'
+Warning: Milestone:Marco da Fase de Concepção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Concep&ccedil;&atilde;o_D100499C.html'
+Warning: Phase:Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/resources/Elabora&ccedil;&atilde;o_40A22EC4_Activity.jpeg'
+Warning: Phase:Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9.html'
+Warning: Phase:Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Elabora&ccedil;&atilde;o_6EBB37A7.html'
+Warning: Phase:Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/resources/Elabora&ccedil;&atilde;o_40A22EC4_Activity.jpeg'
+Warning: Phase:Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9.html'
+Warning: Phase:Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Elabora&ccedil;&atilde;o_6EBB37A7.html'
+Warning: Iteration:Iteração da Fase de Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/Elabora&ccedil;&atilde;o_40A22EC4.html'
+Warning: Iteration:Iteração da Fase de Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9_Activity.jpeg'
+Warning: Activity:Activity 1: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9.html'
+Warning: Activity:ahah: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9.html'
+Warning: Activity:Desenvolver a Arquitetura: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9.html'
+Warning: Activity:Plano de Tempo: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9.html'
+Warning: Milestone:Marco da Fase de Elaboração: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Elabora&ccedil;&atilde;o_F4FA50B9.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/resources/Constru&ccedil;&atilde;o_50FAE971_Activity.jpeg'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 1_E7E1EED2.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 2_34506F94.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Constru&ccedil;&atilde;o_F56E1B61.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/resources/Constru&ccedil;&atilde;o_50FAE971_Activity.jpeg'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 1_E7E1EED2.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 2_34506F94.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9.html'
+Warning: Phase:Construção: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Constru&ccedil;&atilde;o_F56E1B61.html'
+Warning: Iteration:Iteração da Fase de Construção 1: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 1_E7E1EED2_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 1: missing resource file './../../Help_Desk/deliveryprocesses/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D9245E2C.html'
+Warning: Iteration:Iteração da Fase de Construção 1: missing resource file './../../Help_Desk/deliveryprocesses/Testar Solu&ccedil;&atilde;o_47E25360.html'
+Warning: Iteration:Iteração da Fase de Construção 1: missing resource file './../../Help_Desk/deliveryprocesses/Constru&ccedil;&atilde;o_50FAE971.html'
+Warning: Iteration:Iteração da Fase de Construção 1: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 1_E7E1EED2_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 1: missing resource file './../../Help_Desk/deliveryprocesses/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D9245E2C.html'
+Warning: Iteration:Iteração da Fase de Construção 1: missing resource file './../../Help_Desk/deliveryprocesses/Testar Solu&ccedil;&atilde;o_47E25360.html'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D9245E2C_Activity.jpeg'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 1_E7E1EED2.html'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D9245E2C_Activity.jpeg'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Testar Solu&ccedil;&atilde;o_47E25360_Activity.jpeg'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 1_E7E1EED2.html'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Testar Solu&ccedil;&atilde;o_47E25360_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 2: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 2_34506F94_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 2: missing resource file './../../Help_Desk/deliveryprocesses/Desenvolver um Incremento da Solu&ccedil;&atilde;o_4BCDD096.html'
+Warning: Iteration:Iteração da Fase de Construção 2: missing resource file './../../Help_Desk/deliveryprocesses/Testar Solu&ccedil;&atilde;o_B8ECC8DA.html'
+Warning: Iteration:Iteração da Fase de Construção 2: missing resource file './../../Help_Desk/deliveryprocesses/Constru&ccedil;&atilde;o_50FAE971.html'
+Warning: Iteration:Iteração da Fase de Construção 2: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 2_34506F94_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 2: missing resource file './../../Help_Desk/deliveryprocesses/Desenvolver um Incremento da Solu&ccedil;&atilde;o_4BCDD096.html'
+Warning: Iteration:Iteração da Fase de Construção 2: missing resource file './../../Help_Desk/deliveryprocesses/Testar Solu&ccedil;&atilde;o_B8ECC8DA.html'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Desenvolver um Incremento da Solu&ccedil;&atilde;o_4BCDD096_Activity.jpeg'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 2_34506F94.html'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Desenvolver um Incremento da Solu&ccedil;&atilde;o_4BCDD096_Activity.jpeg'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Testar Solu&ccedil;&atilde;o_B8ECC8DA_Activity.jpeg'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 2_34506F94.html'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Testar Solu&ccedil;&atilde;o_B8ECC8DA_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D6D414D7.html'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/Testar Solu&ccedil;&atilde;o_43F30D1B.html'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/Integrar M&oacute;dulos_F1B7CEFC.html'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/Constru&ccedil;&atilde;o_50FAE971.html'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/resources/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9_Activity.jpeg'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D6D414D7.html'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/Testar Solu&ccedil;&atilde;o_43F30D1B.html'
+Warning: Iteration:Iteração da Fase de Construção 3: missing resource file './../../Help_Desk/deliveryprocesses/Integrar M&oacute;dulos_F1B7CEFC.html'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D6D414D7_Activity.jpeg'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9.html'
+Warning: Activity:Desenvolver um Incremento da Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Desenvolver um Incremento da Solu&ccedil;&atilde;o_D6D414D7_Activity.jpeg'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Testar Solu&ccedil;&atilde;o_43F30D1B_Activity.jpeg'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9.html'
+Warning: Activity:Testar Solução: missing resource file './../../Help_Desk/deliveryprocesses/resources/Testar Solu&ccedil;&atilde;o_43F30D1B_Activity.jpeg'
+Warning: Activity:Integrar Módulos: missing resource file './../../Help_Desk/deliveryprocesses/resources/Integrar M&oacute;dulos_F1B7CEFC_Activity.jpeg'
+Warning: Activity:Integrar Módulos: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9.html'
+Warning: Activity:Integrar Módulos: missing resource file './../../Help_Desk/deliveryprocesses/resources/Integrar M&oacute;dulos_F1B7CEFC_Activity.jpeg'
+Warning: Milestone:Marco da Fase de Construção: missing resource file './../../Help_Desk/deliveryprocesses/Itera&ccedil;&atilde;o da Fase de Constru&ccedil;&atilde;o 3_C7B1DF9.html'
+Warning: Phase:Transição: missing resource file './../../Help_Desk/deliveryprocesses/resources/Transi&ccedil;&atilde;o_D3541D76_Activity.jpeg'
+Warning: Phase:Transição: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Transi&ccedil;&atilde;o_24E23C72.html'
+Warning: Phase:Transição: missing resource file './../../Help_Desk/deliveryprocesses/resources/Transi&ccedil;&atilde;o_D3541D76_Activity.jpeg'
+Warning: Phase:Transição: missing resource file './../../Help_Desk/deliveryprocesses/Marco da Fase de Transi&ccedil;&atilde;o_24E23C72.html'
+Warning: Activity:Avaliar Resultados: missing resource file './../../Help_Desk/deliveryprocesses/Transi&ccedil;&atilde;o_D3541D76.html'
+Warning: TaskDescriptor:define_vision: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:define_vision: Missing referenced element Artifact:vision
+Warning: TaskDescriptor:define_vision: Missing referenced element Guideline:req_gathering_techniques
+Warning: TaskDescriptor:define_vision: Missing referenced element Template:vision
+Warning: TaskDescriptor:define_vision: Missing referenced element Guideline:req_gathering_techniques
+Warning: TaskDescriptor:define_vision: Missing referenced element Task:find_and_outline_requirements
+Warning: TaskDescriptor:define_vision: Missing referenced element Role:project_manager
+Warning: TaskDescriptor:define_vision: Missing referenced element Role:architect
+Warning: TaskDescriptor:define_vision: Missing referenced element Artifact:uc_model
+Warning: TaskDescriptor:define_vision: Missing referenced element Task:find_and_outline_requirements
+Warning: TaskDescriptor:define_vision: Missing referenced element Role:project_manager
+Warning: TaskDescriptor:define_vision: Missing referenced element Role:architect
+Warning: TaskDescriptor:define_vision: Missing referenced element TermDefinition:feature
+Warning: TaskDescriptor:define_vision: Missing referenced element Concept:requirement_attributes
+Warning: TaskDescriptor:define_vision: Missing referenced element Artifact:vision
+Warning: TaskDescriptor:define_vision: Missing referenced element Guideline:effective_req_reviews
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:work_items_list
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Guideline:agile_estimation
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:vision
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:risk_list
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Guideline:agile_estimation
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Concept:project_lifecycle
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Task:plan_iteration
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:iteration_plan
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Artifact:vision
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Artifact:work_items_list
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Guideline:req_gathering_techniques
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Artifact:glossary
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Concept:requirements
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Concept:supporting_requirements
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Guideline:supporting_requirements
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Artifact:vision
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Guideline:effective_req_reviews
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Artifact:work_items_list
+Warning: TaskDescriptor:find_and_outline_requirements: Missing referenced element Concept:core_principle_collaborate
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:work_items_list
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Guideline:agile_estimation
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:vision
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:risk_list
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Guideline:agile_estimation
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Concept:project_lifecycle
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Task:plan_iteration
+Warning: TaskDescriptor:plan_the_project: Missing referenced element Artifact:iteration_plan
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Role:analyst
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Checklist:vision
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Concept:architecturally_significant_requirements
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Guideline:determine_architecturally_significant_requirements
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Artifact:architecture_notebook
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Artifact:design
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Artifact:build
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Concept:arch_mech
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Guideline:architectural_mechanisms
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Guideline:outline_the_architecture
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Artifact:glossary
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Role:analyst
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Role:developer
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Role:project_manager
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Artifact:architecture_notebook
+Warning: TaskDescriptor:outline_the_architecture: Missing referenced element Role:developer
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Task:outline_the_architecture
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Artifact:architecture_notebook
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Artifact:design
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Artifact:build
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Artifact:design
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Concept:arch_mech
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Role:developer
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Artifact:architecture_notebook
+Warning: TaskDescriptor:refine_the_architecture: Missing referenced element Artifact:build
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:design
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:architecture_notebook
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:determine_architecturally_significant_requirements
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:use_case
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:supporting_requirements_spec
+Warning: TaskDescriptor:design_solution: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:entity_control_boundary_pattern
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Concept:arch_mech
+Warning: TaskDescriptor:design_solution: Missing referenced element Concept:design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Role:analyst
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:design
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Role:tester
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:developer_test
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Role:tester
+Warning: TaskDescriptor:implement_solution: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:implement_solution: Missing referenced element Concept:refactoring
+Warning: TaskDescriptor:implement_solution: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:developer_test
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:test_log
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Task:request_change
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:work_items_list
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:workspace
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Task:run_developer_tests
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:project_manager
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:developer
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Artifact:build
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Guideline:programming_automated_tests
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Guideline:test_suite
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Checklist:test_script
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:developer
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:analyst
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:workspace
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Task:run_developer_tests
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:build
+Warning: TaskDescriptor:run_tests: Missing referenced element Guideline:test_suite
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:test_script
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:test_log
+Warning: TaskDescriptor:run_tests: Missing referenced element Task:request_change
+Warning: TaskDescriptor:run_tests: Missing referenced element Task:implement_test_scripts
+Warning: TaskDescriptor:run_tests: Missing referenced element Guideline:test_first_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:design
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:architecture_notebook
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:determine_architecturally_significant_requirements
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:use_case
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:supporting_requirements_spec
+Warning: TaskDescriptor:design_solution: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:entity_control_boundary_pattern
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Concept:arch_mech
+Warning: TaskDescriptor:design_solution: Missing referenced element Concept:design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Role:analyst
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:design
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Role:tester
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:developer_test
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Role:tester
+Warning: TaskDescriptor:implement_solution: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:implement_solution: Missing referenced element Concept:refactoring
+Warning: TaskDescriptor:implement_solution: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:developer_test
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:test_log
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Task:request_change
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:work_items_list
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:workspace
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Task:run_developer_tests
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:project_manager
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:developer
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Artifact:build
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Guideline:programming_automated_tests
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Guideline:test_suite
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Checklist:test_script
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:developer
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:analyst
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:workspace
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Task:run_developer_tests
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:build
+Warning: TaskDescriptor:run_tests: Missing referenced element Guideline:test_suite
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:test_script
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:test_log
+Warning: TaskDescriptor:run_tests: Missing referenced element Task:request_change
+Warning: TaskDescriptor:run_tests: Missing referenced element Task:implement_test_scripts
+Warning: TaskDescriptor:run_tests: Missing referenced element Guideline:test_first_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:design
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:architecture_notebook
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:determine_architecturally_significant_requirements
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:use_case
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:supporting_requirements_spec
+Warning: TaskDescriptor:design_solution: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:entity_control_boundary_pattern
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Concept:arch_mech
+Warning: TaskDescriptor:design_solution: Missing referenced element Concept:design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:analyze_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Guideline:evolve_the_design
+Warning: TaskDescriptor:design_solution: Missing referenced element Role:analyst
+Warning: TaskDescriptor:design_solution: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:design
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Role:tester
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Artifact:developer_test
+Warning: TaskDescriptor:impl_developer_tests: Missing referenced element Role:tester
+Warning: TaskDescriptor:implement_solution: Missing referenced element Artifact:implementation
+Warning: TaskDescriptor:implement_solution: Missing referenced element Concept:refactoring
+Warning: TaskDescriptor:implement_solution: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:developer_test
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:test_log
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Task:request_change
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Artifact:work_items_list
+Warning: TaskDescriptor:run_developer_tests: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:workspace
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Task:run_developer_tests
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:project_manager
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:developer
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Artifact:build
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Guideline:programming_automated_tests
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Guideline:test_suite
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Checklist:test_script
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:developer
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:stakeholder
+Warning: TaskDescriptor:implement_test_scripts: Missing referenced element Role:analyst
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:workspace
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Task:run_developer_tests
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Guideline:promoting_changes
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:continuous_integration
+Warning: TaskDescriptor:integrate_and_create_build: Missing referenced element Concept:change_set
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:build
+Warning: TaskDescriptor:run_tests: Missing referenced element Guideline:test_suite
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:test_script
+Warning: TaskDescriptor:run_tests: Missing referenced element Artifact:test_log
+Warning: TaskDescriptor:run_tests: Missing referenced element Task:request_change
+Warning: TaskDescriptor:run_tests: Missing referenced element Task:implement_test_scripts
+Warning: TaskDescriptor:run_tests: Missing referenced element Guideline:test_first_design
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:architect: Missing referenced element Concept:core_principle_focus
+Warning: WorkProductDescriptor:architecture_notebook: Missing referenced element Concept:arch_mech
+Warning: WorkProductDescriptor:architecture_notebook: Missing referenced element Concept:executable_architecture
+Warning: WorkProductDescriptor:architecture_notebook: Missing referenced element Artifact:design
+Warning: WorkProductDescriptor:architecture_notebook: Missing referenced element Guideline:architectural_view
+Warning: WorkProductDescriptor:test_case: Missing referenced element Template:test_case
+Warning: WorkProductDescriptor:test_case: Missing referenced element Concept:types_of_test
+Warning: WorkProductDescriptor:vision: Missing referenced element TermDefinition:feature
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:architect: Missing referenced element Concept:core_principle_focus
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:architect: Missing referenced element Concept:core_principle_focus
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:architect: Missing referenced element Concept:core_principle_focus
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:architect: Missing referenced element Concept:core_principle_focus
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:architect: Missing referenced element Concept:core_principle_focus
+Warning: WorkProductDescriptor:test_case: Missing referenced element Template:test_case
+Warning: WorkProductDescriptor:test_case: Missing referenced element Concept:types_of_test
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: RoleDescriptor:architect: Missing referenced element Concept:core_principle_focus
+Warning: WorkProductDescriptor:test_case: Missing referenced element Template:test_case
+Warning: WorkProductDescriptor:test_case: Missing referenced element Concept:types_of_test
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:self_organize_work_assignments
+Warning: RoleDescriptor:analyst: Missing referenced element Guideline:staffing_project
+Warning: Role:stakeholder: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:vision: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:req_gathering_techniques: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Template:vision: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Task:find_and_outline_requirements: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Role:project_manager: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Role:architect: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:uc_model: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: TermDefinition:feature: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:requirement_attributes: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:effective_req_reviews: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:work_items_list: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:agile_estimation: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:risk_list: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:project_lifecycle: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Task:plan_iteration: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:iteration_plan: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:glossary: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:requirements: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:supporting_requirements: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:supporting_requirements: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:core_principle_collaborate: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Role:analyst: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Checklist:vision: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:architecturally_significant_requirements: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:determine_architecturally_significant_requirements: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:architecture_notebook: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:design: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:build: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:arch_mech: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:architectural_mechanisms: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:outline_the_architecture: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Role:developer: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Task:outline_the_architecture: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:use_case: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:supporting_requirements_spec: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:analyze_the_design: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:evolve_the_design: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:entity_control_boundary_pattern: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:design: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:implementation: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Role:tester: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:developer_test: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:refactoring: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:test_log: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Task:request_change: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:promoting_changes: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:workspace: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:change_set: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Task:run_developer_tests: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:continuous_integration: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:programming_automated_tests: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:test_suite: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Checklist:test_script: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Artifact:test_script: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Task:implement_test_scripts: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:test_first_design: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:self_organize_work_assignments: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:staffing_project: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:core_principle_focus: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:executable_architecture: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Guideline:architectural_view: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Template:test_case: IUPP0003W: Element was not published because it is not a valid element in the configuration.
+Warning: Concept:types_of_test: IUPP0003W: Element was not published because it is not a valid element in the configuration.
